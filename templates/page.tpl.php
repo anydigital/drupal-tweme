@@ -9,17 +9,15 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="brand" href="<?php print $front_page ?>" title="<?php print $site_slogan ?>"><?php print $site_name ?></a>
-			<?php if ($main_menu): ?>
+			<a class="brand" href="<?php print $front_page ?>" title="<?php print $site_slogan ?>">
+        <?php if ($logo): ?><img src="<?php print $logo ?>" /><?php endif ?>
+        <?php print $site_name ?>
+      </a>
+      <?php if ($navbar_search): ?><?php print $navbar_search ?><?php endif ?>
+      <?php if ($navbar_links): ?>
 			<nav class="nav-collapse collapse" role="navigation">
-				<ul class="nav">
-					<?php foreach ($main_menu as $item): ?>
-					<li class="<?php print drupal_match_path(current_path(), $item['href']) ? 'active' : '' ?>">
-						<?php print l($item['title'], $item['href']) ?>
-					</li>
-					<?php endforeach ?>
-				</ul>
-			</nav>
+        <?php print $navbar_links ?>
+      </nav>
 			<?php endif ?>
 		</div>
 	</div>
@@ -45,57 +43,19 @@
 <!-- Main -->
 <div id="main">
   <div class="container">
-    <?php if (user_access('administer')) print $messages ?>
+    <?php print $messages ?>
     <div class="row">
-      <?php $sidebar_cols = 3 * (int) !empty($page['sidebar_first']) + 1 * (int) !empty($page['sidebar_second']) ?>
-      <?php $scrollspy_cols = 3 * (int) !empty($scrollspy) ?>
-      <?php $content_cols = 12 - $sidebar_cols - $scrollspy_cols ?>
-  
-      <?php if ($scrollspy): ?>
-      <!-- ScrollSpy -->
-      <aside id="scrollspy" class="span3 hidden-phone">
-        <div data-spy="affix" data-offset-top="200">
-          <div class="row">
-            <div class="span3">
-              <nav>
-                <ul class="nav nav-tabs nav-stacked">
-                  <li><a href="#up"><i class="icon icon-chevron-up"></i><?php print t('Back to top') ?></a></li>
-                  <?php foreach ($scrollspy as $item): ?>
-                  <li><a href="<?php print $item['href'] ?>"><i class="icon icon-chevron-right"></i><?php print $item['title'] ?></a></li>
-                  <?php endforeach ?>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </aside>
-      <?php endif ?>
-
       <!-- Content -->
-      <section id="content" class="span<?php print $content_cols ?>">
+      <section id="content" class="span<?php print 12 - 3 * (int) $has_sidebar ?>">
         <?php print render($page['content']) ?>
       </section>
-
-      <?php if ($page['sidebar_first']): ?>
-      <!-- Sidebar first -->
-      <aside class="span3">
+      <?php if ($has_sidebar): ?>
+      <!-- Sidebar -->
+      <aside id="sidebar" class="span3 hidden-phone">
         <?php print render($page['sidebar_first']) ?>
+        <?php print render($page['sidebar_second']) ?>
       </aside>
       <?php endif ?>
-
-      <?php if ($page['sidebar_second']): ?>
-      <!-- Sidebar second -->
-      <aside class="span1 hidden-phone">
-        <div data-spy="affix" data-offset-top="200">
-          <div class="row">
-            <div class="span1">
-            <?php print render($page['sidebar_second']) ?>
-            </div>
-          </div>
-        </div>
-      </aside>
-      <?php endif ?>
-      
     </div>
 	</div>
 </div>
@@ -109,9 +69,26 @@
 			<?php foreach ($secondary_menu as $item): ?>
 			<?php print l($item['title'], $item['href']) ?>
 			<?php endforeach ?>
-      <a href="#up"><?php print t('Back to top') ?> </a>
+      <a href="#"><?php print t('Back to top') ?> </a>
       <?php endif ?>
     </div>
     <?php print date('Y') ?> © <?php print $site_name ?>
 	</div>
 </footer>
+
+<script>
+(function ($) {
+  $(document).ready(function() {
+    var ss = $('.region-sidebar-second');
+    if (ss.size()) {
+      var offset = {
+        top: ss.offset().top - 20,
+        bottom: $('#footer').outerHeight() + 20
+      }
+      ss.width(ss.width());
+      ss.affix({ offset: offset });
+      $('head').append('<style>#sidebar .affix-bottom { bottom: ' + offset.bottom + 'px }</style>');
+    }
+  });
+})(jQuery);
+</script>

@@ -1,28 +1,19 @@
-#navbar a {
-  line-height: 30px;
-}
-#navbar .btn-navbar {
-  margin-top: 10px;
-}
 #main {
   padding: 30px 0;
 }
 #footer {
-  padding-top: 30px;
+  background-color: whitesmoke;
+  border-top: 1px solid #e5e5e5;
   padding-bottom: 30px;
-  border-top: 1px solid #E5E5E5;
-  background-color: whiteSmoke;
+  padding-top: 30px;
 }
 .footer-links a {
   margin-left: 15px;
 }
-#disqus_thread {
-  margin-top: 30px;
-}
 #header {
+  background-color: whitesmoke;
+  border-bottom: 1px solid #e5e5e5;
   padding-top: 20px;
-  background-color: whiteSmoke;
-  border-bottom: 1px solid #E5E5E5;
 }
 .nav-tabs {
   border-bottom: 0;
@@ -31,10 +22,23 @@
 h1 {
   margin: 0 0 20px 0;
 }
-aside .affix {
-  top: 30px;
+.node > h2,
+.block > h2 {
+  margin-top: 0;
 }
-.region-sidebar-second .block > h2 {
-  font-size: 14px;
-  text-transform: uppercase;
+#sidebar .affix {
+  top: 20px;
+}
+#sidebar .affix-bottom {
+  position: absolute;
+  top: auto;
+}
+#navbar .navbar-inner {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+#navbar .nav > li > a {
+  margin: -5px 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }

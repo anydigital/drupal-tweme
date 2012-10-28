@@ -1,3 +1,6 @@
+body {
+  position: relative;
+}
 #admin-menu {
   z-index: 1100;
 }
@@ -12,8 +15,8 @@
 }
 .breadcrumb {
   background: transparent;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 .item-list ul li {
   margin: 0 0 -1px 0;
@@ -23,26 +26,21 @@ ul.links.inline {
   margin: 15px 0 0 0;
 }
 ul.links.inline li {
-  padding: 0;
   margin-right: 15px;
+  padding: 0;
 }
 .node {
   margin-bottom: 20px;
 }
 .node .submitted {
-  margin-bottom: 10px;
-  font-size: 90%;
   color: grey;
+  font-size: 90%;
+  margin-bottom: 10px;
 }
 .nav-tabs.nav-stacked > .active > a {
+  background-color: #08c;
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-color: #08C;
-}
-.nav-tabs.nav-stacked .icon {
-  float: right;
-  margin-top: 2px;
-  margin-right: -6px;
 }
 .node .content h2,
 .node .content h3,
@@ -52,8 +50,8 @@ ul.links.inline li {
   padding-top: 20px;
 }
 .poll .title {
-  margin-bottom: 20px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 .poll .progress .bar {
   border: 0;
@@ -80,4 +78,22 @@ input[type="checkbox"] {
     margin: 0 -20px;
     padding: 0 20px;
   }
+}
+.navbar-search-elastic .search-query {
+  width: 80px;
+}
+.navbar-search-elastic .search-query:focus {
+  transition: width 0.5s;
+  width: 160px;
+  -moz-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  -webkit-transition: width 0.5s;
+}
+.navbar .brand img {
+  float: left;
+  height: 30px;
+  margin: -5px 5px -5px 0;
+}
+.form-actions .btn {
+  margin-right: 5px;
 }

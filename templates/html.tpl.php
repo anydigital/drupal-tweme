@@ -7,8 +7,7 @@
   <?php print $styles ?>
   <?php print $scripts ?>
 </head>
-<body class="<?php print $classes ?>" data-spy="scroll" data-target="#scrollspy">
-  <a id="up"></a>
+<body class="<?php print $classes ?>"<?php print $attributes ?>>
   <?php print $page_top ?>
   <?php print $page ?>
   <?php print $page_bottom ?>

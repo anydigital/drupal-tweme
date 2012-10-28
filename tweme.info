@@ -1,6 +1,5 @@
 name = Tweme
-description = Based on Twitter Bootstrap.
-version = VERSION
+description = Lightweight responsive theme based on Twitter Bootstrap.
 core = 7.x
 
 stylesheets[all][] = libraries/bootstrap/css/bootstrap.css
