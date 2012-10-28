@@ -1,0 +1,83 @@
+#admin-menu {
+  z-index: 1100;
+}
+#admin-menu li {
+  line-height: normal;
+}
+#comments {
+  margin-top: 20px;
+}
+#main .block {
+  margin-bottom: 30px;
+}
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+.item-list ul li {
+  margin: 0 0 -1px 0;
+}
+ul.links.inline {
+  display: block;
+  margin: 15px 0 0 0;
+}
+ul.links.inline li {
+  padding: 0;
+  margin-right: 15px;
+}
+.node {
+  margin-bottom: 20px;
+}
+.node .submitted {
+  margin-bottom: 10px;
+  font-size: 90%;
+  color: grey;
+}
+.nav-tabs.nav-stacked > .active > a {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #08C;
+}
+.nav-tabs.nav-stacked .icon {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+}
+.node .content h2,
+.node .content h3,
+.node .content h4,
+.node .content h5,
+.node .content h6 {
+  padding-top: 20px;
+}
+.poll .title {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.poll .progress .bar {
+  border: 0;
+  margin: 0;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 5px 0 0;
+}
+.block-poll ul.links,
+.block-poll ul.links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.block-poll ul.links {
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .navbar-static-top .navbar-inner {
+    margin-right: -40px;
+  }
+  .container-wrapper {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}

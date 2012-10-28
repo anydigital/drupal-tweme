@@ -1,1 +1,23 @@
 name = Tweme
+description = Based on Twitter Bootstrap.
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = libraries/bootstrap/css/bootstrap.css
+stylesheets[all][] = libraries/bootstrap/css/bootstrap-responsive.css
+stylesheets[all][] = tweme.css
+stylesheets[all][] = style.css
+
+scripts[] = libraries/bootstrap/js/bootstrap.js
+
+regions[hidden] = Hidden
+regions[header] = Header
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+regions[featured] = Featured
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+regions[footer] = Footer

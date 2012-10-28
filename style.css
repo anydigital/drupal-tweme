@@ -1,0 +1,40 @@
+#navbar a {
+  line-height: 30px;
+}
+#navbar .btn-navbar {
+  margin-top: 10px;
+}
+#main {
+  padding: 30px 0;
+}
+#footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: 1px solid #E5E5E5;
+  background-color: whiteSmoke;
+}
+.footer-links a {
+  margin-left: 15px;
+}
+#disqus_thread {
+  margin-top: 30px;
+}
+#header {
+  padding-top: 20px;
+  background-color: whiteSmoke;
+  border-bottom: 1px solid #E5E5E5;
+}
+.nav-tabs {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+h1 {
+  margin: 0 0 20px 0;
+}
+aside .affix {
+  top: 30px;
+}
+.region-sidebar-second .block > h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
