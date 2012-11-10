@@ -1,7 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Custom theme implementation to display a single Drupal page.
+ */
+
+?>
 <?php if ($page['hidden']): ?><div class="hide"><?php print render($page['hidden']) ?></div><?php endif ?>
 
 <!-- Navbar -->
-<div id="navbar" class="navbar navbar-inverse navbar-static-top">
+<div id="navbar" class="navbar navbar-medium navbar-inverse navbar-static-top">
 	<div class="navbar-inner">
 		<div class="container">
 			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -14,9 +22,9 @@
         <?php print $site_name ?>
       </a>
       <?php if ($navbar_search): ?><?php print $navbar_search ?><?php endif ?>
-      <?php if ($navbar_links): ?>
+      <?php if ($navbar_menu): ?>
 			<nav class="nav-collapse collapse" role="navigation">
-        <?php print $navbar_links ?>
+        <?php print $navbar_menu ?>
       </nav>
 			<?php endif ?>
 		</div>
@@ -75,20 +83,3 @@
     <?php print date('Y') ?> © <?php print $site_name ?>
 	</div>
 </footer>
-
-<script>
-(function ($) {
-  $(document).ready(function() {
-    var ss = $('.region-sidebar-second');
-    if (ss.size()) {
-      var offset = {
-        top: ss.offset().top - 20,
-        bottom: $('#footer').outerHeight() + 20
-      }
-      ss.width(ss.width());
-      ss.affix({ offset: offset });
-      $('head').append('<style>#sidebar .affix-bottom { bottom: ' + offset.bottom + 'px }</style>');
-    }
-  });
-})(jQuery);
-</script>

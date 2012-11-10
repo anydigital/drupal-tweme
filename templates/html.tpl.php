@@ -1,3 +1,12 @@
+<?php
+
+/**
+ * @file
+ * Custom theme implementation to display the basic html structure of a single
+ * Drupal page.
+ */
+
+?>
 <!DOCTYPE html>
 <html lang="<?php print $language->language ?>">
 <head profile="<?php print $grddl_profile ?>">

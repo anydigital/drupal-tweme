@@ -1,0 +1,27 @@
+#header {
+  background-color: whitesmoke;
+  border-bottom: 1px solid #e5e5e5;
+  padding-top: 20px;
+}
+#main {
+  padding: 30px 0;
+}
+#main .block {
+  margin-bottom: 30px;
+}
+#sidebar .affix {
+  top: 20px;
+}
+#sidebar .affix-bottom {
+  position: absolute;
+  top: auto;
+}
+#footer {
+  background-color: whitesmoke;
+  border-top: 1px solid #e5e5e5;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.footer-links a {
+  margin-left: 15px;
+}

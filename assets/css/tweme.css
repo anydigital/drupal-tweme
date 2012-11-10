@@ -1,0 +1,130 @@
+body {
+  position: relative;
+}
+h1 {
+  margin: 0 0 20px 0;
+}
+/* System */
+.breadcrumb {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+ul.links.inline {
+  display: block;
+  margin: 15px 0 0 0;
+}
+ul.links.inline li {
+  margin-right: 15px;
+  padding: 0;
+}
+.item-list ul {
+  margin: 0 0 10px 25px;
+}
+div.messages {
+  margin: 0 0 20px 0;
+}
+/* Block */
+.block > h2 {
+  margin-top: 0;
+}
+/* Node */
+.node {
+  margin-bottom: 30px;
+}
+.node > h2 {
+  margin-top: 0;
+}
+.node .submitted {
+  color: grey;
+  font-size: 90%;
+  margin-bottom: 10px;
+}
+.node .content h2,
+.node .content h3,
+.node .content h4,
+.node .content h5,
+.node .content h6 {
+  padding-top: 20px;
+}
+/* Poll */
+.poll .title {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.poll .progress .bar {
+  border: 0;
+  margin: 0;
+}
+.block-poll ul.links,
+.block-poll ul.links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.block-poll ul.links {
+  margin-top: 10px;
+}
+/* Admin Menu */
+#admin-menu {
+  z-index: 1100;
+}
+#admin-menu li {
+  line-height: normal;
+}
+/* Forms */
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 5px 0 0;
+}
+.form-actions .btn {
+  margin-right: 5px;
+}
+/* Navbar */
+.navbar-medium .navbar-inner {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.navbar-medium .nav > li > a {
+  margin: -5px 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.navbar .navbar-search {
+  margin-right: 10px;
+}
+.navbar .navbar-search-elastic .search-query {
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  transition: width 0.5s;
+  width: 80px;
+}
+.navbar .navbar-search-elastic .search-query:focus {
+  width: 160px;
+}
+.navbar .brand img {
+  float: left;
+  height: 30px;
+  margin: -5px 5px -5px 0;
+}
+/* Navs */
+.nav-tabs.nav-stacked > .active > a {
+  background-color: #08c;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+.nav-tabs {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+/* Responsive */
+@media (max-width: 767px) {
+  .navbar-static-top .navbar-inner {
+    margin-right: -40px;
+  }
+  .container-wrapper {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}

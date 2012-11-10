@@ -2,12 +2,8 @@ name = Tweme
 description = Lightweight responsive theme based on Twitter Bootstrap.
 core = 7.x
 
-stylesheets[all][] = libraries/bootstrap/css/bootstrap.css
-stylesheets[all][] = libraries/bootstrap/css/bootstrap-responsive.css
-stylesheets[all][] = tweme.css
-stylesheets[all][] = style.css
-
-scripts[] = libraries/bootstrap/js/bootstrap.js
+stylesheets[all][] = assets/css/tweme.css
+stylesheets[all][] = assets/css/style.css
 
 regions[hidden] = Hidden
 regions[header] = Header
