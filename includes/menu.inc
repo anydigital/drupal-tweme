@@ -18,12 +18,15 @@ function tweme_menu_tree__main_menu($vars) {
 function tweme_menu_link__main_menu($vars) {
   $elem = $vars['element'];
 
+  // Prevent XSS exploits.
+  $title = check_plain($elem['#title']);
+
   // Rewrite the link output in special cases.
-  if ($elem['#title'] == '---') {
+  if ($title == '---') {
     return '<li class="divider"></li>';
   }
-  if ($elem['#title'][0] == '#') {
-    return '<li class="nav-header">' . trim(drupal_substr($elem['#title'], 1)) . '</li>';
+  if ($title[0] == '#') {
+    return '<li class="nav-header">' . trim(drupal_substr($title, 1)) . '</li>';
   }
 
   // Initialize variables.
@@ -44,7 +47,7 @@ function tweme_menu_link__main_menu($vars) {
       $a_attrs['class'][] = 'dropdown-toggle';
       $a_attrs['data-toggle'][] = 'dropdown';
       $a_attrs['data-target'][] = '#';
-      $elem['#title'] .= ' <b class="caret"></b>';
+      $title .= ' <b class="caret"></b>';
     }
     elseif ($link['depth'] > 1) {
       $li_attrs['class'][] = 'dropdown-submenu';
@@ -56,7 +59,7 @@ function tweme_menu_link__main_menu($vars) {
   // Build link output.
   $out = '';
   $out .= '<li' . drupal_attributes($li_attrs) . '>';
-  $out .= l($elem['#title'], $elem['#href'], array('attributes' => $a_attrs, 'html' => TRUE));
+  $out .= l($title, $elem['#href'], array('attributes' => $a_attrs, 'html' => TRUE));
   $out .= $sub_menu;
   $out .= '</li>';
 
