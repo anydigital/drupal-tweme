@@ -31,11 +31,22 @@ INSTALLATION
 ------------
 
 1. Install Libraries API module.
-2. Install jQuery Update module and configure it to use jQuery 1.8.
+2. Install the latest dev version of the jQuery Update module and configure it
+   to use jQuery version 1.8.
 3. Download and unpack Twitter's Bootstrap framework.
 4. Place it inside sites/all/libraries folder so that the bootstrap.css file is
    reachable at sites/all/libraries/bootstrap/css/bootstrap.css.
 5. Enable Tweme.
+
+
+CONFIGURATION
+-------------
+
+By default it will be used not minified version of Bootstrap. If you do not
+prefer to compress JS and CSS files by the Drupal built-in compression and
+aggregation system, you can manually replace bootstrap.js, bootstrap.css,
+and bootstrap-responsive.css with their minified versions to run on the
+production environment.
 
 
 INFO
