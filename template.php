@@ -32,7 +32,8 @@ function tweme_preprocess_page(&$vars) {
   // Build navbar search form.
   $vars['navbar_search'] = FALSE;
   if (module_exists('search')) {
-    $search_form = drupal_render(drupal_get_form('_tweme_navbar_search_form'));
+    $search_form = drupal_get_form('_tweme_navbar_search_form');
+    $search_form = drupal_render($search_form);
     // Clean up the search form output by stripping div wrappers.
     $vars['navbar_search'] = strip_tags($search_form, '<form><input>');
   }
