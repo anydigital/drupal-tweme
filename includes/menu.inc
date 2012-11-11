@@ -31,26 +31,27 @@ function tweme_menu_link__main_menu($vars) {
 
   // Initialize variables.
   $link = $elem['#original_link'];
-  $li_attrs = array();
-  $a_attrs = array();
+  $attrs = array();
+  $options = $elem['#localized_options'];
 
   // Mark link as active.
   if ($link['in_active_trail']) {
-    $li_attrs['class'][] = 'active';
+    $attrs['class'][] = 'active';
   }
 
   // Build submenu.
   $sub_menu = '';
   if ($link['has_children'] && $link['expanded']) {
     if ($link['depth'] == 1) {
-      $li_attrs['class'][] = 'dropdown';
-      $a_attrs['class'][] = 'dropdown-toggle';
-      $a_attrs['data-toggle'][] = 'dropdown';
-      $a_attrs['data-target'][] = '#';
+      $attrs['class'][] = 'dropdown';
+      $options['attributes']['class'][] = 'dropdown-toggle';
+      $options['attributes']['data-toggle'][] = 'dropdown';
+      $options['attributes']['data-target'][] = '#';
       $title .= ' <b class="caret"></b>';
+      $options['html'] = TRUE;
     }
     elseif ($link['depth'] > 1) {
-      $li_attrs['class'][] = 'dropdown-submenu';
+      $attrs['class'][] = 'dropdown-submenu';
     }
     unset($elem['#below']['#theme_wrappers']);
     $sub_menu = '<ul class="dropdown-menu">' . drupal_render($elem['#below']) . '</ul>';
@@ -58,8 +59,8 @@ function tweme_menu_link__main_menu($vars) {
 
   // Build link output.
   $out = '';
-  $out .= '<li' . drupal_attributes($li_attrs) . '>';
-  $out .= l($title, $elem['#href'], array('attributes' => $a_attrs, 'html' => TRUE));
+  $out .= '<li' . drupal_attributes($attrs) . '>';
+  $out .= l($title, $elem['#href'], $options);
   $out .= $sub_menu;
   $out .= '</li>';
 
