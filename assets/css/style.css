@@ -8,14 +8,14 @@
 }
 #carousel .item {
   height: 200px;
-  width: 80%;
   padding: 50px 10% 0 10%;
   text-align: center;
+  width: 80%;
 }
 #carousel .carousel-control {
-  color: #333;
   background-color: transparent;
   border: 0;
+  color: #333;
   font-size: 100px;
   top: 50%;
 }

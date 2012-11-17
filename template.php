@@ -26,7 +26,7 @@ function tweme_process_page(&$vars) {
   $vars['has_sidebar_first'] = !empty($page['sidebar_first']) || !empty($page['sidebar_first_affix']);
   $vars['has_sidebar_second'] = !empty($page['sidebar_second']) || !empty($page['sidebar_second_affix']);
   $vars['content_cols'] = 12 - 3 * (int) $vars['has_sidebar_first'] - 3 * (int) $vars['has_sidebar_second'];
-  
+
   // Render and clean up navbar search form.
   $vars['navbar_search'] = drupal_render($vars['navbar_search']);
   $vars['navbar_search'] = strip_tags($vars['navbar_search'], '<form><input>');
@@ -76,7 +76,7 @@ function tweme_preprocess_page(&$vars) {
  */
 function tweme_preprocess_block(&$vars) {
   $block = $vars['block'];
-  
+
   if (_tweme_is_tweme()) {
     if ($block->region == 'featured') {
       $vars['classes_array'][] = 'item';
