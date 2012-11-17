@@ -33,7 +33,7 @@
 
 <?php if ($is_front): ?>
 <!-- Featured -->
-<div id="featured" class="container-wrapper">
+<div id="featured" class="container-wrapper hidden-phone">
   <div class="container">
     <?php print render($page['featured']) ?>
   </div>
@@ -61,7 +61,7 @@
 <!-- Main -->
 <div id="main">
   <div class="container">
-    <div class="row">
+    <div class="row-fluid">
       <?php if ($has_sidebar_first): ?>
       <!-- Sidebar first -->
       <aside id="sidebar_first" class="span3 hidden-phone">
