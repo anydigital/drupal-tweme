@@ -26,6 +26,10 @@ function tweme_process_page(&$vars) {
   $vars['has_sidebar_first'] = !empty($page['sidebar_first']) || !empty($page['sidebar_first_affix']);
   $vars['has_sidebar_second'] = !empty($page['sidebar_second']) || !empty($page['sidebar_second_affix']);
   $vars['content_cols'] = 12 - 3 * (int) $vars['has_sidebar_first'] - 3 * (int) $vars['has_sidebar_second'];
+  
+  // Render and clean up navbar search form.
+  $vars['navbar_search'] = drupal_render($vars['navbar_search']);
+  $vars['navbar_search'] = strip_tags($vars['navbar_search'], '<form><input>');
 }
 
 /**
@@ -42,10 +46,11 @@ function tweme_preprocess_page(&$vars) {
   // Build navbar search form.
   $vars['navbar_search'] = FALSE;
   if (module_exists('search')) {
-    $search_form = drupal_get_form('_tweme_navbar_search_form');
-    $search_form = drupal_render($search_form);
-    // Clean up the search form output by stripping div wrappers.
-    $vars['navbar_search'] = strip_tags($search_form, '<form><input>');
+    $vars['navbar_search'] = drupal_get_form('_tweme_navbar_search_form');
+    // Add custom classes.
+    $vars['navbar_search']['#attributes']['class'][] = 'navbar-search-elastic';
+    $vars['navbar_search']['#attributes']['class'][] = 'pull-right';
+    $vars['navbar_search']['#attributes']['class'][] = 'hidden-phone';
   }
 
   // Connect Twitter's Bootstrap framework using Libraries API.
@@ -149,9 +154,6 @@ function _tweme_navbar_search_form($form, &$form_state) {
 
   // Set additional attributes.
   $form['#attributes']['class'][] = 'navbar-search';
-  $form['#attributes']['class'][] = 'navbar-search-elastic';
-  $form['#attributes']['class'][] = 'pull-left';
-  $form['#attributes']['class'][] = 'hidden-phone';
   $form['basic']['keys']['#title'] = '';
   $form['basic']['keys']['#attributes']['class'][] = 'search-query';
   $form['basic']['keys']['#attributes']['placeholder'] = t('Search');
