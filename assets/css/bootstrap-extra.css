@@ -47,9 +47,6 @@ h1 {
 }
 /* Responsive */
 @media (max-width: 767px) {
-  .navbar-static-top .navbar-inner {
-    margin-right: -40px;
-  }
   .container-wrapper {
     margin: 0 -20px;
     padding: 0 20px;
