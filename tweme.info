@@ -14,5 +14,7 @@ regions[highlighted] = Highlighted
 regions[featured] = Featured
 regions[content] = Content
 regions[sidebar_first] = Sidebar first
+regions[sidebar_first_affix] = Sidebar first affix
 regions[sidebar_second] = Sidebar second
+regions[sidebar_second_affix] = Sidebar second affix
 regions[footer] = Footer

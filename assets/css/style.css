@@ -9,13 +9,6 @@
 #main .block {
   margin-bottom: 30px;
 }
-#sidebar .affix {
-  top: 20px;
-}
-#sidebar .affix-bottom {
-  position: absolute;
-  top: auto;
-}
 #footer {
   background-color: whitesmoke;
   border-top: 1px solid #e5e5e5;

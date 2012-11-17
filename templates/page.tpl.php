@@ -31,7 +31,7 @@
 	</div>
 </div>
 
-<?php if ($title): ?>
+<?php if ($has_header): ?>
 <!-- Header -->
 <header id="header" class="container-wrapper">
   <div class="container">
@@ -41,6 +41,7 @@
     <h1><?php print $title ?></h1>
     <?php print render($title_suffix) ?>
     <?php endif ?>
+    <?php print $messages ?>
     <?php print render($page['help']) ?>
     <?php if ($tabs): ?><?php print render($tabs) ?><?php endif ?>
     <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links) ?></ul><?php endif ?>
@@ -51,17 +52,23 @@
 <!-- Main -->
 <div id="main">
   <div class="container">
-    <?php print $messages ?>
     <div class="row">
+      <?php if ($has_sidebar_first): ?>
+      <!-- Sidebar first -->
+      <aside id="sidebar_first" class="span3 hidden-phone">
+        <?php print render($page['sidebar_first']) ?>
+        <?php print render($page['sidebar_first_affix']) ?>
+      </aside>
+      <?php endif ?>
       <!-- Content -->
-      <section id="content" class="span<?php print 12 - 3 * (int) $has_sidebar ?>">
+      <section id="content" class="span<?php print $content_cols ?>">
         <?php print render($page['content']) ?>
       </section>
-      <?php if ($has_sidebar): ?>
-      <!-- Sidebar -->
-      <aside id="sidebar" class="span3 hidden-phone">
-        <?php print render($page['sidebar_first']) ?>
+      <?php if ($has_sidebar_second): ?>
+      <!-- Sidebar second -->
+      <aside id="sidebar_second" class="span3 hidden-phone">
         <?php print render($page['sidebar_second']) ?>
+        <?php print render($page['sidebar_second_affix']) ?>
       </aside>
       <?php endif ?>
     </div>

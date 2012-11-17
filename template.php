@@ -16,13 +16,24 @@ function tweme_css_alter(&$css) {
 }
 
 /**
+ * Implements hook_process_page().
+ */
+function tweme_process_page(&$vars) {
+  $page = $vars['page'];
+
+  // Prepare some useful variables.
+  $vars['has_header'] = !empty($vars['title']) || !empty($vars['messages']);
+  $vars['has_sidebar_first'] = !empty($page['sidebar_first']) || !empty($page['sidebar_first_affix']);
+  $vars['has_sidebar_second'] = !empty($page['sidebar_second']) || !empty($page['sidebar_second_affix']);
+  $vars['content_cols'] = 12 - 3 * (int) $vars['has_sidebar_first'] - 3 * (int) $vars['has_sidebar_second'];
+}
+
+/**
  * Implements hook_preprocess_page().
  */
 function tweme_preprocess_page(&$vars) {
   global $theme;
   $page = $vars['page'];
-
-  $vars['has_sidebar'] = !empty($page['sidebar_first']) || !empty($page['sidebar_second']);
 
   // Build navbar menu.
   $menu_id = variable_get('menu_main_links_source', 'main-menu');

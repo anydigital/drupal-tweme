@@ -1,14 +1,20 @@
 (function ($) {
+  var TWEME_AFFIX_OFFSET = 20;
   $(document).ready(function() {
-    var ss = $('.region-sidebar-second');
-    if (ss.size()) {
-      var offset = {
-        top: ss.offset().top - 20,
-        bottom: $('#footer').outerHeight() + 20
-      }
-      ss.width(ss.width());
-      ss.affix({ offset: offset });
-      $('head').append('<style>#sidebar .affix-bottom { bottom: ' + offset.bottom + 'px }</style>');
-    }
+    tweme_affix_sidebar('.region-sidebar-first-affix');
+    tweme_affix_sidebar('.region-sidebar-second-affix');
   });
+  function tweme_affix_sidebar(selector) {
+    var sidebar = $(selector);
+    if (sidebar.size()) {
+      var offset = {
+        top: sidebar.offset().top - TWEME_AFFIX_OFFSET,
+        bottom: $('#footer').outerHeight() + TWEME_AFFIX_OFFSET
+      }
+      sidebar.width(sidebar.width());
+      $('head').append('<style>' + selector + '.affix { top: ' + TWEME_AFFIX_OFFSET + 'px; }</style>');
+      $('head').append('<style>' + selector + '.affix-bottom { position: absolute; top: auto; bottom: ' + offset.bottom + 'px; }</style>');
+      sidebar.affix({ offset: offset });
+    }
+  }
 })(jQuery);
