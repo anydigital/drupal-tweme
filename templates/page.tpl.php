@@ -31,6 +31,15 @@
 	</div>
 </div>
 
+<?php if ($is_front): ?>
+<!-- Featured -->
+<div id="featured" class="container-wrapper">
+  <div class="container">
+    <?php print render($page['featured']) ?>
+  </div>
+</div>
+<?php endif ?>
+
 <?php if ($has_header): ?>
 <!-- Header -->
 <header id="header" class="container-wrapper">

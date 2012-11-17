@@ -1,3 +1,24 @@
+#featured {
+  background-color: whitesmoke;
+  border-bottom: 1px solid #e5e5e5;
+}
+#carousel {
+  height: 250px;
+  margin-bottom: 0;
+}
+#carousel .item {
+  height: 200px;
+  width: 80%;
+  padding: 50px 10% 0 10%;
+  text-align: center;
+}
+#carousel .carousel-control {
+  color: #333;
+  background-color: transparent;
+  border: 0;
+  font-size: 100px;
+  top: 50%;
+}
 #header {
   background-color: whitesmoke;
   border-bottom: 1px solid #e5e5e5;

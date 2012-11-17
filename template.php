@@ -32,7 +32,6 @@ function tweme_process_page(&$vars) {
  * Implements hook_preprocess_page().
  */
 function tweme_preprocess_page(&$vars) {
-  global $theme;
   $page = $vars['page'];
 
   // Build navbar menu.
@@ -61,9 +60,27 @@ function tweme_preprocess_page(&$vars) {
   }
 
   // Special behavior for Tweme only (not for subthemes).
-  if ($theme = 'tweme') {
+  if (_tweme_is_tweme()) {
     $tweme_path = drupal_get_path('theme', 'tweme');
     drupal_add_js($tweme_path . '/assets/js/affix.js');
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function tweme_preprocess_block(&$vars) {
+  $block = $vars['block'];
+  
+  if (_tweme_is_tweme()) {
+    if ($block->region == 'featured') {
+      $vars['classes_array'][] = 'item';
+      if ($vars['block_id'] == 1) {
+        $vars['classes_array'][] = 'active';
+      }
+      $vars['content'] = '<h1>' . $vars['block']->subject . '</h1>' . $vars['content'];
+      $vars['block']->subject = '';
+    }
   }
 }
 
@@ -145,4 +162,12 @@ function _tweme_navbar_search_form($form, &$form_state) {
   unset($form['basic']['#attributes']);
 
   return $form;
+}
+
+/**
+ * Helper function: returns TRUE if current theme is Tweme.
+ */
+function _tweme_is_tweme() {
+  global $theme;
+  return $theme == 'tweme';
 }
