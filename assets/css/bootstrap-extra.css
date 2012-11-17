@@ -1,0 +1,57 @@
+body {
+  position: relative;
+}
+h1 {
+  margin: 0 0 20px 0;
+}
+/* Navbar */
+.navbar-medium .navbar-inner {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.navbar-medium .nav > li > a {
+  margin: -5px 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.navbar .navbar-search {
+  margin-right: 10px;
+}
+.navbar .navbar-search-elastic .search-query {
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  transition: width 0.5s;
+  width: 80px;
+}
+.navbar .navbar-search-elastic .search-query:focus {
+  width: 160px;
+}
+.navbar .brand {
+  font-weight: bold;
+}
+.navbar .brand img {
+  float: left;
+  height: 30px;
+  margin: -5px 5px -5px 0;
+}
+/* Navs */
+.nav-tabs.nav-stacked > .active > a {
+  background-color: #08c;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+.nav-tabs {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+/* Responsive */
+@media (max-width: 767px) {
+  .navbar-static-top .navbar-inner {
+    margin-right: -40px;
+  }
+  .container-wrapper {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}
