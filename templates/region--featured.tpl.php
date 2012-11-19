@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Custom theme implementation to display a region.
+ * Custom theme implementation to display a carousel.
  */
 
 ?>
