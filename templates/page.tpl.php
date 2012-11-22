@@ -12,16 +12,9 @@
 <div id="navbar" class="navbar navbar-medium navbar-inverse navbar-static-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="brand" href="<?php print $front_page ?>" title="<?php print $site_slogan ?>">
-        <?php if ($logo): ?><img src="<?php print $logo ?>" /><?php endif ?>
-        <?php print $site_name ?>
-      </a>
-      <?php if ($navbar_search): ?><?php print $navbar_search ?><?php endif ?>
+      <?php print $navbar_toggler ?>
+			<?php print $brand ?>
+      <?php print $navbar_search ?>
       <?php if ($navbar_menu): ?>
 			<nav class="nav-collapse collapse" role="navigation">
         <?php print $navbar_menu ?>
@@ -31,29 +24,18 @@
 	</div>
 </div>
 
-<?php if ($is_front): ?>
 <!-- Featured -->
 <div id="featured" class="container-wrapper hidden-phone">
   <div class="container">
     <?php print render($page['featured']) ?>
   </div>
 </div>
-<?php endif ?>
 
 <?php if ($has_header): ?>
 <!-- Header -->
 <header id="header" class="container-wrapper">
   <div class="container">
-    <?php if ($title): ?>
-    <?php print $breadcrumb ?>
-    <?php print render($title_prefix) ?>
-    <h1><?php print $title ?></h1>
-    <?php print render($title_suffix) ?>
-    <?php endif ?>
-    <?php print $messages ?>
-    <?php print render($page['help']) ?>
-    <?php if ($tabs): ?><?php print render($tabs) ?><?php endif ?>
-    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links) ?></ul><?php endif ?>
+    <?php print $preface ?>
   </div>
 </header>
 <?php endif ?>
@@ -96,6 +78,6 @@
       <a href="#"><?php print t('Back to top') ?> </a>
       <?php endif ?>
     </div>
-    <?php print date('Y') ?> © <?php print $site_name ?>
+    <?php print $copyright ?>
 	</div>
 </footer>

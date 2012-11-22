@@ -14,9 +14,6 @@ h1 {
   padding-bottom: 15px;
   padding-top: 15px;
 }
-.navbar .navbar-search {
-  margin-right: 10px;
-}
 .navbar .navbar-search-elastic .search-query {
   -webkit-transition: width 0.5s;
   -moz-transition: width 0.5s;

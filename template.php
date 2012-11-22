@@ -6,7 +6,46 @@
  */
 
 // Includes:
-include_once DRUPAL_ROOT . '/' . drupal_get_path('theme', 'tweme') . '/includes/menu.inc';
+$theme_path = drupal_get_path('theme', 'tweme');
+include_once $theme_path . '/includes/menu.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function tweme_theme() {
+  return array(
+    'brand' => array(
+      'file' => 'includes/theme.inc',
+      'variables' => array(
+        'name' => NULL,
+        'href' => NULL,
+        'logo' => NULL,
+      ),
+    ),
+    'preface' => array(
+      'file' => 'includes/theme.inc',
+      'variables' => array(
+        'breadcrumb' => NULL,
+        'title_prefix' => array(),
+        'title' => NULL,
+        'title_suffix' => array(),
+        'messages' => NULL,
+        'help' => array(),
+        'tabs' => array(),
+        'actions' => array(),
+      ),
+    ),
+    'copyright' => array(
+      'file' => 'includes/theme.inc',
+      'variables' => array(
+        'name' => NULL,
+      ),
+    ),
+    'navbar_toggler' => array(
+      'file' => 'includes/theme.inc',
+    ),
+  );
+}
 
 /**
  * Implements hook_css_alter().
@@ -20,6 +59,25 @@ function tweme_css_alter(&$css) {
  */
 function tweme_process_page(&$vars) {
   $page = $vars['page'];
+  
+  // Provide additional variables to theme.
+  $vars['brand'] = theme('brand', array(
+    'name' => $vars['site_name'],
+    'href' => $vars['front_page'],
+    'logo' => $vars['logo'],
+  ));
+  $vars['preface'] = theme('preface', array(
+    'breadcrumb' => $vars['breadcrumb'],
+    'title_prefix' => $vars['title_prefix'],
+    'title' => $vars['title'],
+    'title_suffix' => $vars['title_suffix'],
+    'messages' => $vars['messages'],
+    'help' => $page['help'],
+    'tabs' => $vars['tabs'],
+    'actions' => $vars['action_links'],
+  ));
+  $vars['navbar_toggler'] = theme('navbar_toggler');
+  $vars['copyright'] = theme('copyright', array('name' => $vars['site_name']));
 
   // Render navbar menu.
   $vars['navbar_menu'] = drupal_render($vars['navbar_menu_tree']);
@@ -123,18 +181,18 @@ function tweme_preprocess_button(&$vars) {
  * Implements theme_menu_local_tasks().
  */
 function tweme_menu_local_tasks(&$vars) {
-  $output = '';
+  $out = '';
   if (!empty($vars['primary'])) {
     $vars['primary']['#prefix'] = '<ul class="nav nav-tabs">';
     $vars['primary']['#suffix'] = '</ul>';
-    $output .= drupal_render($vars['primary']);
+    $out .= drupal_render($vars['primary']);
   }
   if (!empty($vars['secondary'])) {
     $vars['secondary']['#prefix'] = '<ul class="nav nav-pills">';
     $vars['secondary']['#suffix'] = '</ul>';
-    $output .= drupal_render($vars['secondary']);
+    $out .= drupal_render($vars['secondary']);
   }
-  return $output;
+  return $out;
 }
 
 /**
