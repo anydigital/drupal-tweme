@@ -32,7 +32,9 @@ function tweme_preface($vars) {
   $out = '';
   $out .= drupal_render($vars['title_prefix']);
   $out .= $vars['breadcrumb'];
-  $out .= '<h1>' . $vars['title'] . '</h1>';
+  if ($vars['title']) {
+    $out .= '<h1>' . $vars['title'] . '</h1>';
+  }
   $out .= drupal_render($vars['title_suffix']);
   $out .= $vars['messages'];
   $out .= drupal_render($vars['help']);

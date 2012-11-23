@@ -178,17 +178,25 @@ function tweme_preprocess_button(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_menu_local_tasks().
+ */
+function tweme_preprocess_menu_local_tasks(&$vars) {
+  $vars['primary_widget'] = 'tabs';
+  $vars['secondary_widget'] = 'pills';
+}
+
+/**
  * Implements theme_menu_local_tasks().
  */
 function tweme_menu_local_tasks(&$vars) {
   $out = '';
   if (!empty($vars['primary'])) {
-    $vars['primary']['#prefix'] = '<ul class="nav nav-tabs">';
+    $vars['primary']['#prefix'] = '<ul class="nav nav-' . $vars['primary_widget'] . '">';
     $vars['primary']['#suffix'] = '</ul>';
     $out .= drupal_render($vars['primary']);
   }
   if (!empty($vars['secondary'])) {
-    $vars['secondary']['#prefix'] = '<ul class="nav nav-pills">';
+    $vars['secondary']['#prefix'] = '<ul class="nav nav-' . $vars['secondary_widget'] . '">';
     $vars['secondary']['#suffix'] = '</ul>';
     $out .= drupal_render($vars['secondary']);
   }
