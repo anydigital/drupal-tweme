@@ -23,9 +23,6 @@
   </head>
   <body class="<?php print $classes ?>"<?php print $attributes ?>>
     <?php print $page_top ?>
-    <!--[if lt IE 7]>
-      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
     <?php print $page ?>
     <?php print $page_bottom ?>
   </body>
