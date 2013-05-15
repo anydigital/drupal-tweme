@@ -4,6 +4,15 @@ body {
 h1 {
   margin: 0 0 20px 0;
 }
+.conceal {
+  visibility: hidden;
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
 /* Navbar */
 .navbar-medium .navbar-inner {
   padding-bottom: 5px;

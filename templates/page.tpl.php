@@ -6,8 +6,6 @@
  */
 
 ?>
-<?php if ($page['hidden']): ?><div class="hide"><?php print render($page['hidden']) ?></div><?php endif ?>
-
 <!-- Navbar -->
 <div id="navbar" class="navbar navbar-medium navbar-inverse navbar-static-top">
 	<div class="navbar-inner">

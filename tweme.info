@@ -6,9 +6,10 @@ stylesheets[all][] = assets/css/bootstrap-extra.css
 stylesheets[all][] = assets/css/drupal.css
 stylesheets[all][] = assets/css/style.css
 
-regions[hidden] = Hidden
 regions[header] = Header
 regions[help] = Help
+regions[body_top] = Body top
+regions[body_bottom] = Body bottom
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 regions[highlighted] = Highlighted

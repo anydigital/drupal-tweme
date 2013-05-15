@@ -55,6 +55,20 @@ function tweme_css_alter(&$css) {
 }
 
 /**
+ * Implements hook_process_html().
+ */
+function tweme_process_html(&$vars) {
+  $body_top = _tweme_region_blocks_markup('body_top');
+  if (!empty($body_top)) {
+    $vars['page_top'] = '<div class="conceal">' . $body_top . '</div>' . $vars['page_top'];
+  }
+  $body_bottom = _tweme_region_blocks_markup('body_bottom');
+  if (!empty($body_bottom)) {
+    $vars['page_bottom'] .= '<div class="conceal">' . $body_bottom . '</div>';
+  }
+}
+
+/**
  * Implements hook_process_page().
  */
 function tweme_process_page(&$vars) {
@@ -250,4 +264,20 @@ function _tweme_search_form($form, &$form_state) {
 function _tweme_is_tweme() {
   global $theme;
   return $theme == 'tweme';
+}
+
+/**
+  * Helper function: returns markup of all blocks in the region.
+  */
+function _tweme_region_blocks_markup($region) {
+  $elems = block_get_blocks_by_region($region);
+  if (is_array($elems)) {
+    foreach ($elems as &$elem) {
+      if (isset($elem['#theme_wrappers'])) {
+        unset($elem['#theme_wrappers']);
+      }
+    }
+    return drupal_render($elems);
+  }
+  return '';
 }
