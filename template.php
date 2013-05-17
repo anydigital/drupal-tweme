@@ -8,6 +8,7 @@
 // Includes:
 $theme_path = drupal_get_path('theme', 'tweme');
 include_once $theme_path . '/includes/menu.inc';
+include_once $theme_path . '/includes/form.inc';
 
 /**
  * Implements hook_theme().
@@ -43,6 +44,10 @@ function tweme_theme() {
     ),
     'navbar_toggler' => array(
       'file' => 'includes/theme.inc',
+    ),
+    'pure_input_wrapper' => array(
+      'file' => 'includes/theme.inc',
+      'render element' => 'element',
     ),
   );
 }
@@ -98,7 +103,6 @@ function tweme_process_page(&$vars) {
 
   // Render and clean up navbar search form.
   $vars['navbar_search'] = drupal_render($vars['navbar_search_form']);
-  $vars['navbar_search'] = strip_tags($vars['navbar_search'], '<form><input>');
   
   if (_tweme_is_tweme()) {
   // Prepare some useful variables.
@@ -121,7 +125,7 @@ function tweme_preprocess_page(&$vars) {
   // Prepare navbar search form.
   $vars['navbar_search_form'] = FALSE;
   if (module_exists('search')) {
-    $form = drupal_get_form('_tweme_search_form');
+    $form = drupal_get_form('search_form');
     $form['#attributes']['class'][] = 'navbar-search';
     $form['#attributes']['class'][] = 'navbar-search-elastic';
     $form['#attributes']['class'][] = 'hidden-phone';
@@ -237,25 +241,6 @@ function tweme_item_list($vars) {
     return '<div class="pagination pagination-centered">' . theme_item_list($vars) . '</div>';
   }
   return theme_item_list($vars);
-}
-
-/**
- * Helper function: returns a navbar search form.
- */
-function _tweme_search_form($form, &$form_state) {
-  $form = search_form($form, $form_state);
-
-  // Set additional attributes.
-  $form['basic']['keys']['#title'] = '';
-  $form['basic']['keys']['#attributes']['class'][] = 'search-query';
-  $form['basic']['keys']['#attributes']['placeholder'] = t('Search');
-
-  // Unset unnecessary data and attributes.
-  unset($form['basic']['submit']);
-  unset($form['basic']['#type']);
-  unset($form['basic']['#attributes']);
-
-  return $form;
 }
 
 /**

@@ -58,3 +58,10 @@ function tweme_navbar_toggler($vars) {
   $out .= '</button>';
   return $out;
 }
+
+/**
+ * Cleans up element markup leaving only <input> tags.
+ */
+function tweme_pure_input_wrapper($vars) {
+  return strip_tags($vars['element']['#children'], '<input>');
+}
