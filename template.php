@@ -5,26 +5,32 @@
  * Provides preprocess logic and other functionality for theming.
  */
 
-// Includes:
-$theme_path = drupal_get_path('theme', 'tweme');
-include_once $theme_path . '/includes/menu.inc';
-include_once $theme_path . '/includes/form.inc';
+// Ensure that __DIR__ constant is defined:
+if (!defined('__DIR__')) {
+  define('__DIR__', dirname(__FILE__));
+}
+
+// Require files:
+require_once __DIR__ . '/includes/forms.inc';
+require_once __DIR__ . '/includes/menus.inc';
+require_once __DIR__ . '/includes/theme.inc';
 
 /**
  * Implements hook_theme().
  */
-function tweme_theme() {
+function tweme_theme($existing, $type, $theme, $path) {
   return array(
-    'brand' => array(
-      'file' => 'includes/theme.inc',
+    'navbar_brand' => array(
       'variables' => array(
         'name' => NULL,
         'href' => NULL,
         'logo' => NULL,
       ),
     ),
+    'navbar_toggler' => array(),
     'preface' => array(
-      'file' => 'includes/theme.inc',
+      'path' => $path . '/templates',
+      'template' => 'preface',
       'variables' => array(
         'breadcrumb' => NULL,
         'title_prefix' => array(),
@@ -37,16 +43,11 @@ function tweme_theme() {
       ),
     ),
     'copyright' => array(
-      'file' => 'includes/theme.inc',
       'variables' => array(
         'name' => NULL,
       ),
     ),
-    'navbar_toggler' => array(
-      'file' => 'includes/theme.inc',
-    ),
     'pure_input_wrapper' => array(
-      'file' => 'includes/theme.inc',
       'render element' => 'element',
     ),
   );
@@ -63,53 +64,11 @@ function tweme_css_alter(&$css) {
  * Implements hook_process_html().
  */
 function tweme_process_html(&$vars) {
-  $body_top = _tweme_region_blocks_markup('body_top');
-  if (!empty($body_top)) {
+  if ($body_top = _tweme_region_blocks_markup('body_top')) {
     $vars['page_top'] = '<div class="conceal">' . $body_top . '</div>' . $vars['page_top'];
   }
-  $body_bottom = _tweme_region_blocks_markup('body_bottom');
-  if (!empty($body_bottom)) {
+  if ($body_bottom = _tweme_region_blocks_markup('body_bottom')) {
     $vars['page_bottom'] .= '<div class="conceal">' . $body_bottom . '</div>';
-  }
-}
-
-/**
- * Implements hook_process_page().
- */
-function tweme_process_page(&$vars) {
-  $page = $vars['page'];
-  
-  // Provide additional variables to theme.
-  $vars['brand'] = theme('brand', array(
-    'name' => $vars['site_name'],
-    'href' => $vars['front_page'],
-    'logo' => $vars['logo'],
-  ));
-  $vars['preface'] = theme('preface', array(
-    'breadcrumb' => $vars['breadcrumb'],
-    'title_prefix' => $vars['title_prefix'],
-    'title' => $vars['title'],
-    'title_suffix' => $vars['title_suffix'],
-    'messages' => $vars['messages'],
-    'help' => $page['help'],
-    'tabs' => $vars['tabs'],
-    'actions' => $vars['action_links'],
-  ));
-  $vars['navbar_toggler'] = theme('navbar_toggler');
-  $vars['copyright'] = theme('copyright', array('name' => $vars['site_name']));
-
-  // Render navbar menu.
-  $vars['navbar_menu'] = drupal_render($vars['navbar_menu_tree']);
-
-  // Render and clean up navbar search form.
-  $vars['navbar_search'] = drupal_render($vars['navbar_search_form']);
-  
-  if (_tweme_is_tweme()) {
-  // Prepare some useful variables.
-    $vars['has_header'] = !empty($vars['title']) || !empty($vars['messages']);
-    $vars['has_sidebar_first'] = !empty($page['sidebar_first']) || !empty($page['sidebar_first_affix']);
-    $vars['has_sidebar_second'] = !empty($page['sidebar_second']) || !empty($page['sidebar_second_affix']);
-    $vars['content_cols'] = 12 - 3 * (int) $vars['has_sidebar_first'] - 3 * (int) $vars['has_sidebar_second'];
   }
 }
 
@@ -157,10 +116,36 @@ function tweme_preprocess_page(&$vars) {
 
   if (_tweme_is_tweme()) {
     // Affix sidebars.
-    $tweme_path = drupal_get_path('theme', 'tweme');
-    drupal_add_js($tweme_path . '/assets/js/affix.js');
+    drupal_add_js(__DIR__ . '/assets/js/affix.js');
     // Add custom classes to navbar search form.
     $vars['navbar_search_form']['#attributes']['class'][] = 'pull-right';
+  }
+}
+
+/**
+ * Implements hook_process_page().
+ */
+function tweme_process_page(&$vars) {
+  $page = $vars['page'];
+  
+  // Provide additional variables to theme.
+  $vars['navbar_brand'] = theme('navbar_brand', array(
+    'name' => $vars['site_name'],
+    'href' => $vars['front_page'],
+    'logo' => $vars['logo'],
+  ));
+  $vars['navbar_menu'] = drupal_render($vars['navbar_menu_tree']);
+  $vars['navbar_search'] = drupal_render($vars['navbar_search_form']);
+  $vars['navbar_toggler'] = theme('navbar_toggler');
+  $vars['preface'] = theme('preface', $vars);
+  $vars['copyright'] = theme('copyright', array('name' => $vars['site_name']));
+
+  if (_tweme_is_tweme()) {
+  // Prepare some useful variables.
+    $vars['has_header'] = !empty($vars['title']) || !empty($vars['messages']);
+    $vars['has_sidebar_first'] = !empty($page['sidebar_first']) || !empty($page['sidebar_first_affix']);
+    $vars['has_sidebar_second'] = !empty($page['sidebar_second']) || !empty($page['sidebar_second_affix']);
+    $vars['content_cols'] = 12 - 3 * (int) $vars['has_sidebar_first'] - 3 * (int) $vars['has_sidebar_second'];
   }
 }
 
@@ -204,46 +189,6 @@ function tweme_preprocess_menu_local_tasks(&$vars) {
 }
 
 /**
- * Implements theme_menu_local_tasks().
- */
-function tweme_menu_local_tasks(&$vars) {
-  $out = '';
-  if (!empty($vars['primary'])) {
-    $vars['primary']['#prefix'] = '<ul class="nav nav-' . $vars['primary_widget'] . '">';
-    $vars['primary']['#suffix'] = '</ul>';
-    $out .= drupal_render($vars['primary']);
-  }
-  if (!empty($vars['secondary'])) {
-    $vars['secondary']['#prefix'] = '<ul class="nav nav-' . $vars['secondary_widget'] . '">';
-    $vars['secondary']['#suffix'] = '</ul>';
-    $out .= drupal_render($vars['secondary']);
-  }
-  return $out;
-}
-
-/**
- * Implements theme_item_list().
- */
-function tweme_item_list($vars) {
-  if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
-    // Adjust pager output.
-    unset($vars['attributes']['class']);
-    foreach ($vars['items'] as $i => &$item) {
-      if (in_array('pager-current', $item['class'])) {
-        $item['class'] = array('active');
-        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
-      }
-      elseif (in_array('pager-ellipsis', $item['class'])) {
-        $item['class'] = array('disabled');
-        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
-      }
-    }
-    return '<div class="pagination pagination-centered">' . theme_item_list($vars) . '</div>';
-  }
-  return theme_item_list($vars);
-}
-
-/**
  * Helper function: returns TRUE if current theme is Tweme.
  */
 function _tweme_is_tweme() {
@@ -264,5 +209,5 @@ function _tweme_region_blocks_markup($region) {
     }
     return drupal_render($elems);
   }
-  return '';
+  return FALSE;
 }

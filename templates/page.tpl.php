@@ -11,7 +11,7 @@
 	<div class="navbar-inner">
 		<div class="container">
       <?php print $navbar_toggler ?>
-			<?php print $brand ?>
+			<?php print $navbar_brand ?>
       <?php print $navbar_search ?>
       <?php if ($navbar_menu): ?>
 			<nav class="nav-collapse collapse" role="navigation">

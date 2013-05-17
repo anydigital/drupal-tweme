@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Provides menu-related theme overrides and implementations.
+ * Provides menus related theme overrides and implementations.
  */
 
 /**
@@ -58,8 +58,7 @@ function tweme_menu_link__main_menu($vars) {
   }
 
   // Build link output.
-  $out = '';
-  $out .= '<li' . drupal_attributes($attrs) . '>';
+  $out = '<li' . drupal_attributes($attrs) . '>';
   $out .= l($title, $elem['#href'], $options);
   $out .= $sub_menu;
   $out .= '</li>';
