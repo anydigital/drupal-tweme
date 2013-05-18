@@ -220,7 +220,7 @@ function _tweme_verify_jquery_update() {
   }
   $version = variable_get('jquery_update_jquery_version');
   if ($version != '1.8') {
-    _tweme_admin_message(t('jQuery @version is used but jQuery 1.8 is recommended. <a href="/admin/config/development/jquery_update">Configure</a>.', array('@version' => $version)), 'warning');
+    _tweme_admin_message(t('You are now using jQuery @version. Recommended version: jQuery 1.8. <a href="@config">Configure</a>.', array('@version' => $version, '@config' => url('admin/config/development/jquery_update'))), 'warning');
   }
 }
 
@@ -238,7 +238,7 @@ function _tweme_detect_twitter_bootstrap() {
   if (_tweme_check_twitter_bootstrap_path($path)) {
     return $path;
   }
-  _tweme_admin_message(t('<a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap</a> library was not found. It should be placed here: <code>sites/all/libraries/bootstrap</code>.'), 'error');
+  _tweme_admin_message(t('<a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap</a> library was not found. Download and extract it here: <code>sites/all/libraries/bootstrap</code>.'), 'error');
   return FALSE;
 }
 
@@ -254,6 +254,6 @@ function _tweme_check_twitter_bootstrap_path($path) {
   */
 function _tweme_admin_message($message, $type = 'status') {
   if (user_access('administer')) {
-    drupal_set_message($message, $type);
+    drupal_set_message('Tweme: ' . $message, $type);
   }
 }
