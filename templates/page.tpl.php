@@ -38,7 +38,7 @@
 </div>
 <?php endif ?>
 
-<?php if ($has_header): ?>
+<?php if ($preface): ?>
 <!-- Header -->
 <header id="header" class="container-wrapper">
   <div class="container">
