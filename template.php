@@ -104,27 +104,14 @@ function tweme_preprocess_page(&$vars) {
     $vars['navbar_search_form'] = $form;
   }
 
-  // Connect Twitter Bootstrap via Libraries API.
-  $loaded = FALSE;
-  if (module_exists('libraries')) {
-    if (libraries_detect('bootstrap')) {
-      // Try to load the library.
-      $loaded = libraries_load('bootstrap');
-    }
-    if (!$loaded) {
-      // Otherwise try to load the library manually by path.
-      $bootstrap_path = libraries_get_path('bootstrap');
-      if ($bootstrap_path) {
-        drupal_add_css($bootstrap_path . '/css/bootstrap.css', array('media' => 'all'));
-        drupal_add_css($bootstrap_path . '/css/bootstrap-responsive.css', array('media' => 'screen', 'browsers' => array('IE' => 'gte IE 9', '!IE' => TRUE), 'preprocess' => FALSE));
-        drupal_add_js($bootstrap_path . '/js/bootstrap.js');
-        $loaded = TRUE;
-      }
-    }
-  }
-  if (!$loaded) {
-    // Notify a user if Bootstrap library was not found.
-    drupal_set_message(t('Twitter Bootstrap library was not found. See <a href="http://drupal.org/project/tweme#install" target="_blank">installation guide</a> for more details.'), 'error');
+  // Verify jQuery Update:
+  _tweme_verify_jquery_update();
+
+  // Connect Twitter Bootstrap library:
+  if ($bootstrap_path = _tweme_detect_twitter_bootstrap()) {
+    drupal_add_css($bootstrap_path . '/css/bootstrap.css', array('media' => 'all'));
+    drupal_add_css($bootstrap_path . '/css/bootstrap-responsive.css', array('media' => 'screen', 'browsers' => array('IE' => 'gte IE 9', '!IE' => TRUE), 'preprocess' => FALSE));
+    drupal_add_js($bootstrap_path . '/js/bootstrap.js');
   }
 
   if (_tweme_is_tweme()) {
@@ -221,4 +208,52 @@ function _tweme_region_blocks_markup($region) {
     return drupal_render($elems);
   }
   return FALSE;
+}
+
+/**
+  * Helper function: verifies if jQuery Update is properly installed and configured.
+  */
+function _tweme_verify_jquery_update() {
+  if (!module_exists('jquery_update')) {
+    _tweme_admin_message(t('<a href="http://drupal.org/project/jquery_update" target="_blank">jQuery Update</a> module is not installed.'), 'error');
+    return;
+  }
+  $version = variable_get('jquery_update_jquery_version');
+  if ($version != '1.8') {
+    _tweme_admin_message(t('jQuery @version is used but jQuery 1.8 is recommended. <a href="/admin/config/development/jquery_update">Configure</a>.', array('@version' => $version)), 'warning');
+  }
+}
+
+/**
+  * Helper function: detects where Twitter Bootstrap library is located.
+  */
+function _tweme_detect_twitter_bootstrap() {
+  if (module_exists('libraries')) {
+    $path = libraries_get_path('bootstrap');
+    if (_tweme_check_twitter_bootstrap_path($path)) {
+      return $path;
+    }
+  }
+  $path = 'sites/all/libraries/bootstrap';
+  if (_tweme_check_twitter_bootstrap_path($path)) {
+    return $path;
+  }
+  _tweme_admin_message(t('<a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap</a> library was not found. It should be placed here: <code>sites/all/libraries/bootstrap</code>.'), 'error');
+  return FALSE;
+}
+
+/**
+  * Helper function: checks Twitter Bootstrap library path.
+  */
+function _tweme_check_twitter_bootstrap_path($path) {
+  return isset($path) && is_dir(DRUPAL_ROOT . '/' . $path) && file_exists(DRUPAL_ROOT . '/' . $path . '/css/bootstrap.css');
+}
+
+/**
+  * Helper function: displays message for admin.
+  */
+function _tweme_admin_message($message, $type = 'status') {
+  if (user_access('administer')) {
+    drupal_set_message($message, $type);
+  }
 }
