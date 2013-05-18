@@ -11,7 +11,6 @@ if ($title) {
   print '<h1>' . $title . '</h1>';
   print render($title_suffix);
 }
-print $messages;
 print render($help);
 print render($tabs);
 if ($actions) {

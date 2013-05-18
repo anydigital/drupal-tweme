@@ -50,6 +50,7 @@
 <!-- Main -->
 <div id="main">
   <div class="container">
+    <?php print $messages ?>
     <div class="row row-toggle">
       <?php if ($has_sidebar_first): ?>
       <!-- Sidebar first -->
