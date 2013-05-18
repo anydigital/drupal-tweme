@@ -15,6 +15,9 @@ ul.links.inline li {
 .item-list ul {
   margin: 0 0 10px 25px;
 }
+.item-list ul li {
+  margin: 0;
+}
 div.messages {
   margin: 0 0 20px 0;
 }
