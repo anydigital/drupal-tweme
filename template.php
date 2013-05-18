@@ -47,7 +47,10 @@ function tweme_theme($existing, $type, $theme, $path) {
         'name' => NULL,
       ),
     ),
-    'pure_input_wrapper' => array(
+    'pure_form_wrapper' => array(
+      'render element' => 'element',
+    ),
+    'search_input_wrapper' => array(
       'render element' => 'element',
     ),
   );
@@ -85,9 +88,12 @@ function tweme_preprocess_page(&$vars) {
   $vars['navbar_search_form'] = FALSE;
   if (module_exists('search')) {
     $form = drupal_get_form('search_form');
+    unset($form['basic']['keys']['#theme_wrappers']);
+    $form['basic']['keys']['#attributes']['class'][] = 'search-query';
     $form['#attributes']['class'][] = 'navbar-search';
     $form['#attributes']['class'][] = 'navbar-search-elastic';
     $form['#attributes']['class'][] = 'hidden-phone';
+    $form['#theme_wrappers'][] = 'pure_form_wrapper';
     $vars['navbar_search_form'] = $form;
   }
 

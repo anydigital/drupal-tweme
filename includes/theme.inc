@@ -38,10 +38,24 @@ function tweme_copyright($vars) {
 }
 
 /**
- * Cleans up element markup leaving only <input> tags.
+ * Cleans up form markup leaving only <form> and <input> tags.
  */
-function tweme_pure_input_wrapper($vars) {
-  return strip_tags($vars['element']['#children'], '<input>');
+function tweme_pure_form_wrapper($vars) {
+  return strip_tags($vars['element']['#children'], '<form><input>');
+}
+
+/**
+ * Adds the search button right after the search input element.
+ */
+function tweme_search_input_wrapper($vars) {
+  $out = '<div class="input-append">';
+  $out .= $vars['element']['#children'];
+  $out .= '<button type="submit" class="btn">';
+  $out .= '<i class="icon-search"></i>';
+  $out .= '<span class="element-invisible">' . t('Search') . '</span>';
+  $out .= '</button>';
+  $out .= '</div>';
+  return $out;
 }
 
 /**

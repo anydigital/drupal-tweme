@@ -74,3 +74,30 @@ input[type="checkbox"] {
 .form-actions .btn {
   margin-right: 5px;
 }
+fieldset legend {
+  font-size: 1em;
+}
+html.js fieldset.collapsed {
+  height: 3em;
+}
+
+/* Search */
+.search-results {
+  margin: 2em 0;
+}
+.search-results .search-result {
+  margin-bottom: 2em;
+}
+.search-results .title {
+  line-height: 1em;
+  margin-top: 0;
+}
+.search-results .search-info {
+  color: grey;
+}
+.search-form .form-item {
+  margin: 0;
+}
+.region-content .search-form {
+  margin-bottom: 2em;
+}

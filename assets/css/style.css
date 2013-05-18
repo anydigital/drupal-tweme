@@ -30,6 +30,9 @@
 #main .block {
   margin-bottom: 30px;
 }
+.sidebar input.form-text {
+  width: 70%;
+}
 #footer {
   background-color: whitesmoke;
   border-top: 1px solid #e5e5e5;
