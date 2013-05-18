@@ -22,12 +22,14 @@
 	</div>
 </div>
 
+<?php if ($page['featured']): ?>
 <!-- Featured -->
 <div id="featured" class="container-wrapper hidden-phone">
   <div class="container">
     <?php print render($page['featured']) ?>
   </div>
 </div>
+<?php endif ?>
 
 <?php if ($has_header): ?>
 <!-- Header -->
