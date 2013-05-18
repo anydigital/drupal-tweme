@@ -116,7 +116,7 @@ function tweme_preprocess_page(&$vars) {
       $bootstrap_path = libraries_get_path('bootstrap');
       if ($bootstrap_path) {
         drupal_add_css($bootstrap_path . '/css/bootstrap.css', array('media' => 'all'));
-        drupal_add_css($bootstrap_path . '/css/bootstrap-responsive.css', array('media' => 'screen'));
+        drupal_add_css($bootstrap_path . '/css/bootstrap-responsive.css', array('media' => 'screen', 'browsers' => array('IE' => 'gte IE 9', '!IE' => TRUE), 'preprocess' => FALSE));
         drupal_add_js($bootstrap_path . '/js/bootstrap.js');
         $loaded = TRUE;
       }
@@ -128,8 +128,6 @@ function tweme_preprocess_page(&$vars) {
   }
 
   if (_tweme_is_tweme()) {
-    // Affix sidebars.
-    drupal_add_js(__DIR__ . '/assets/js/affix.js');
     // Add custom classes to navbar search form.
     $vars['navbar_search_form']['#attributes']['class'][] = 'pull-right';
   }

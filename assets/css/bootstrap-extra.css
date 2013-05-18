@@ -14,6 +14,10 @@ h1 {
   overflow: hidden;
 }
 /* Navbar */
+.navbar,
+.navbar * {
+  z-index: 2000;
+}
 .navbar-medium .navbar-inner {
   padding-bottom: 5px;
   padding-top: 5px;

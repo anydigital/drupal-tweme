@@ -6,6 +6,13 @@
  */
 
 ?>
+
+<!--[if gte IE 9]><!-->
+  <link type="text/css" rel="stylesheet" href="/<?php print $directory ?>/assets/css/bootstrap-responsive-940.css" media="screen" />
+  <script type="text/javascript" src="/<?php print $directory ?>/assets/js/bootstrap-responsive-940.js"></script>
+  <script type="text/javascript" src="/<?php print $directory ?>/assets/js/affix.js"></script>
+<!--<![endif]-->
+
 <!-- Navbar -->
 <div id="navbar" class="navbar navbar-medium navbar-inverse navbar-static-top">
 	<div class="navbar-inner">
@@ -43,7 +50,7 @@
 <!-- Main -->
 <div id="main">
   <div class="container">
-    <div class="row-fluid">
+    <div class="row row-toggle">
       <?php if ($has_sidebar_first): ?>
       <!-- Sidebar first -->
       <aside id="sidebar_first" class="sidebar span3 hidden-phone">
