@@ -33,6 +33,12 @@
 #main .block {
   margin-bottom: 30px;
 }
+#sidebar-first > .region {
+  padding-right: 10px;
+}
+#sidebar-second > .region {
+  padding-left: 10px;
+}
 .sidebar input.form-text {
   width: 70%;
 }
@@ -44,4 +50,12 @@
 }
 .footer-links a {
   margin-left: 15px;
+}
+@media (max-width: 979px) {
+  #sidebar-first > .region {
+    padding-right: 0;
+  }
+  #sidebar-second > .region {
+    padding-left: 0;
+  }
 }

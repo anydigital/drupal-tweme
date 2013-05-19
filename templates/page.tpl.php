@@ -54,7 +54,7 @@
     <div class="row row-toggle">
       <?php if ($has_sidebar_first): ?>
       <!-- Sidebar first -->
-      <aside id="sidebar_first" class="sidebar span3 hidden-phone">
+      <aside id="sidebar-first" class="sidebar span3 hidden-phone">
         <?php print render($page['sidebar_first']) ?>
         <?php print render($page['sidebar_first_affix']) ?>
       </aside>
@@ -65,7 +65,7 @@
       </section>
       <?php if ($has_sidebar_second): ?>
       <!-- Sidebar second -->
-      <aside id="sidebar_second" class="sidebar span3 hidden-phone">
+      <aside id="sidebar-second" class="sidebar span3 hidden-phone">
         <?php print render($page['sidebar_second']) ?>
         <?php print render($page['sidebar_second_affix']) ?>
       </aside>
