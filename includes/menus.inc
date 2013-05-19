@@ -33,6 +33,7 @@ function tweme_menu_link__main_menu($vars) {
   $link = $elem['#original_link'];
   $attrs = array();
   $options = $elem['#localized_options'];
+  $options['html'] = TRUE;
 
   // Mark link as active.
   if ($link['in_active_trail']) {
@@ -48,7 +49,6 @@ function tweme_menu_link__main_menu($vars) {
       $options['attributes']['data-toggle'][] = 'dropdown';
       $options['attributes']['data-target'][] = '#';
       $title .= ' <b class="caret"></b>';
-      $options['html'] = TRUE;
     }
     elseif ($link['depth'] > 1) {
       $attrs['class'][] = 'dropdown-submenu';
