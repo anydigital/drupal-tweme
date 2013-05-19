@@ -219,8 +219,8 @@ function _tweme_verify_jquery_update() {
     return;
   }
   $version = variable_get('jquery_update_jquery_version');
-  if ($version != '1.8') {
-    _tweme_admin_message(t('You are now using jQuery @version. Recommended version: jQuery 1.8. <a href="@config">Configure</a>.', array('@version' => $version, '@config' => url('admin/config/development/jquery_update'))), 'warning');
+  if ($version != '1.7') {
+    _tweme_admin_message(t('You are now using jQuery @version. Recommended version: jQuery 1.7. <a href="@config">Configure</a>.', array('@version' => $version, '@config' => url('admin/config/development/jquery_update'))), 'warning');
   }
 }
 
