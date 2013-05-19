@@ -1,7 +1,6 @@
 core = 7.x
 api = 2
 
-projects[] = libraries
 projects[jquery_update] = 2.x-dev
 
 libraries[bootstrap][download][type] = "get"
