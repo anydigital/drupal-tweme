@@ -3,14 +3,27 @@
   border-bottom: 1px solid #e5e5e5;
 }
 #carousel {
-  height: 250px;
+  height: 300px;
   margin-bottom: 0;
 }
 #carousel .item {
-  height: 200px;
-  padding: 50px 10% 0 10%;
+  height: 240px;
+  padding: 60px 10% 0 10%;
   text-align: center;
   width: 80%;
+}
+#carousel .item h1 {
+  font-size: 60px;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -1px;  
+  margin-bottom: 20px;
+}
+#carousel .item p {
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 1.25;
+  margin-bottom: 20px;
 }
 #carousel .carousel-control {
   background-color: transparent;
