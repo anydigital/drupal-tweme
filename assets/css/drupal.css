@@ -104,3 +104,10 @@ html.js fieldset.collapsed {
 .region-content .search-form {
   margin-bottom: 2em;
 }
+
+/* File Entity */
+.file .caption {
+  font-size: 80%;
+  color: grey;
+  margin-top: 5px;
+}
