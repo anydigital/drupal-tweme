@@ -64,11 +64,3 @@
 .footer-links a {
   margin-left: 15px;
 }
-@media (max-width: 979px) {
-  #sidebar-first > .region {
-    padding-right: 0;
-  }
-  #sidebar-second > .region {
-    padding-left: 0;
-  }
-}
