@@ -8,9 +8,9 @@
 ?>
 
 <!--[if gte IE 9]><!-->
-  <link type="text/css" rel="stylesheet" href="/<?php print $directory ?>/assets/css/bootstrap-responsive-940.css" media="screen" />
-  <script type="text/javascript" src="/<?php print $directory ?>/assets/js/bootstrap-responsive-940.js"></script>
-  <script type="text/javascript" src="/<?php print $directory ?>/assets/js/affix.js"></script>
+  <link type="text/css" rel="stylesheet" href="<?php print $base_path . $directory ?>/assets/css/bootstrap-responsive-940.css" media="screen" />
+  <script type="text/javascript" src="<?php print $base_path . $directory ?>/assets/js/bootstrap-responsive-940.js"></script>
+  <script type="text/javascript" src="<?php print $base_path . $directory ?>/assets/js/affix.js"></script>
 <!--<![endif]-->
 
 <!-- Navbar -->
