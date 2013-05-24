@@ -115,10 +115,8 @@ function tweme_preprocess_page(&$vars) {
     drupal_add_js($bootstrap_path . '/js/bootstrap.js');
   }
 
-  if (_tweme_is_tweme()) {
-    // Add custom classes to navbar search form.
-    $vars['navbar_search_form']['#attributes']['class'][] = 'pull-right';
-  }
+  // Add custom classes to navbar search form.
+  $vars['navbar_search_form']['#attributes']['class'][] = 'pull-right';
 }
 
 /**
@@ -139,13 +137,11 @@ function tweme_process_page(&$vars) {
   $vars['preface'] = theme('preface', $vars);
   $vars['copyright'] = theme('copyright', array('name' => $vars['site_name']));
 
-  if (_tweme_is_tweme()) {
   // Prepare some useful variables.
-    $vars['has_header'] = !empty($vars['title']) || !empty($vars['messages']);
-    $vars['has_sidebar_first'] = !empty($page['sidebar_first']) || !empty($page['sidebar_first_affix']);
-    $vars['has_sidebar_second'] = !empty($page['sidebar_second']) || !empty($page['sidebar_second_affix']);
-    $vars['content_cols'] = 12 - 3 * (int) $vars['has_sidebar_first'] - 3 * (int) $vars['has_sidebar_second'];
-  }
+  $vars['has_header'] = !empty($vars['title']) || !empty($vars['messages']);
+  $vars['has_sidebar_first'] = !empty($page['sidebar_first']) || !empty($page['sidebar_first_affix']);
+  $vars['has_sidebar_second'] = !empty($page['sidebar_second']) || !empty($page['sidebar_second_affix']);
+  $vars['content_cols'] = 12 - 3 * (int) $vars['has_sidebar_first'] - 3 * (int) $vars['has_sidebar_second'];
 }
 
 /**
@@ -192,14 +188,6 @@ function tweme_preprocess_button(&$vars) {
 function tweme_preprocess_menu_local_tasks(&$vars) {
   $vars['primary_widget'] = 'tabs';
   $vars['secondary_widget'] = 'pills';
-}
-
-/**
- * Helper function: returns TRUE if current theme is Tweme.
- */
-function _tweme_is_tweme() {
-  global $theme;
-  return $theme == 'tweme';
 }
 
 /**
