@@ -11,6 +11,7 @@ if (!defined('__DIR__')) {
 }
 
 // Require files:
+require_once __DIR__ . '/includes/helpers.inc';
 require_once __DIR__ . '/includes/menus.inc';
 require_once __DIR__ . '/includes/theme.inc';
 
@@ -145,6 +146,13 @@ function tweme_process_page(&$vars) {
     $vars['has_sidebar_second'] = !empty($page['sidebar_second']) || !empty($page['sidebar_second_affix']);
     $vars['content_cols'] = 12 - 3 * (int) $vars['has_sidebar_first'] - 3 * (int) $vars['has_sidebar_second'];
   }
+}
+
+/**
+ * Processes variables for node.tpl.php.
+ */
+function tweme_process_node(&$vars) {
+  list($vars['title'], ) = _tweme_parse_title($vars['title']);
 }
 
 /**

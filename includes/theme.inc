@@ -83,3 +83,10 @@ function tweme_item_list($vars) {
   }
   return theme_item_list($vars);
 }
+
+/**
+ * Processes variables for preface.tpl.php.
+ */
+function tweme_process_preface(&$vars) {
+  list($vars['title'], $vars['subtitle']) = _tweme_parse_title($vars['title']);
+}
