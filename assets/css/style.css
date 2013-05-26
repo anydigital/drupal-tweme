@@ -2,6 +2,13 @@
   background-color: whitesmoke;
   border-bottom: 1px solid #e5e5e5;
 }
+#featured p u {
+  text-decoration: none;
+  border-bottom: 2px solid grey;
+}
+#featured p u a {
+  text-decoration: none;
+}
 #carousel {
   height: 300px;
   margin-bottom: 0;
@@ -63,6 +70,12 @@
 }
 .footer-links a {
   margin-left: 15px;
+}
+.block > h2 {
+  text-transform: uppercase;
+  color: #999;
+  font-size: 1.4em;
+  font-weight: normal;
 }
 
 
