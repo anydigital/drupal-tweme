@@ -191,6 +191,18 @@ function tweme_preprocess_menu_local_tasks(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_field().
+ */
+function tweme_field__field_tags($vars) {
+  $out = '';
+  foreach ($vars['items'] as $item) {
+    $item['#options']['attributes']['class'][] = 'badge';
+    $out .= ' ' . drupal_render($item);
+  }
+  return '<div class="'. $vars['field_name_css'] .'">' . $out . '</div>';
+}
+
+/**
   * Helper function: returns markup of all blocks in the region.
   */
 function _tweme_region_blocks_markup($region) {

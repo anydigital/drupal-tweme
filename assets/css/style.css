@@ -64,3 +64,22 @@
 .footer-links a {
   margin-left: 15px;
 }
+
+
+/* Tags */
+
+.field-tags {
+  margin: 2em 0 2em 0;
+}
+.field-tags a.badge {
+  background: #08c;
+  border: 1px solid #08c;
+  margin-bottom: .4em;
+}
+.field-tags a.badge:not(:hover) {
+  background: snow;
+  border: 1px solid #ddd;
+  border-bottom-color: #bbb;
+  color: grey;
+  text-shadow: none;
+}
