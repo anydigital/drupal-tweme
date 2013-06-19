@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_form_FORM_ID_alter() for search_form().
+ * Implements hook_form_FORM_ID_alter() for search_form.
  */
 function tweme_form_search_form_alter(&$form, &$form_state) {
   $form['basic']['keys']['#attributes']['placeholder'] = t('Search');
@@ -15,7 +15,7 @@ function tweme_form_search_form_alter(&$form, &$form_state) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter() for search_block_form().
+ * Implements hook_form_FORM_ID_alter() for search_block_form.
  */
 function tweme_form_search_block_form_alter(&$form, &$form_state) {
   $form['search_block_form']['#attributes']['placeholder'] = t('Search');

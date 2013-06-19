@@ -6,7 +6,14 @@
  */
 
 /**
- * Returns HTML for a navbar brand.
+ * Processes variables for preface.tpl.php.
+ */
+function tweme_process_preface(&$vars) {
+  list($vars['title'], $vars['subtitle']) = _tweme_parse_title($vars['title']);
+}
+
+/**
+ * Returns HTML for the navbar brand.
  */
 function tweme_navbar_brand($vars) {
   $out = '<a class="brand" href="' . $vars['href'] . '">';
@@ -19,7 +26,7 @@ function tweme_navbar_brand($vars) {
 }
 
 /**
- * Returns HTML for a navbar toggler.
+ * Returns HTML for the navbar toggler.
  */
 function tweme_navbar_toggler($vars) {
   $out = '<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">';
@@ -31,7 +38,7 @@ function tweme_navbar_toggler($vars) {
 }
 
 /**
- * Returns HTML for a copyright text.
+ * Returns HTML for the copyright text.
  */
 function tweme_copyright($vars) {
   return date('Y') . ' &copy; ' . $vars['name'];
@@ -42,51 +49,4 @@ function tweme_copyright($vars) {
  */
 function tweme_pure_form_wrapper($vars) {
   return strip_tags($vars['element']['#children'], '<form><input>');
-}
-
-/**
- * Implements theme_menu_local_tasks().
- */
-function tweme_menu_local_tasks(&$vars) {
-  $out = '';
-  if (!empty($vars['primary'])) {
-    $vars['primary']['#prefix'] = '<ul class="nav nav-' . $vars['primary_widget'] . '">';
-    $vars['primary']['#suffix'] = '</ul>';
-    $out .= drupal_render($vars['primary']);
-  }
-  if (!empty($vars['secondary'])) {
-    $vars['secondary']['#prefix'] = '<ul class="nav nav-' . $vars['secondary_widget'] . '">';
-    $vars['secondary']['#suffix'] = '</ul>';
-    $out .= drupal_render($vars['secondary']);
-  }
-  return $out;
-}
-
-/**
- * Implements theme_item_list().
- */
-function tweme_item_list($vars) {
-  if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
-    // Adjust pager output.
-    unset($vars['attributes']['class']);
-    foreach ($vars['items'] as $i => &$item) {
-      if (in_array('pager-current', $item['class'])) {
-        $item['class'] = array('active');
-        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
-      }
-      elseif (in_array('pager-ellipsis', $item['class'])) {
-        $item['class'] = array('disabled');
-        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
-      }
-    }
-    return '<div class="pagination pagination-centered">' . theme_item_list($vars) . '</div>';
-  }
-  return theme_item_list($vars);
-}
-
-/**
- * Processes variables for preface.tpl.php.
- */
-function tweme_process_preface(&$vars) {
-  list($vars['title'], $vars['subtitle']) = _tweme_parse_title($vars['title']);
 }
