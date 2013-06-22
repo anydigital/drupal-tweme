@@ -13,7 +13,10 @@ h1 {
   height: 0;
   overflow: hidden;
 }
+
+
 /* Navbar */
+
 .navbar,
 .navbar * {
   z-index: 400;
@@ -45,7 +48,10 @@ h1 {
   height: 30px;
   margin: -5px 5px -5px 0;
 }
+
+
 /* Navs */
+
 .nav-tabs.nav-stacked > .active > a {
   background-color: #08c;
   color: white;
@@ -55,7 +61,10 @@ h1 {
   border-bottom: 0;
   margin-bottom: 0;
 }
+
+
 /* Responsive */
+
 @media (max-width: 767px) {
   .container-wrapper {
     margin: 0 -20px;

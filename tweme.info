@@ -2,6 +2,15 @@ name = Tweme
 description = Lightweight responsive theme based on Twitter Bootstrap.
 core = 7.x
 
+settings[jquery_source] = googlecdn
+settings[jquery_version] = 1.7.2
+settings[bootstrap_source] = bootstrapcdn
+settings[bootstrap_version] = 2.3.2
+settings[primary_tasks_style] = tabs
+settings[secondary_tasks_style] = pills
+settings[max_width_940] = 1
+settings[affixed_sidebars] = 1
+
 stylesheets[all][] = assets/css/bootstrap-extra.css
 stylesheets[all][] = assets/css/drupal.css
 stylesheets[all][] = assets/css/style.css

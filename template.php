@@ -69,5 +69,22 @@ function tweme_theme($existing, $type, $theme, $path) {
  * Implements hook_css_alter().
  */
 function tweme_css_alter(&$css) {
-  unset($css[drupal_get_path('module', 'poll') . '/poll.css']);
+  unset($css['modules/poll/poll.css']);
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function tweme_js_alter(&$js) {
+  $version = theme_get_setting('jquery_version');
+  switch (theme_get_setting('jquery_source')) {
+    case 'googlecdn':
+      $js['misc/jquery.js']['data'] = '//ajax.googleapis.com/ajax/libs/jquery/' . $version . '/jquery.min.js';
+      $js['misc/jquery.js']['type'] = 'external';
+      break;
+    case 'libraries':
+      $js['misc/jquery.js']['data'] = 'sites/all/libraries/jquery/jquery.min.js';
+      unset($js['misc/jquery.js']['version']);
+      break;
+  }
 }

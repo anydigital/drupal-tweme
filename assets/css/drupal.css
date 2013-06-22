@@ -1,4 +1,5 @@
 /* System */
+
 .breadcrumb {
   background: transparent;
   margin: 0;
@@ -21,11 +22,17 @@ ul.links.inline li {
 div.messages {
   margin: 0 0 20px 0;
 }
+
+
 /* Block */
+
 .block > h2 {
   margin-top: 0;
 }
+
+
 /* Node */
+
 .node {
   margin-bottom: 30px;
 }
@@ -44,7 +51,10 @@ div.messages {
 .node .content h6 {
   padding-top: 20px;
 }
+
+
 /* Poll */
+
 .poll .title {
   font-weight: bold;
   margin-bottom: 20px;
@@ -62,14 +72,20 @@ div.messages {
 .block-poll ul.links {
   margin-top: 10px;
 }
+
+
 /* Admin Menu */
+
 #admin-menu {
   z-index: 1100;
 }
 #admin-menu li {
   line-height: normal;
 }
+
+
 /* Forms */
+
 input[type="radio"],
 input[type="checkbox"] {
   margin: 0 5px 0 0;
@@ -84,7 +100,9 @@ html.js fieldset.collapsed {
   height: 3em;
 }
 
+
 /* Search */
+
 .search-results {
   margin: 2em 0;
 }
@@ -105,7 +123,9 @@ html.js fieldset.collapsed {
   margin-bottom: 2em;
 }
 
+
 /* File Entity */
+
 .file .caption {
   font-size: 80%;
   color: grey;

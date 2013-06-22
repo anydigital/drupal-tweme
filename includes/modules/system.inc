@@ -9,8 +9,9 @@
  * Preprocesses variables for html.tpl.php.
  */
 function tweme_preprocess_html(&$vars) {
-  _tweme_load_jquery();
   _tweme_load_bootstrap();
+  _tweme_load_html5shiv();
+  _tweme_load_assets();
 }
 
 /**
@@ -23,6 +24,7 @@ function tweme_process_html(&$vars) {
   if ($body_bottom = _tweme_region_blocks_markup('body_bottom')) {
     $vars['page_bottom'] .= '<div class="conceal">' . $body_bottom . '</div>';
   }
+  $vars['head_bottom'] = _tweme_add_html_head_bottom();
 }
 
 /**
@@ -77,25 +79,17 @@ function tweme_process_page(&$vars) {
 }
 
 /**
- * Preprocesses variables for theme_menu_local_tasks().
- */
-function tweme_preprocess_menu_local_tasks(&$vars) {
-  $vars['primary_widget'] = 'tabs';
-  $vars['secondary_widget'] = 'pills';
-}
-
-/**
  * Overrides theme_menu_local_tasks().
  */
 function tweme_menu_local_tasks(&$vars) {
   $out = '';
   if (!empty($vars['primary'])) {
-    $vars['primary']['#prefix'] = '<ul class="nav nav-' . $vars['primary_widget'] . '">';
+    $vars['primary']['#prefix'] = '<ul class="nav nav-' . theme_get_setting('primary_tasks_style') . '">';
     $vars['primary']['#suffix'] = '</ul>';
     $out .= drupal_render($vars['primary']);
   }
   if (!empty($vars['secondary'])) {
-    $vars['secondary']['#prefix'] = '<ul class="nav nav-' . $vars['secondary_widget'] . '">';
+    $vars['secondary']['#prefix'] = '<ul class="nav nav-' . theme_get_setting('secondary_tasks_style') . '">';
     $vars['secondary']['#suffix'] = '</ul>';
     $out .= drupal_render($vars['secondary']);
   }
@@ -107,7 +101,6 @@ function tweme_menu_local_tasks(&$vars) {
  */
 function tweme_item_list($vars) {
   if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
-    // Adjust pager output.
     unset($vars['attributes']['class']);
     foreach ($vars['items'] as $i => &$item) {
       if (in_array('pager-current', $item['class'])) {
