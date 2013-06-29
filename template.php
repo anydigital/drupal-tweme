@@ -12,7 +12,7 @@ if (!defined('__DIR__')) {
 
 // Require files:
 require_once __DIR__ . '/includes/helpers.inc';
-require_once __DIR__ . '/includes/loaders.inc';
+require_once __DIR__ . '/includes/libraries.inc';
 require_once __DIR__ . '/includes/menus.inc';
 require_once __DIR__ . '/includes/theme.inc';
 
@@ -76,15 +76,5 @@ function tweme_css_alter(&$css) {
  * Implements hook_js_alter().
  */
 function tweme_js_alter(&$js) {
-  $version = theme_get_setting('jquery_version');
-  switch (theme_get_setting('jquery_source')) {
-    case 'googlecdn':
-      $js['misc/jquery.js']['data'] = '//ajax.googleapis.com/ajax/libs/jquery/' . $version . '/jquery.min.js';
-      $js['misc/jquery.js']['type'] = 'external';
-      break;
-    case 'libraries':
-      $js['misc/jquery.js']['data'] = 'sites/all/libraries/jquery/jquery.min.js';
-      unset($js['misc/jquery.js']['version']);
-      break;
-  }
+  _tweme_upgrade_jquery($js['misc/jquery.js']);
 }

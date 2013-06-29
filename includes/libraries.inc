@@ -2,8 +2,30 @@
 
 /**
  * @file
- * Provides functions for loading libraries.
+ * Provides functions for working with libraries.
  */
+
+/**
+ * Upgrades jQuery library.
+ */
+function _tweme_upgrade_jquery(&$js_config) {
+  $source = theme_get_setting('jquery_source');
+  if (module_exists('jquery_update') && $source != 'drupal') {
+    _tweme_admin_message(t('Tweme does not need <strong>jQuery Update</strong> module anymore! Please <a href="@modules">disable it</a>.', array('@modules' => url('admin/modules'))), 'warning');
+    return;
+  }
+  $version = theme_get_setting('jquery_version');
+  switch ($source) {
+    case 'googlecdn':
+      $js_config['data'] = '//ajax.googleapis.com/ajax/libs/jquery/' . $version . '/jquery.min.js';
+      $js_config['type'] = 'external';
+      break;
+    case 'libraries':
+      $js_config['data'] = 'sites/all/libraries/jquery/jquery.min.js';
+      unset($js_config['version']);
+      break;
+  }
+}
 
 /**
  * Loads Twitter Bootstrap library.

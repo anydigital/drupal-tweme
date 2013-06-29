@@ -23,7 +23,7 @@ function _tweme_parse_title($title) {
   */
 function _tweme_admin_message($message, $type = 'status') {
   if (user_access('administer')) {
-    drupal_set_message('Tweme: ' . $message, $type);
+    drupal_set_message($message, $type);
   }
 }
 
@@ -56,6 +56,7 @@ function _tweme_add_asset($type, $data, $options) {
       break;
     case 'js':
       if (isset($options['browsers'])) {
+        $data = file_create_url($data);
         $elements = array(
           '#markup' => '<script type="text/javascript" src="' . $data . '"></script>',
           '#browsers' => $options['browsers'],
