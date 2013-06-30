@@ -4,6 +4,12 @@ body {
 h1 {
   margin: 0 0 20px 0;
 }
+dt {
+  font-size: 1.15em;
+}
+dd {
+  margin: 5px 0 20px 25px;
+}
 .conceal {
   visibility: hidden;
   position: absolute;
