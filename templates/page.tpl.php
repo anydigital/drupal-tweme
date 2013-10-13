@@ -23,63 +23,86 @@
 	</div>
 </div>
 
-<?php if ($page['featured']): ?>
-<!-- Featured -->
-<div id="featured" class="container-wrapper hidden-phone">
+<?php if ($page['header'] || $page['featured']): ?>
+<!-- Header -->
+<div id="header" class="zone container-wrapper hidden-phone">
   <div class="container">
-    <?php print render($page['featured']) ?>
+    <div class="inner mkt size-m align-center">
+      <?php print render($page['header']) ?>
+      <?php print render($page['featured']) ?>
+    </div>
   </div>
 </div>
 <?php endif ?>
 
-<?php if ($preface): ?>
-<!-- Header -->
-<header id="header" class="container-wrapper">
+<?php if ($page['highlighted']): ?>
+<!-- Highlighted -->
+<header id="highlighted" class="zone container-wrapper">
   <div class="container">
-    <?php print $preface ?>
+    <div class="inner mkt size-l align-center">
+      <?php print render($page['highlighted']) ?>
+    </div>
+  </div>
+</header>
+<?php endif ?>
+
+<?php if ($preface): ?>
+<!-- Preface -->
+<header id="preface" class="zone container-wrapper">
+  <div class="container">
+    <div class="inner">
+      <?php print $preface ?>
+    </div>
   </div>
 </header>
 <?php endif ?>
 
 <!-- Main -->
-<div id="main">
+<div id="main" class="zone container-wrapper">
   <div class="container">
-    <?php print $messages ?>
-    <div class="row row-toggle">
-      <?php if ($has_sidebar_first): ?>
-      <!-- Sidebar first -->
-      <aside id="sidebar-first" class="sidebar span3 hidden-phone">
-        <?php print render($page['sidebar_first']) ?>
-        <?php print render($page['sidebar_first_affix']) ?>
-      </aside>
-      <?php endif ?>
-      <!-- Content -->
-      <section id="content" class="span<?php print $content_cols ?>">
-        <?php print render($page['content']) ?>
-      </section>
-      <?php if ($has_sidebar_second): ?>
-      <!-- Sidebar second -->
-      <aside id="sidebar-second" class="sidebar span3 hidden-phone">
-        <?php print render($page['sidebar_second']) ?>
-        <?php print render($page['sidebar_second_affix']) ?>
-      </aside>
-      <?php endif ?>
+    <div class="inner">
+      <?php print $messages ?>
+      <div class="row row-toggle">
+        <?php if ($has_sidebar_first): ?>
+        <!-- Sidebar first -->
+        <aside id="sidebar-first" class="sidebar span3 hidden-phone">
+          <?php print render($page['sidebar_first']) ?>
+          <?php print render($page['sidebar_first_affix']) ?>
+        </aside>
+        <?php endif ?>
+        <!-- Content -->
+        <section id="content" class="span<?php print 12 - 3 * $has_sidebar_first - 3 * $has_sidebar_second ?>">
+          <?php print render($page['content']) ?>
+        </section>
+        <?php if ($has_sidebar_second): ?>
+        <!-- Sidebar second -->
+        <aside id="sidebar-second" class="sidebar span3 hidden-phone">
+          <?php print render($page['sidebar_second']) ?>
+          <?php print render($page['sidebar_second_affix']) ?>
+        </aside>
+        <?php endif ?>
+      </div>
     </div>
 	</div>
 </div>
 
 <!-- Footer -->
-<footer id="footer" class="container-wrapper">
+<footer id="footer" class="zone container-wrapper">
 	<div class="container">
-    <div class="footer-links pull-right">
-      <?php if ($feed_icons): ?><?php print $feed_icons ?><?php endif ?>
-      <?php if ($secondary_menu): ?>
-			<?php foreach ($secondary_menu as $item): ?>
-			<?php print l($item['title'], $item['href']) ?>
-			<?php endforeach ?>
-      <a href="#"><?php print t('Back to top') ?> </a>
+    <div class="inner size-s align-center">
+      <?php if ($page['footer']): ?>
+      <?php print render($page['footer']) ?>
+      <?php else: ?>
+      <?php print $copyright ?>
       <?php endif ?>
+      <div class="footer-links">
+        <?php if ($feed_icons): ?><?php print $feed_icons ?><?php endif ?>
+        <?php if ($secondary_menu): ?>
+        <?php foreach ($secondary_menu as $item): ?>
+        <?php print l($item['title'], $item['href']) ?>
+        <?php endforeach ?>
+        <?php endif ?>
+      </div>
     </div>
-    <?php print $copyright ?>
 	</div>
 </footer>

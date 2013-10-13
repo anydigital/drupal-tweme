@@ -1,75 +1,76 @@
-#featured {
-  background-color: whitesmoke;
+.zone {
   border-bottom: 1px solid #e5e5e5;
-}
-#featured p u {
-  text-decoration: none;
-  border-bottom: 2px solid grey;
-}
-#featured p u a {
-  text-decoration: none;
-}
-#carousel {
-  height: 300px;
-  margin-bottom: 0;
-}
-#carousel .item {
-  height: 240px;
-  padding: 60px 10% 0 10%;
-  text-align: center;
-  width: 80%;
-}
-#carousel .item h1 {
-  font-size: 60px;
-  font-weight: 200;
-  line-height: 1;
-  letter-spacing: -1px;  
-  margin-bottom: 20px;
-}
-#carousel .item p {
-  font-size: 24px;
-  font-weight: 200;
-  line-height: 1.25;
-  margin-bottom: 20px;
-}
-#carousel .carousel-control {
-  background-color: transparent;
-  border: 0;
-  color: #333;
-  font-size: 100px;
-  line-height: 100px;
-  top: 50%;
-  height: 100px;
-  margin-top: -50px;
 }
 #header {
   background-color: whitesmoke;
-  border-bottom: 1px solid #e5e5e5;
-  padding-top: 20px;
 }
-#main {
-  padding: 30px 0;
+#header > .container > .inner {
+  padding: 2.5em 0;
+}
+#header h1 {
+  font-size: 4em;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -1px;  
+  margin-bottom: .2em;
+}
+#header .carousel {
+  margin-bottom: 0;
+}
+#header .carousel-control {
+  color: #333;
+}
+#header .carousel-control.left {
+  left: 0;
+}
+#header .carousel-control.right {
+  right: 0;
+}
+#highlighted {
+  background: #d9edf7;
+  border-color: #bce8f1;
+}
+#highlighted > .container > .inner {
+  color: #3a87ad;
+  padding: 1.5em 0;
+}
+#preface {
+  background-color: whitesmoke;
+  padding-top: 1.5em;
+}
+#main > .container > .inner {
+  padding: 1em 0;
 }
 #main .block {
-  margin-bottom: 30px;
+  margin-bottom: 2em;
+}
+#main .block:last-child {
+  margin-bottom: 0;
 }
 #sidebar-first > .region {
-  padding-right: 10px;
+  padding-right: 1em;
 }
 #sidebar-second > .region {
-  padding-left: 10px;
+  padding-left: 1em;
 }
 .sidebar input.form-text {
   width: 70%;
 }
 #footer {
   background-color: whitesmoke;
-  border-top: 1px solid #e5e5e5;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  border-bottom: 0;
+}
+#footer > .container > .inner {
+  padding: 2em 0;
+}
+.footer-links {
+  margin-top: .5em;
 }
 .footer-links a {
-  margin-left: 15px;
+  margin-right: 1.5em;
+}
+.footer-links a:last-child {
+  margin-right: 0;
 }
 .block > h2 {
   text-transform: uppercase;

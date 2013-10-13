@@ -13,7 +13,7 @@
     <?php print $content ?>
   </div>
   <!-- Carousel nav -->
-  <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
+  <a class="carousel-control carousel-control-modern left" href="#carousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control carousel-control-modern right" href="#carousel" data-slide="next">&rsaquo;</a>
 </div>
 <?php endif ?>

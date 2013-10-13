@@ -7,20 +7,20 @@
 }
 ul.links.inline {
   display: block;
-  margin: 15px 0 0 0;
+  margin: 1em 0 0 0;
 }
 ul.links.inline li {
-  margin-right: 15px;
+  margin-right: 1em;
   padding: 0;
 }
 .item-list ul {
-  margin: 0 0 10px 25px;
+  margin: 0 0 1em 2em;
 }
 .item-list ul li {
   margin: 0;
 }
 div.messages {
-  margin: 0 0 20px 0;
+  margin: 0 0 1.5em 0;
 }
 
 
@@ -34,7 +34,10 @@ div.messages {
 /* Node */
 
 .node {
-  margin-bottom: 30px;
+  margin-bottom: 2em;
+}
+.node:last-child {
+  margin-bottom: 0;
 }
 .node > h2 {
   margin-top: 0;
@@ -42,7 +45,7 @@ div.messages {
 .node .submitted {
   color: grey;
   font-size: 90%;
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 .node .content h2,
 .node .content h3,
@@ -57,7 +60,7 @@ div.messages {
 
 .poll .title {
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 1.5em;
 }
 .poll .progress .bar {
   border: 0;
@@ -70,7 +73,7 @@ div.messages {
   padding: 0;
 }
 .block-poll ul.links {
-  margin-top: 10px;
+  margin-top: .5em;
 }
 
 
@@ -88,10 +91,10 @@ div.messages {
 
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 0 5px 0 0;
+  margin: 0 .5em 0 0;
 }
 .form-actions .btn {
-  margin-right: 5px;
+  margin-right: .5em;
 }
 fieldset legend {
   font-size: 1em;
@@ -129,5 +132,5 @@ html.js fieldset.collapsed {
 .file .caption {
   font-size: 80%;
   color: grey;
-  margin-top: 5px;
+  margin-top: .5em;
 }

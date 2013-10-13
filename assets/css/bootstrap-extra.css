@@ -99,6 +99,19 @@ span.divider {
 }
 
 
+/* Carousel */
+
+.carousel-control-modern {
+  background-color: transparent;
+  border: 0;
+  font-size: 100px;
+  line-height: 1 !important;
+  top: 50%;
+  height: 100px;
+  margin-top: -50px;
+}
+
+
 /* Responsive */
 
 @media (max-width: 767px) {
@@ -112,7 +125,14 @@ span.divider {
 /* Marketing */
 
 .mkt * {
-  line-height: 140%;
+  line-height: 1.4;
+}
+.mkt u {
+  text-decoration: none;
+  border-bottom: 2px solid grey;
+}
+.mkt u a {
+  text-decoration: none;
 }
 .mkt hr {
   height: 1px;
@@ -125,11 +145,6 @@ span.divider {
 }
 .mkt p {
   margin-bottom: 1em;
-}
-.mkt h1,
-.mkt h2,
-.mkt h3 {
-  font-family: Georgia;
 }
 .mkt ul,
 .mkt ol,
@@ -148,11 +163,10 @@ span.divider {
 .mkt li > .number,
 .mkt dt > .number {
   float: left;
-  font-family: Georgia;
   font-size: 2em;
   color: grey;
   font-weight: normal;
   width: 1.5em;
   text-align: right;
-  line-height: 0.5em;
+  line-height: 0.5;
 }
