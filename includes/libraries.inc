@@ -101,7 +101,7 @@ function _tweme_load_assets() {
       )
     );
     _tweme_add_asset(
-      'js', $assets_dir . '/js/max-width-940.js',
+      'js', $assets_dir . '/js/max-width.js',
       array('browsers' => 'modern'));
   }
   if (theme_get_setting('affixed_sidebars')) {
