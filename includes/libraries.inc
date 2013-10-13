@@ -82,14 +82,24 @@ function _tweme_load_html5shiv() {
 function _tweme_load_assets() {
   $assets_dir = drupal_get_path('theme', 'tweme') . '/assets';
   
-  if (theme_get_setting('max_width_940')) {
+  if ($max_width = theme_get_setting('max_width')) {
     _tweme_add_asset(
-      'css', $assets_dir . '/css/max-width-940.css',
+      'css',
+      '@media (min-width: 1200px) {
+        .container,
+        .navbar-static-top .container,
+        .navbar-fixed-top .container,
+        .navbar-fixed-bottom .container {
+          width: ' . $max_width . 'px;
+        }
+      }',
       array(
+        'type' => 'inline',
         'group' => CSS_THEME,
         'browsers' => 'modern',
         'media' => 'screen',
-      ));
+      )
+    );
     _tweme_add_asset(
       'js', $assets_dir . '/js/max-width-940.js',
       array('browsers' => 'modern'));
