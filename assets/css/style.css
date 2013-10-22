@@ -4,7 +4,7 @@
 #header {
   background-color: whitesmoke;
 }
-#header > .container > .inner {
+#header-content {
   padding: 2.5em 0;
 }
 #header h1 {
@@ -15,7 +15,13 @@
   margin-bottom: .2em;
 }
 #header .carousel {
-  margin-bottom: 0;
+  margin: 0 -100px;
+  padding: 0 100px;
+}
+@media (max-width: 1199px) {
+  #header .carousel-control {
+    display: none;
+  }
 }
 #header .carousel-control {
   color: #333;
@@ -27,19 +33,16 @@
   right: 0;
 }
 #highlighted {
-  background: #d9edf7;
-  border-color: #bce8f1;
+  border-bottom: 1px dashed #bce8f1;
 }
 #highlighted > .container > .inner {
-  color: #3a87ad;
   padding: 1.5em 0;
 }
-#preface {
-  background-color: whitesmoke;
-  padding-top: 1.5em;
+#highlighted .mkt {
+  color: #3a87ad;
 }
 #main > .container > .inner {
-  padding: 1em 0;
+  padding: 2em 0;
 }
 #main .block {
   margin-bottom: 2em;

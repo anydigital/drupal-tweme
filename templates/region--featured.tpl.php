@@ -7,13 +7,13 @@
 
 ?>
 <?php if ($content): ?>
-<div id="carousel" class="carousel slide">
+<div id="featured" class="carousel slide">
   <!-- Carousel items -->
   <div class="carousel-inner">
     <?php print $content ?>
   </div>
   <!-- Carousel nav -->
-  <a class="carousel-control carousel-control-modern left" href="#carousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control carousel-control-modern right" href="#carousel" data-slide="next">&rsaquo;</a>
+  <a class="carousel-control carousel-control-modern left" href="#featured" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control carousel-control-modern right" href="#featured" data-slide="next">&rsaquo;</a>
 </div>
 <?php endif ?>

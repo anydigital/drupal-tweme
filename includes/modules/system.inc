@@ -68,14 +68,15 @@ function tweme_process_page(&$vars) {
   $vars['navbar_menu'] = drupal_render($vars['navbar_menu_tree']);
   $vars['navbar_search'] = drupal_render($vars['navbar_search_form']);
   $vars['navbar_toggler'] = theme('navbar_toggler');
-  $vars['preface'] = theme('preface', $vars);
+  $vars['headline'] = theme('page_headline', $vars);
+  $vars['controls'] = theme('page_controls', $vars);
   $vars['copyright'] = theme('copyright', array('name' => $vars['site_name']));
 
   // Prepare some useful variables:
-  $vars['has_header'] = !empty($vars['title']) || !empty($vars['messages']);
-  $vars['has_sidebar_first'] = !empty($page['sidebar_first']) || !empty($page['sidebar_first_affix']);
-  $vars['has_sidebar_second'] = !empty($page['sidebar_second']) || !empty($page['sidebar_second_affix']);
-  $vars['content_cols'] = 12 - 3 * (int) $vars['has_sidebar_first'] - 3 * (int) $vars['has_sidebar_second'];
+  $vars['has_header'] = !(empty($vars['headline']) && empty($page['featured']) && empty($page['header']) && empty($vars['controls']));
+  $vars['has_highlights'] = !(empty($page['highlighted']));
+  $vars['has_sidebar_first'] = !(empty($page['sidebar_first']) && empty($page['sidebar_first_affix']));
+  $vars['has_sidebar_second'] = !(empty($page['sidebar_second']) && empty($page['sidebar_second_affix']));
 }
 
 /**

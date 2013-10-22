@@ -23,19 +23,23 @@
 	</div>
 </div>
 
-<?php if ($page['header'] || $page['featured']): ?>
+<?php if ($has_header): ?>
 <!-- Header -->
 <div id="header" class="zone container-wrapper hidden-phone">
   <div class="container">
-    <div class="inner mkt size-m align-center">
-      <?php print render($page['header']) ?>
-      <?php print render($page['featured']) ?>
+    <div class="inner">
+      <div id="header-content" class="mkt size-m">
+        <?php print $headline ?>
+        <?php print render($page['featured']) ?>
+        <?php print render($page['header']) ?>
+      </div>
+      <?php print $controls ?>
     </div>
   </div>
 </div>
 <?php endif ?>
 
-<?php if ($page['highlighted']): ?>
+<?php if ($has_highlights): ?>
 <!-- Highlighted -->
 <header id="highlighted" class="zone container-wrapper">
   <div class="container">
@@ -46,21 +50,11 @@
 </header>
 <?php endif ?>
 
-<?php if ($preface): ?>
-<!-- Preface -->
-<header id="preface" class="zone container-wrapper">
-  <div class="container">
-    <div class="inner">
-      <?php print $preface ?>
-    </div>
-  </div>
-</header>
-<?php endif ?>
-
 <!-- Main -->
 <div id="main" class="zone container-wrapper">
   <div class="container">
     <div class="inner">
+      <?php print render($page['help']) ?>
       <?php print $messages ?>
       <div class="row row-toggle">
         <?php if ($has_sidebar_first): ?>
@@ -90,11 +84,7 @@
 <footer id="footer" class="zone container-wrapper">
 	<div class="container">
     <div class="inner size-s align-center">
-      <?php if ($page['footer']): ?>
-      <?php print render($page['footer']) ?>
-      <?php else: ?>
-      <?php print $copyright ?>
-      <?php endif ?>
+      <?php print $page['footer'] ? render($page['footer']) : $copyright ?>
       <div class="footer-links">
         <?php if ($feed_icons): ?><?php print $feed_icons ?><?php endif ?>
         <?php if ($secondary_menu): ?>

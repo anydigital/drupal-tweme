@@ -37,16 +37,16 @@ function tweme_theme($existing, $type, $theme, $path) {
       ),
     ),
     'navbar_toggler' => array(),
-    'preface' => array(
-      'path' => $path . '/templates',
-      'template' => 'preface',
+    'page_headline' => array(
       'variables' => array(
         'breadcrumb' => NULL,
         'title_prefix' => array(),
         'title' => NULL,
         'title_suffix' => array(),
-        'messages' => NULL,
-        'help' => array(),
+      ),
+    ),
+    'page_controls' => array(
+      'variables' => array(
         'tabs' => array(),
         'actions' => array(),
       ),
