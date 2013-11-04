@@ -98,3 +98,10 @@ function _tweme_add_html_head_bottom($data = NULL) {
   }
   return $head_bottom;
 }
+
+/**
+ * Returns primary menu name.
+ */
+function _tweme_primary_menu_name() {
+  return variable_get('menu_main_links_source', 'main-menu');
+}

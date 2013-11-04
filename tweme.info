@@ -15,6 +15,7 @@ stylesheets[all][] = assets/css/bootstrap-extra.css
 stylesheets[all][] = assets/css/drupal.css
 stylesheets[all][] = assets/css/style.css
 
+scripts[] = assets/js/bootstrap-extra.js
 scripts[] = assets/js/drupal.js
 
 regions[header] = Header

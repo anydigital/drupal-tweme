@@ -34,7 +34,8 @@ function tweme_preprocess_page(&$vars) {
   $page = $vars['page'];
 
   // Prepare navbar menu:
-  $vars['navbar_menu_tree'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+  $vars['navbar_menu_tree'] = menu_tree(_tweme_primary_menu_name());
+  unset($vars['navbar_menu_tree']['#theme_wrappers']);
 
   // Prepare navbar search form:
   $vars['navbar_search_form'] = FALSE;
@@ -65,7 +66,7 @@ function tweme_process_page(&$vars) {
     'href' => $vars['front_page'],
     'logo' => $vars['logo'],
   ));
-  $vars['navbar_menu'] = drupal_render($vars['navbar_menu_tree']);
+  $vars['navbar_menu'] = '<ul class="nav">' . drupal_render($vars['navbar_menu_tree']) . '</ul>';
   $vars['navbar_search'] = drupal_render($vars['navbar_search_form']);
   $vars['navbar_toggler'] = theme('navbar_toggler');
   $vars['headline'] = theme('page_headline', $vars);

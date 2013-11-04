@@ -127,6 +127,9 @@ span.divider {
 .mkt * {
   line-height: 1.4;
 }
+.mkt h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1em;
+}
 .mkt u {
   text-decoration: none;
   border-bottom: 2px solid grey;
@@ -156,17 +159,21 @@ span.divider {
 .mkt dd {
   margin-bottom: 1.5em;
 }
-.mkt li > .inner,
-.mkt dt > .inner {
+
+
+/* Lists */
+
+ol.numbered li > .inner,
+dl.numbered dt > .inner {
   padding-left: 4em;
 }
-.mkt li > .number,
-.mkt dt > .number {
+ol.numbered li > .number,
+dl.numbered dt > .number {
   float: left;
-  font-size: 2em;
-  color: grey;
-  font-weight: normal;
+  font-size: 1.8em;
+  color: #aaa;
+  font-weight: bold;
   width: 1.5em;
   text-align: right;
-  line-height: 0.5;
+  line-height: 0.7;
 }

@@ -13,7 +13,6 @@ if (!defined('__DIR__')) {
 // Require files:
 require_once __DIR__ . '/includes/helpers.inc';
 require_once __DIR__ . '/includes/libraries.inc';
-require_once __DIR__ . '/includes/menus.inc';
 require_once __DIR__ . '/includes/theme.inc';
 
 // Require module-specific files:
@@ -35,6 +34,9 @@ function tweme_theme($existing, $type, $theme, $path) {
         'href' => NULL,
         'logo' => NULL,
       ),
+    ),
+    'navbar_menu_link' => array(
+      'render element' => 'element',
     ),
     'navbar_toggler' => array(),
     'page_headline' => array(
