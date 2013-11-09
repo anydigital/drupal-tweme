@@ -114,7 +114,7 @@ function tweme_item_list($vars) {
         $item['data'] = '<a href="#">' . $item['data'] . '</a>';
       }
     }
-    return '<div class="pagination pagination-centered">' . theme_item_list($vars) . '</div>';
+    return '<div class="pagination">' . theme_item_list($vars) . '</div>';
   }
   return theme_item_list($vars);
 }

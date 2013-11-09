@@ -1,18 +1,28 @@
+html, body {
+  background: whitesmoke;
+}
 .zone {
   border-bottom: 1px solid #e5e5e5;
 }
-#header {
-  background-color: whitesmoke;
-}
 #header-content {
+  padding: 2em 0 1em 0;
+}
+body.front #header-content {
+  font-size: 150%;
+  text-align: center;
   padding: 2.5em 0;
+  font-weight: 200;
 }
 #header h1 {
   font-size: 4em;
   font-weight: 200;
   line-height: 1;
   letter-spacing: -1px;  
-  margin-bottom: .2em;
+  margin: .1em 0;
+}
+#header h1 small {
+  font-weight: 100;
+  letter-spacing: 1px;
 }
 #header .carousel {
   margin: 0 -100px;
@@ -41,6 +51,9 @@
 #highlighted .mkt {
   color: #3a87ad;
 }
+#main {
+  background: white;
+}
 #main > .container > .inner {
   padding: 2em 0;
 }
@@ -60,7 +73,6 @@
   width: 70%;
 }
 #footer {
-  background-color: whitesmoke;
   border-bottom: 0;
 }
 #footer > .container > .inner {

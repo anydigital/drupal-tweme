@@ -10,9 +10,11 @@ settings[primary_tasks_style] = tabs
 settings[secondary_tasks_style] = pills
 settings[max_width] = 940
 settings[affixed_sidebars] = 1
+settings[font_awesome] = 1
 
 stylesheets[all][] = assets/css/bootstrap-extra.css
 stylesheets[all][] = assets/css/drupal.css
+stylesheets[all][] = assets/css/base.css
 stylesheets[all][] = assets/css/style.css
 
 scripts[] = assets/js/bootstrap-extra.js

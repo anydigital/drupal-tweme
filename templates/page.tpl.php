@@ -28,7 +28,7 @@
 <div id="header" class="zone container-wrapper hidden-phone">
   <div class="container">
     <div class="inner">
-      <div id="header-content" class="mkt size-m">
+      <div id="header-content" class="mkt">
         <?php print $headline ?>
         <?php print render($page['featured']) ?>
         <?php print render($page['header']) ?>

@@ -7,6 +7,9 @@ dt {
 span.divider {
   margin: 0 1em;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
 .conceal {
   visibility: hidden;
   position: absolute;
@@ -127,7 +130,7 @@ span.divider {
 .mkt * {
   line-height: 1.4;
 }
-.mkt h1, h2, h3, h4, h5, h6 {
+.mkt h1, .mkt h2, .mkt h3, .mkt h4, .mkt h5, .mkt h6 {
   margin-bottom: 1em;
 }
 .mkt u {

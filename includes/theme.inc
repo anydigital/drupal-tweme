@@ -134,7 +134,9 @@ function tweme_navbar_toggler($vars) {
  * Returns HTML for the copyright text.
  */
 function tweme_copyright($vars) {
-  return date('Y') . ' &copy; ' . $vars['name'];
+  return t('Copyright &copy; @year @name. All rights reserved.', array(
+    '@year' => date('Y'),
+    '@name' => $vars['name']));
 }
 
 /**

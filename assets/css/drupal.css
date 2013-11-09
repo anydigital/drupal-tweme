@@ -22,6 +22,9 @@ ul.links.inline li {
 div.messages {
   margin: 0 0 1.5em 0;
 }
+.pagination ul {
+  margin: 0;
+}
 
 
 /* Block */
@@ -35,9 +38,6 @@ div.messages {
 
 .node {
   margin-bottom: 2em;
-}
-.node:last-child {
-  margin-bottom: 0;
 }
 .node > h2 {
   margin-top: 0;

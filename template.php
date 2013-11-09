@@ -12,7 +12,7 @@ if (!defined('__DIR__')) {
 
 // Require files:
 require_once __DIR__ . '/includes/helpers.inc';
-require_once __DIR__ . '/includes/libraries.inc';
+require_once __DIR__ . '/includes/assets.inc';
 require_once __DIR__ . '/includes/theme.inc';
 
 // Require module-specific files:
