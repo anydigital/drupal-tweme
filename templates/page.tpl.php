@@ -85,14 +85,16 @@
 	<div class="container">
     <div class="inner size-s align-center">
       <?php print $page['footer'] ? render($page['footer']) : $copyright ?>
+      <?php if ($secondary_menu): ?>
       <div class="footer-links">
-        <?php if ($feed_icons): ?><?php print $feed_icons ?><?php endif ?>
-        <?php if ($secondary_menu): ?>
         <?php foreach ($secondary_menu as $item): ?>
         <?php print l($item['title'], $item['href']) ?>
         <?php endforeach ?>
-        <?php endif ?>
       </div>
+      <?php endif ?>
+      <?php if ($feed_icons): ?>
+      <div class="footer-icons"><?php print $feed_icons ?></div>
+      <?php endif ?>
     </div>
 	</div>
 </footer>

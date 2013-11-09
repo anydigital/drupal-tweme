@@ -79,13 +79,16 @@ body.front #header-content {
   padding: 2em 0;
 }
 .footer-links {
-  margin-top: .5em;
+  margin-bottom: .5em;
 }
 .footer-links a {
   margin-right: 1.5em;
 }
 .footer-links a:last-child {
   margin-right: 0;
+}
+.footer-icons {
+  margin-top: .5em;
 }
 .block > h2 {
   text-transform: uppercase;
