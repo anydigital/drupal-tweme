@@ -80,6 +80,17 @@
 	</div>
 </div>
 
+<?php if ($page['bottom']): ?>
+<!-- Bottom -->
+<header id="bottom" class="zone container-wrapper">
+  <div class="container">
+    <div class="inner">
+      <?php print render($page['bottom']) ?>
+    </div>
+  </div>
+</header>
+<?php endif ?>
+
 <!-- Footer -->
 <footer id="footer" class="zone container-wrapper">
 	<div class="container">

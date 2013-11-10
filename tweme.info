@@ -33,4 +33,5 @@ regions[sidebar_first] = Sidebar first
 regions[sidebar_first_affix] = Sidebar first affixed
 regions[sidebar_second] = Sidebar second
 regions[sidebar_second_affix] = Sidebar second affixed
+regions[bottom] = Bottom
 regions[footer] = Footer

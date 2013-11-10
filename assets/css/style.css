@@ -72,6 +72,12 @@ body.front #header-content {
 .sidebar input.form-text {
   width: 70%;
 }
+#bottom {
+  border-bottom: 2px dashed #e5e5e5;
+}
+#bottom > .container > .inner {
+  padding: 2em 0;
+}
 #footer {
   border-bottom: 0;
 }
