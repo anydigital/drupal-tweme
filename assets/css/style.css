@@ -63,10 +63,10 @@ body.front #header-content {
 #main .block:last-child {
   margin-bottom: 0;
 }
-#sidebar-first > .region {
+#sidebar-first > .inner {
   padding-right: 1em;
 }
-#sidebar-second > .region {
+#sidebar-second > .inner {
   padding-left: 1em;
 }
 .sidebar input.form-text {

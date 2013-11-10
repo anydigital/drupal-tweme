@@ -104,12 +104,7 @@ function _tweme_load_assets() {
       'js', $assets_dir . '/js/max-width.js',
       array('browsers' => 'modern'));
   }
-  if (theme_get_setting('affixed_sidebars')) {
-    _tweme_add_asset(
-      'js', $assets_dir . '/js/affixed-sidebars.js',
-      array('browsers' => 'modern'));
-  }
-  if (theme_get_setting('affixed_sidebars')) {
+  if (theme_get_setting('font_awesome')) {
     _tweme_add_html_head_bottom('<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet" />');
   }
 }

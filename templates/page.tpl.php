@@ -53,15 +53,21 @@
 <!-- Main -->
 <div id="main" class="zone container-wrapper">
   <div class="container">
-    <div class="inner">
+    <div id="main-inner" class="inner">
       <?php print render($page['help']) ?>
       <?php print $messages ?>
       <div class="row row-toggle">
         <?php if ($has_sidebar_first): ?>
         <!-- Sidebar first -->
         <aside id="sidebar-first" class="sidebar span3 hidden-phone">
-          <?php print render($page['sidebar_first']) ?>
-          <?php print render($page['sidebar_first_affix']) ?>
+          <div class="inner">
+            <?php print render($page['sidebar_first']) ?>
+            <?php if ($page['sidebar_first_affix']): ?>
+              <div data-spy="pin" data-pin-container="#main-inner">
+                <?php print render($page['sidebar_first_affix']) ?>
+              </div>
+            <?php endif ?>
+          </div>
         </aside>
         <?php endif ?>
         <!-- Content -->
@@ -71,8 +77,14 @@
         <?php if ($has_sidebar_second): ?>
         <!-- Sidebar second -->
         <aside id="sidebar-second" class="sidebar span3 hidden-phone">
-          <?php print render($page['sidebar_second']) ?>
-          <?php print render($page['sidebar_second_affix']) ?>
+          <div class="inner">
+            <?php print render($page['sidebar_second']) ?>
+            <?php if ($page['sidebar_second_affix']): ?>
+              <div data-spy="pin" data-pin-container="#main-inner">
+                <?php print render($page['sidebar_second_affix']) ?>
+              </div>
+            <?php endif ?>
+          </div>
         </aside>
         <?php endif ?>
       </div>
