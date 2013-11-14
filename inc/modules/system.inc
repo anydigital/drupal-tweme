@@ -31,7 +31,6 @@ function tweme_process_html(&$vars) {
  * Preprocesses variables for page.tpl.php.
  */
 function tweme_preprocess_page(&$vars) {
-  $page = $vars['page'];
 
   // Prepare navbar menu:
   $vars['navbar_menu_tree'] = menu_tree(_tweme_primary_menu_name());
@@ -52,6 +51,16 @@ function tweme_preprocess_page(&$vars) {
 
   // Add custom classes to navbar search form:
   $vars['navbar_search_form']['#attributes']['class'][] = 'pull-right';
+
+  // Pin sidebars:
+  if ($vars['page']['sidebar_first_affix']) {
+    $vars['page']['sidebar_first_affix']['#prefix'] = '<div data-spy="pin" data-container=".id-pin-to">';
+    $vars['page']['sidebar_first_affix']['#suffix'] = '</div>';
+  }
+  if ($vars['page']['sidebar_second_affix']) {
+    $vars['page']['sidebar_second_affix']['#prefix'] = '<div data-spy="pin" data-container=".id-pin-to">';
+    $vars['page']['sidebar_second_affix']['#suffix'] = '</div>';
+  }
 }
 
 /**
@@ -74,8 +83,7 @@ function tweme_process_page(&$vars) {
   $vars['copyright'] = theme('copyright', array('name' => $vars['site_name']));
 
   // Prepare some useful variables:
-  $vars['has_header'] = !(empty($vars['headline']) && empty($page['featured']) && empty($page['header']) && empty($vars['controls']));
-  $vars['has_highlights'] = !(empty($page['highlighted']));
+  $vars['has_header'] = !(empty($vars['headline']) && empty($vars['messages']) && empty($page['header']) && empty($page['help']) && empty($vars['controls']));
   $vars['has_sidebar_first'] = !(empty($page['sidebar_first']) && empty($page['sidebar_first_affix']));
   $vars['has_sidebar_second'] = !(empty($page['sidebar_second']) && empty($page['sidebar_second_affix']));
 }

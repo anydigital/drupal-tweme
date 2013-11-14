@@ -1,87 +1,78 @@
 html, body {
   background: whitesmoke;
 }
-.zone {
-  border-bottom: 1px solid #e5e5e5;
-}
-#header-content {
-  padding: 2em 0 1em 0;
-}
-body.front #header-content {
-  font-size: 150%;
-  text-align: center;
-  padding: 2.5em 0;
-  font-weight: 200;
-}
-#header h1 {
-  font-size: 4em;
+h1 {
   font-weight: 200;
   line-height: 1;
-  letter-spacing: -1px;  
-  margin: .1em 0;
+  letter-spacing: -1px;
 }
-#header h1 small {
+h1 small {
   font-weight: 100;
   letter-spacing: 1px;
 }
-#header .carousel {
-  margin: 0 -100px;
-  padding: 0 100px;
+.zone {
+  border-bottom: 1px solid #e5e5e5;
+}
+.zone-annex {
+  border-bottom: 2px dashed #e5e5e5;
+}
+.zone-featured .zone-inner {
+  font-weight: 200;
+  padding: 2em 0;
+}
+.zone-featured h1 {
+  margin-bottom: 0;
+}
+.zone-featured .carousel {
+  margin: 0;
+}
+.zone-featured .carousel-control {
+  color: #333;
 }
 @media (max-width: 1199px) {
-  #header .carousel-control {
+  .zone-featured .carousel-control {
     display: none;
   }
 }
-#header .carousel-control {
-  color: #333;
+.zone-header .zone-inner {
+  padding-top: 1.5em;
 }
-#header .carousel-control.left {
-  left: 0;
+.zone-header h1 {
+  font-size: 400%;
+  margin: .1em 0 .4em;
 }
-#header .carousel-control.right {
-  right: 0;
-}
-#highlighted {
-  border-bottom: 1px dashed #bce8f1;
-}
-#highlighted > .container > .inner {
+.zone-highlighted .zone-inner {
   padding: 1.5em 0;
-}
-#highlighted .mkt {
   color: #3a87ad;
 }
-#main {
+.zone-main {
   background: white;
 }
-#main > .container > .inner {
+.zone-main .zone-inner {
   padding: 2em 0;
 }
-#main .block {
+.zone-main .block {
   margin-bottom: 2em;
 }
-#main .block:last-child {
+.zone-main .block:last-child {
   margin-bottom: 0;
 }
-#sidebar-first > .inner {
+.sidebar-first {
   padding-right: 1em;
 }
-#sidebar-second > .inner {
+.sidebar-second {
   padding-left: 1em;
 }
 .sidebar input.form-text {
   width: 70%;
 }
-#bottom {
-  border-bottom: 2px dashed #e5e5e5;
-}
-#bottom > .container > .inner {
+.zone-bottom .zone-inner {
   padding: 2em 0;
 }
-#footer {
+.zone-footer {
   border-bottom: 0;
 }
-#footer > .container > .inner {
+.zone-footer .zone-inner {
   padding: 2em 0;
 }
 .footer-links {

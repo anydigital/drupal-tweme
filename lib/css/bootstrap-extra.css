@@ -130,6 +130,21 @@ h1, h2, h3, h4, h5, h6 {
 .mkt * {
   line-height: 1.4;
 }
+.mkt h1 {
+  font-size: 300%;
+}
+.mkt h2 {
+  font-size: 200%;
+}
+.mkt h3 {
+  font-size: 150%;
+}
+.mkt h4 {
+  font-size: 120%; 
+}
+.mkt h5, .mkt h6 {
+  font-size: 100%;
+}
 .mkt h1, .mkt h2, .mkt h3, .mkt h4, .mkt h5, .mkt h6 {
   margin-bottom: 1em;
 }
