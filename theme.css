@@ -16,13 +16,6 @@ h1 small {
 .zone-annex {
   border-bottom: 2px dashed #e5e5e5;
 }
-.zone-featured .zone-inner {
-  font-weight: 200;
-  padding: 2em 0;
-}
-.zone-featured h1 {
-  margin-bottom: 0;
-}
 .zone-featured .carousel {
   margin: 0;
 }
@@ -33,6 +26,16 @@ h1 small {
   .zone-featured .carousel-control {
     display: none;
   }
+}
+.zone-featured .zone-inner {
+  font-weight: 200;
+  padding: 2em 0;
+}
+.zone-featured .block-imageblock {
+  background-size: cover;
+}
+.zone-featured h1 {
+  margin-bottom: 0;
 }
 .zone-header .zone-inner {
   padding-top: 1.5em;
