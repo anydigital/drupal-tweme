@@ -55,7 +55,7 @@ function _tweme_load_bootstrap() {
       $bootstrap_path = 'sites/all/libraries/bootstrap';
       break;
     case 'theme';
-      $bootstrap_path = path_to_theme() . '/libraries/bootstrap';
+      $bootstrap_path = path_to_theme() . '/lib';
       break;
     default:
       return;
@@ -80,7 +80,7 @@ function _tweme_load_html5shiv() {
  * Loads assets.
  */
 function _tweme_load_assets() {
-  $assets_dir = drupal_get_path('theme', 'tweme') . '/assets';
+  $assets_dir = drupal_get_path('theme', 'tweme') . '/lib';
   
   if ($max_width = theme_get_setting('max_width')) {
     _tweme_add_asset(
@@ -100,9 +100,6 @@ function _tweme_load_assets() {
         'media' => 'screen',
       )
     );
-    _tweme_add_asset(
-      'js', $assets_dir . '/js/max-width.js',
-      array('browsers' => 'modern'));
   }
   if (theme_get_setting('font_awesome')) {
     _tweme_add_html_head_bottom('<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet" />');

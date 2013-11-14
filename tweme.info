@@ -9,16 +9,13 @@ settings[bootstrap_version] = 2.3.2
 settings[primary_tasks_style] = tabs
 settings[secondary_tasks_style] = pills
 settings[max_width] = 940
-settings[affixed_sidebars] = 1
 settings[font_awesome] = 1
 
-stylesheets[all][] = assets/css/bootstrap-extra.css
-stylesheets[all][] = assets/css/drupal.css
-stylesheets[all][] = assets/css/base.css
-stylesheets[all][] = assets/css/style.css
+stylesheets[all][] = lib/css/bootstrap-extra.css
+stylesheets[all][] = system.css
+stylesheets[all][] = theme.css
 
-scripts[] = assets/js/bootstrap-extra.js
-scripts[] = assets/js/drupal.js
+scripts[] = lib/js/bootstrap-extra.js
 
 regions[header] = Header
 regions[help] = Help
