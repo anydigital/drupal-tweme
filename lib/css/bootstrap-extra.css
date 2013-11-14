@@ -1,0 +1,182 @@
+body {
+  position: relative;
+}
+dt {
+  font-size: 1.15em;
+}
+span.divider {
+  margin: 0 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+.conceal {
+  visibility: hidden;
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+.clear {
+  clear: both;
+}
+.size-xs {
+  font-size: 70%;
+}
+.size-s, small {
+  font-size: 85%;
+}
+.size-m {
+  font-size: 120%;
+}
+.size-l, big {
+  font-size: 150%;
+}
+.size-xl {
+  font-size: 200%;
+}
+.size-xxl {
+  font-size: 300%;
+}
+.size-xxxl {
+  font-size: 400%;
+}
+
+
+/* Navbar */
+
+.navbar,
+.navbar * {
+  z-index: 400;
+}
+.navbar-medium .navbar-inner {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.navbar-medium .nav > li > a {
+  margin: -5px 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.navbar .navbar-search-elastic .search-query {
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  transition: width 0.5s;
+  width: 80px;
+}
+.navbar .navbar-search-elastic .search-query:focus {
+  width: 160px;
+}
+.navbar .brand {
+  font-weight: bold;
+}
+.navbar .brand img {
+  float: left;
+  height: 30px;
+  margin: -5px 5px -5px 0;
+}
+
+
+/* Navs */
+
+.nav-tabs.nav-stacked > .active > a {
+  background-color: #08c;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+.nav-tabs {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+
+/* Carousel */
+
+.carousel-control-modern {
+  background-color: transparent;
+  border: 0;
+  font-size: 100px;
+  line-height: 1 !important;
+  top: 50%;
+  height: 100px;
+  margin-top: -50px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 767px) {
+  .container-wrapper {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}
+
+
+/* Marketing */
+
+.mkt * {
+  line-height: 1.4;
+}
+.mkt h1, .mkt h2, .mkt h3, .mkt h4, .mkt h5, .mkt h6 {
+  margin-bottom: 1em;
+}
+.mkt u {
+  text-decoration: none;
+  border-bottom: 2px solid grey;
+}
+.mkt u a {
+  text-decoration: none;
+}
+.mkt hr {
+  height: 1px;
+  margin: 2em 0;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  border: 0;
+}
+.mkt p {
+  margin-bottom: 1em;
+}
+.mkt ul,
+.mkt ol,
+.mkt dl {
+  text-align: left;
+}
+.mkt li,
+.mkt dt,
+.mkt dd {
+  margin-bottom: 1.5em;
+}
+
+
+/* Lists */
+
+ol.numbered li > .inner,
+dl.numbered dt > .inner {
+  padding-left: 4em;
+}
+ol.numbered li > .number,
+dl.numbered dt > .number {
+  float: left;
+  font-size: 1.8em;
+  color: #aaa;
+  font-weight: bold;
+  width: 1.5em;
+  text-align: right;
+  line-height: 0.7;
+}

@@ -1,0 +1,136 @@
+/* System */
+
+.breadcrumb {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+ul.links.inline {
+  display: block;
+  margin: 1em 0 0 0;
+}
+ul.links.inline li {
+  margin-right: 1em;
+  padding: 0;
+}
+.item-list ul {
+  margin: 0 0 1em 2em;
+}
+.item-list ul li {
+  margin: 0;
+}
+div.messages {
+  margin: 0 0 1.5em 0;
+}
+.pagination ul {
+  margin: 0;
+}
+
+
+/* Block */
+
+.block > h2 {
+  margin-top: 0;
+}
+
+
+/* Node */
+
+.node {
+  margin-bottom: 2em;
+}
+.node > h2 {
+  margin-top: 0;
+}
+.node .submitted {
+  color: grey;
+  font-size: 90%;
+  margin-bottom: 1em;
+}
+.node .content h2,
+.node .content h3,
+.node .content h4,
+.node .content h5,
+.node .content h6 {
+  padding-top: 20px;
+}
+
+
+/* Poll */
+
+.poll .title {
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+.poll .progress .bar {
+  border: 0;
+  margin: 0;
+}
+.block-poll ul.links,
+.block-poll ul.links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.block-poll ul.links {
+  margin-top: .5em;
+}
+
+
+/* Admin Menu */
+
+#admin-menu {
+  z-index: 1100;
+}
+#admin-menu li {
+  line-height: normal;
+}
+
+
+/* Forms */
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 .5em 0 0;
+}
+.form-actions .btn {
+  margin-right: .5em;
+}
+fieldset legend {
+  font-size: 1em;
+}
+html.js fieldset.collapsed {
+  height: 3em;
+}
+
+
+/* Search */
+
+.search-results {
+  margin: 2em 0;
+}
+.search-results .search-result {
+  margin-bottom: 2em;
+}
+.search-results .title {
+  line-height: 1em;
+  margin-top: 0;
+}
+.search-results .search-info {
+  color: grey;
+}
+.search-form .form-item {
+  margin: 0;
+}
+.region-content .search-form {
+  margin-bottom: 2em;
+}
+
+
+/* File Entity */
+
+.file .caption {
+  font-size: 80%;
+  color: grey;
+  margin-top: .5em;
+}
