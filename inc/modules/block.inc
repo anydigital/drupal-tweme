@@ -15,7 +15,7 @@ function tweme_preprocess_block(&$vars) {
     if ($block->module == 'imageblock' && module_exists('imageblock')) {
       if ($img = imageblock_get_file($block->delta)) {
         $src = file_create_url($img->uri);
-        $vars['attributes_array']['style'] = sprintf('background: url(%s)', $src);
+        $vars['attributes_array']['style'] = sprintf('background-image: url(%s)', $src);
       }
     }
     $vars['classes_array'][] = 'item';
