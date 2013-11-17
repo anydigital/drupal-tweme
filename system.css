@@ -47,13 +47,6 @@ div.messages {
   font-size: 90%;
   margin-bottom: 1em;
 }
-.node .content h2,
-.node .content h3,
-.node .content h4,
-.node .content h5,
-.node .content h6 {
-  padding-top: 20px;
-}
 
 
 /* Poll */

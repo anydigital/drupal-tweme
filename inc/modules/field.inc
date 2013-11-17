@@ -6,13 +6,13 @@
  */
 
 /**
- * Overrides theme_field__FIELD_ID() for field_tags.
+ * Preprocesses variables for theme_field().
  */
-function tweme_field__field_tags($vars) {
-  $out = '';
-  foreach ($vars['items'] as $item) {
-    $item['#options']['attributes']['class'][] = 'badge';
-    $out .= ' ' . drupal_render($item);
+function tweme_preprocess_field(&$vars) {
+  $elem = $vars['element'];
+  if ($elem['#field_type'] == 'taxonomy_term_reference') {
+    foreach ($vars['items'] as &$item) {
+      $item['#options']['attributes']['class'][] = 'badge';
+    }
   }
-  return '<div class="'. $vars['field_name_css'] .'">' . $out . '</div>';
 }

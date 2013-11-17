@@ -1,6 +1,9 @@
 body {
   position: relative;
 }
+p {
+  margin-bottom: 1em;
+}
 dt {
   font-size: 1.15em;
 }
@@ -9,6 +12,7 @@ span.divider {
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
+  margin-top: .8em;
 }
 .conceal {
   visibility: hidden;
