@@ -90,6 +90,10 @@ h1 small {
 .footer-icons {
   margin-top: .5em;
 }
+
+
+/* Block */
+
 .block > h2 {
   text-transform: uppercase;
   color: #999;
@@ -98,17 +102,32 @@ h1 small {
 }
 
 
-/* Tags */
+/* Node */
 
-.field-tags {
+.node .content h2 {
+  padding: 1em 0 .5em;
+  margin: 0 0 .5em;
+  border-bottom: 1px solid #eeeeee;
+  font-weight: bold;
+  color: #5a5a5a;
+}
+
+
+/* Taxonomy terms */
+
+.field-type-taxonomy-term-reference {
   margin: 2em 0 2em 0;
 }
-.field-tags a.badge {
+.field-type-taxonomy-term-reference .field-items * {
+  display: inline;
+}
+.field-type-taxonomy-term-reference a.badge {
   background: #08c;
   border: 1px solid #08c;
-  margin-bottom: .4em;
+  margin: 0 0 .4em .4em;
+  font-weight: normal;
 }
-.field-tags a.badge:not(:hover) {
+.field-type-taxonomy-term-reference a.badge:not(:hover) {
   background: snow;
   border: 1px solid #ddd;
   border-bottom-color: #bbb;
