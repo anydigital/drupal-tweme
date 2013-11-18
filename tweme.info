@@ -13,7 +13,7 @@ settings[font_awesome] = 1
 
 stylesheets[all][] = lib/css/bootstrap-extra.css
 stylesheets[all][] = system.css
-stylesheets[all][] = theme.css
+stylesheets[all][] = tweme.css
 
 scripts[] = lib/js/bootstrap-extra.js
 
