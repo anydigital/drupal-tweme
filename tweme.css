@@ -44,6 +44,9 @@ h1 small {
   font-size: 400%;
   margin: .1em 0 .4em;
 }
+.zone-highlighted {
+  background: white;
+}
 .zone-highlighted .zone-inner {
   padding: 1.5em 0;
   color: #3a87ad;
