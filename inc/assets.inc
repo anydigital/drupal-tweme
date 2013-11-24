@@ -55,7 +55,7 @@ function _tweme_load_bootstrap() {
       $bootstrap_path = 'sites/all/libraries/bootstrap';
       break;
     case 'theme';
-      $bootstrap_path = path_to_theme() . '/lib';
+      $bootstrap_path = path_to_theme() . '/lib/bootstrap';
       break;
     default:
       return;

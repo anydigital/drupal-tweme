@@ -11,11 +11,11 @@ settings[secondary_tasks_style] = pills
 settings[max_width] = 940
 settings[font_awesome] = 1
 
-stylesheets[all][] = lib/css/bootstrap-extra.css
+stylesheets[all][] = lib/bootstrap-extra/css/bootstrap-extra.css
 stylesheets[all][] = system.css
 stylesheets[all][] = tweme.css
 
-scripts[] = lib/js/bootstrap-extra.js
+scripts[] = lib/bootstrap-extra/js/bootstrap-extra.js
 
 regions[header] = Header
 regions[help] = Help
