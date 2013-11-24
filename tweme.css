@@ -1,3 +1,76 @@
+/* Bootstrap extended */
+
+.navbar,
+.navbar * {
+  z-index: 400;
+}
+.navbar-medium .navbar-inner {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.navbar-medium .nav > li > a {
+  margin: -5px 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.navbar .navbar-search-elastic .search-query {
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  transition: width 0.5s;
+  width: 80px;
+}
+.navbar .navbar-search-elastic .search-query:focus {
+  width: 160px;
+}
+.navbar .brand {
+  font-weight: bold;
+}
+.navbar .brand img {
+  float: left;
+  height: 30px;
+  margin: -5px 5px -5px 0;
+}
+.nav-tabs.nav-stacked > .active > a {
+  background-color: #08c;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+.nav-tabs {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+.carousel-control-modern {
+  background-color: transparent;
+  border: 0;
+  font-size: 100px;
+  line-height: 1 !important;
+  top: 50%;
+  height: 100px;
+  margin-top: -50px;
+}
+.align-left, .text-left {
+  text-align: left;
+}
+.align-right, .text-right {
+  text-align: right;
+}
+.align-center, .text-center {
+  text-align: center;
+}
+.mkt * {
+  line-height: 1.4;
+}
+@media (max-width: 767px) {
+  .container-wrapper {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}
+
+
+/* Layout */
+
 html, body {
   background: whitesmoke;
 }
