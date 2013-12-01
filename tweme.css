@@ -61,6 +61,9 @@
 .mkt * {
   line-height: 1.4;
 }
+.mkt ul, .mkt ol {
+  text-align: left;
+}
 @media (max-width: 767px) {
   .container-wrapper {
     margin: 0 -20px;
