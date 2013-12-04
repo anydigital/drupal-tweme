@@ -4,7 +4,7 @@ core = 7.x
 
 settings[jquery_path] = //cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3
 settings[bootstrap_path] = //cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2
-settings[bootstrap_extra_path] = %t/lib/bootstrap-extra
+settings[bootstrap_extra_path] = %t/libraries/bootstrap-extra
 settings[font_awesome_path] = //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.1
 settings[html5shiv_path] = //cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7
 
