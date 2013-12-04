@@ -1,0 +1,10 @@
+/*!
+ * Bootstrap Extra v1.1.0
+ * http://tonystar.ru/projects/bootstrap-extra
+ *
+ * Copyright (c) 2013 Anton Staroverov
+ * http://tonystar.ru
+ *
+ * Licensed under http://opensource.org/licenses/MIT
+ */
+small{font-size:.85em}big{font-size:1.25em}dt{margin-bottom:10px}dl>dd:last-child{margin-bottom:0}.mkt p{margin-bottom:1em}.mkt u{text-decoration:none;border-bottom:2px solid #999}.mkt u a{text-decoration:none}.mkt hr{height:1px;margin:2em 0;border:0;background-image:-webkit-gradient(left,linear,0 0,0 100%,from(rgba(0,0,0,0)),color-stop(50%,rgba(0,0,0,0.1)),to(rgba(0,0,0,0)));background-image:-webkit-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.1) 50%,rgba(0,0,0,0));background-image:-moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.1) 50%,rgba(0,0,0,0));background-image:linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.1) 50%,rgba(0,0,0,0));background-repeat:no-repeat;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#00000000',GradientType=1)}.mkt h1{font-size:2.6em}.mkt h2{font-size:2.15em}.mkt h3{font-size:1.7em}.mkt h4{font-size:1.25em}.mkt h5{font-size:1em}.mkt h6{font-size:.85em}.mkt h1,.mkt h2,.mkt h3,.mkt h4,.mkt h5,.mkt h6{margin-top:1em;margin-bottom:.5em}.mkt dt{font-size:1.25em}.mkt dd{margin-bottom:1em}.mkt td{padding-left:0}.mkt .well,.mkt.well{padding:2em}.text-justify{text-align:justify}.clear{clear:both}.conceal{visibility:hidden;position:absolute;top:-1000px;left:-1000px;width:0;height:0;overflow:hidden}.trim>*:first-child{margin-top:0}.trim>*:last-child{margin-bottom:0}[class^="col-"]{position:static}.size-xxxl{font-size:2.6em}.size-xxl{font-size:2.15em}.size-xl{font-size:1.7em}.size-l{font-size:1.25em}.size-m{font-size:1em}.size-s{font-size:.85em}.size-xs{font-size:.7em}.pin-top{position:static}.pin{position:fixed;top:0;bottom:auto}.pin-bottom{position:absolute;top:auto;bottom:0}
