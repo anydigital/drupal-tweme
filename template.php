@@ -11,11 +11,11 @@ if (!defined('__DIR__')) {
 }
 
 // Require files:
-require_once __DIR__ . '/inc/helpers.inc';
-require_once __DIR__ . '/inc/theme.inc';
+require_once __DIR__ . '/includes/utils.inc';
+require_once __DIR__ . '/includes/theme.inc';
 
 // Require module-specific files:
-$requires = file_scan_directory(__DIR__ . '/inc/modules', '/\.inc$/');
+$requires = file_scan_directory(__DIR__ . '/includes/modules', '/\.inc$/');
 foreach ($requires as $require) {
   if (module_exists($require->name)) {
     require_once $require->uri;
