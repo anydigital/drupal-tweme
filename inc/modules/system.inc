@@ -9,9 +9,41 @@
  * Preprocesses variables for html.tpl.php.
  */
 function tweme_preprocess_html(&$vars) {
-  _tweme_load_bootstrap();
-  _tweme_load_html5shiv();
-  _tweme_load_assets();
+  // Connect Twitter Bootstrap:
+  if ($path = theme_get_setting('bootstrap_path')) {
+    _tweme_connect_lib('css', $path . '/css/bootstrap.min.css');
+    _tweme_connect_lib('css', $path . '/css/bootstrap-responsive.min.css');
+    _tweme_connect_lib('js', $path . '/js/bootstrap.min.js');
+  }
+  // Connect Twitter Bootstrap Extra:
+  if ($path = theme_get_setting('bootstrap_extra_path')) {
+    _tweme_connect_lib('css', $path . '/css/bootstrap-extra.min.css');
+    _tweme_connect_lib('js', $path . '/js/bootstrap-extra.min.js');
+  }
+  // Connect HTML5 Shiv:
+  if ($path = theme_get_setting('html5shiv_path')) {
+    _tweme_connect_lib('js', $path . '/html5shiv.min.js', array('browsers' => 'obsolete'));
+  }
+
+  if ($max_width = theme_get_setting('max_width')) {
+    _tweme_add_asset(
+      'css',
+      '@media (min-width: 1200px) {
+        .container,
+        .navbar-static-top .container,
+        .navbar-fixed-top .container,
+        .navbar-fixed-bottom .container {
+          width: ' . $max_width . 'px;
+        }
+      }',
+      array(
+        'type' => 'inline',
+        'group' => CSS_THEME,
+        'browsers' => 'modern',
+        'media' => 'screen',
+      )
+    );
+  }
 }
 
 /**

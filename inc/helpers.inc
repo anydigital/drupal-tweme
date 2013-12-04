@@ -44,11 +44,28 @@ function _tweme_region_blocks_markup($region) {
 }
 
 /**
+ * Upgrades jQuery library.
+ */
+function _tweme_upgrade_jquery(&$js_config) {
+  if (!module_exists('jquery_update') && $path = theme_get_setting('jquery_path')) {
+    $path .= '/jquery.min.js';
+    $js_config['data'] = $path;
+    $js_config['type'] = _tweme_detect_asset_type($path);
+    unset($js_config['version']);
+  }
+}
+
+/**
  * Adds js/css file.
  */
-function _tweme_add_asset($type, $data, $options) {
+function _tweme_add_asset($type, $data, $options = array()) {
   if (isset($options['browsers']) && !is_array($options['browsers'])) {
     $options['browsers'] = _tweme_browsers_to_array($options['browsers']);
+  }
+  if (!isset($options['type']) || $options['type'] == 'file') {
+    // Data is path:
+    global $theme;
+    $data = str_replace('%t', drupal_get_path('theme', $theme), $data);
   }
   switch ($type) {
     case 'css':
@@ -69,6 +86,38 @@ function _tweme_add_asset($type, $data, $options) {
       }
       break;
   }
+}
+
+/**
+ * Connects library file.
+ */
+function _tweme_connect_lib($type, $path, $options = array()) {
+  $options += array(
+    'type' => _tweme_detect_asset_type($path),
+  );
+  switch ($type) {
+    case 'css':
+      $options += array(
+        'group' => CSS_THEME,
+        'weight' => -1000,
+        'every_page' => TRUE,
+      );
+      break;
+    
+    case 'js':
+      $options += array(
+        'group' => JS_LIBRARY,
+      );
+      break;
+  }
+  _tweme_add_asset($type, $path, $options);
+}
+
+/**
+ * Detects lib type by a given path.
+ */
+function _tweme_detect_asset_type($path) {
+  return strpos($path, '//') === FALSE ? 'file' : 'external';
 }
 
 /**
