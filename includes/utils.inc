@@ -65,7 +65,8 @@ function _tweme_add_asset($type, $data, $options = array()) {
   if (!isset($options['type']) || $options['type'] == 'file') {
     // Data is path:
     global $theme;
-    $data = str_replace('%t', drupal_get_path('theme', $theme), $data);
+    $data = str_replace('%tweme', drupal_get_path('theme', 'tweme'), $data);
+    $data = str_replace('%theme', drupal_get_path('theme', $theme), $data);
   }
   switch ($type) {
     case 'css':
