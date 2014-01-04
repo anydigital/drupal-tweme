@@ -17,7 +17,9 @@ function tweme_preprocess_html(&$vars) {
   }
   // Connect Twitter Bootstrap Extra:
   if ($path = theme_get_setting('bootstrap_extra_path')) {
-    _tweme_connect_lib('css', $path . '/css/bootstrap-extra.min.css');
+    module_exists('less') ?
+      _tweme_connect_lib('less', $path . '/less/bootstrap-extra.less') :
+      _tweme_connect_lib('css', $path . '/css/bootstrap-extra.min.css');
     _tweme_connect_lib('js', $path . '/js/bootstrap-extra.min.js');
   }
   // Connect HTML5 Shiv:

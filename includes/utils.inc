@@ -69,6 +69,7 @@ function _tweme_add_asset($type, $data, $options = array()) {
   }
   switch ($type) {
     case 'css':
+    case 'less':
       drupal_add_css($data, $options);
       break;
     case 'js':
@@ -97,6 +98,7 @@ function _tweme_connect_lib($type, $path, $options = array()) {
   );
   switch ($type) {
     case 'css':
+    case 'less':
       $options += array(
         'group' => CSS_THEME,
         'weight' => -1000,
