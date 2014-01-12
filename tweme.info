@@ -11,6 +11,7 @@ settings[html5shiv_path] = //cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7
 settings[primary_tasks_style] = tabs
 settings[secondary_tasks_style] = pills
 settings[max_width] = 940
+settings[navbar_menus] = 1
 
 stylesheets[all][] = system.css
 stylesheets[all][] = tweme.css

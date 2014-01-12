@@ -23,6 +23,15 @@
   </div>
 </div>
 
+<!-- NAVBAR II -->
+<div class="id-navbar2 navbar navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <?php print $navbar_menu2 ?>
+    </div>
+  </div>
+</div>
+
 <?php if ($page['featured']): ?>
 <!-- FEATURED -->
 <div class="zone zone-featured container-wrapper">

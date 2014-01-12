@@ -9,6 +9,7 @@
  * Preprocesses variables for html.tpl.php.
  */
 function tweme_preprocess_html(&$vars) {
+
   // Connect Twitter Bootstrap:
   if ($path = theme_get_setting('bootstrap_path')) {
     _tweme_connect_lib('css', $path . '/css/bootstrap.min.css');
@@ -67,8 +68,22 @@ function tweme_process_html(&$vars) {
 function tweme_preprocess_page(&$vars) {
 
   // Prepare navbar menu:
-  $vars['navbar_menu_tree'] = menu_tree(_tweme_primary_menu_name());
-  unset($vars['navbar_menu_tree']['#theme_wrappers']);
+  if ($menu = variable_get('menu_main_links_source')) {
+    $vars['navbar_menu_tree'] = menu_tree($menu);
+    unset($vars['navbar_menu_tree']['#theme_wrappers']);      
+    if (theme_get_setting('navbar_menus') > 1) {
+      foreach ($vars['navbar_menu_tree'] as $key => &$item) {
+        if (_tweme_in_active_trail($item['#original_link'])) {
+          $vars['navbar_menu2_tree'] = $item['#below'];
+        }
+        if (is_array($item)) {
+          $item['#below'] = array();
+          $item['#original_link']['has_children'] = FALSE;
+        }
+        unset($vars['navbar_menu2_tree']['#theme_wrappers']);
+      }
+    }
+  }
 
   // Prepare navbar search form:
   $vars['navbar_search_form'] = FALSE;
@@ -109,7 +124,14 @@ function tweme_process_page(&$vars) {
     'href' => $vars['front_page'],
     'logo' => $vars['logo'],
   ));
-  $vars['navbar_menu'] = '<ul class="nav">' . drupal_render($vars['navbar_menu_tree']) . '</ul>';
+  $vars['navbar_menu'] = NULL;
+  if (isset($vars['navbar_menu_tree'])) {
+    $vars['navbar_menu'] = '<ul class="nav">' . drupal_render($vars['navbar_menu_tree']) . '</ul>';
+  }
+  $vars['navbar_menu2'] = NULL;
+  if (isset($vars['navbar_menu2_tree'])) {
+    $vars['navbar_menu2'] = '<ul class="nav">' . drupal_render($vars['navbar_menu2_tree']) . '</ul>';
+  }
   $vars['navbar_search'] = drupal_render($vars['navbar_search_form']);
   $vars['navbar_toggler'] = theme('navbar_toggler');
   $vars['headline'] = theme('page_headline', $vars);

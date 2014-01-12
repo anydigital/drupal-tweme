@@ -56,7 +56,7 @@ function tweme_navbar_brand($vars) {
  * Overrides theme_menu_link().
  */
 function tweme_menu_link($vars) {
-  if ($vars['element']['#original_link']['menu_name'] == _tweme_primary_menu_name()) {
+  if (_tweme_in_primary_menu($vars['element']['#original_link'])) {
     return tweme_navbar_menu_link($vars);
   }
   else {
@@ -88,7 +88,7 @@ function tweme_navbar_menu_link($vars) {
   $options['html'] = TRUE;
 
   // Mark link as active:
-  if ($link['in_active_trail']) {
+  if (_tweme_in_active_trail($link)) {
     $attrs['class'][] = 'active';
   }
 

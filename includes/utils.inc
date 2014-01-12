@@ -152,8 +152,19 @@ function _tweme_add_html_head_bottom($data = NULL) {
 }
 
 /**
- * Returns primary menu name.
+ * Checks if a given link in the primary menu.
  */
-function _tweme_primary_menu_name() {
-  return variable_get('menu_main_links_source', 'main-menu');
+function _tweme_in_primary_menu($link) {
+  // TODO: caching
+  return $link['menu_name'] == variable_get('menu_main_links_source');
+}
+
+/**
+ * Checks if a given link in the active trail.
+ */
+function _tweme_in_active_trail($link) {
+  // TODO: caching
+  return
+    url($link['href'], array('absolute' => TRUE)) . '/' == url('<front>', array('absolute' => TRUE)) ||
+    $link['in_active_trail'];
 }
