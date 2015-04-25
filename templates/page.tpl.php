@@ -1,128 +1,82 @@
-<?php
+<header class="<?php print $navbar_classes ?>">
+  <div class="container">
+    <div class="navbar-header">
+      <?php if ($logo): ?>
+      <a class="logo navbar-btn pull-left" href="<?php print $front_page ?>" title="<?php print t('Home') ?>">
+        <img src="<?php print $logo ?>" alt="<?php print t('Home') ?>" />
+      </a>
+      <?php endif ?>
+      <?php if (!empty($site_name)): ?>
+      <a class="name navbar-brand" href="<?php print $front_page ?>" title="<?php print t('Home') ?>">
+        <?php print $site_name ?>
+      </a>
+      <?php endif ?>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+      <div class="navbar-collapse collapse">
+        <nav role="navigation">
+          <?php print render($primary_nav) ?>
+          <?php print render($secondary_nav) ?>
+          <?php print render($page['navigation']) ?>
+        </nav>
+      </div>
+    <?php endif ?>
+  </div>
+</header>
 
-/**
- * @file
- * Custom theme implementation to display a single Drupal page.
- */
-
-?>
-
-<!-- NAVBAR -->
-<div class="id-navbar navbar navbar-medium navbar-inverse navbar-static-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <?php print $navbar_toggler ?>
-      <?php print $navbar_brand ?>
-      <?php print $navbar_search ?>
-      <?php if ($navbar_menu): ?>
-      <nav class="nav-collapse collapse" role="navigation">
-        <?php print $navbar_menu ?>
-      </nav>
+<header class="header zone">
+  <div class="zone-inner">
+    <?php if (empty($page['featured'])): ?><div class="container"><?php endif ?>
+    <div class="header-top">
+      <?php print $breadcrumb ?>
+      <?php print render($title_prefix) ?>
+      <?php if (!empty($title)): ?>
+      <h1 class="page-header"><?php print $title ?></h1>
+      <?php endif ?>
+      <?php print render($title_suffix) ?>
+      <?php print render($page['header']) ?>
+    </div>
+    <?php print render($page['featured']) ?>
+    <div class="header-bottom">
+      <?php print render($tabs) ?>
+      <?php if (!empty($action_links)): ?>
+      <ul class="action-links"><?php print render($action_links) ?></ul>
       <?php endif ?>
     </div>
+    <?php if (empty($page['featured'])): ?></div><?php endif ?>
   </div>
-</div>
+</header>
 
-<!-- NAVBAR II -->
-<div class="id-navbar2 navbar navbar-static-top">
-  <div class="navbar-inner">
+<section class="main zone">
+  <div class="zone-inner">
     <div class="container">
-      <?php print $navbar_menu2 ?>
-    </div>
-  </div>
-</div>
-
-<?php if ($page['featured']): ?>
-<!-- FEATURED -->
-<div class="zone zone-featured container-wrapper">
-  <?php print render($page['featured']) ?>
-</div>
-<?php endif ?>
-
-<?php if ($has_header): ?>
-<!-- HEADER -->
-<header class="zone zone-header container-wrapper">
-  <div class="container">
-    <div class="zone-inner">
-      <?php print $headline ?>
       <?php print $messages ?>
-      <?php print render($page['header']) ?>
       <?php print render($page['help']) ?>
-      <?php print $controls ?>
-    </div>
-  </div>
-</header>
-<?php endif ?>
-
-<?php if ($page['highlighted']): ?>
-<!-- HIGHLIGHTED -->
-<header class="zone zone-highlighted zone-annex container-wrapper">
-  <div class="container">
-    <div class="zone-inner mkt size-l align-center">
       <?php print render($page['highlighted']) ?>
+      <?php print render($page['content']) ?>
     </div>
   </div>
-</header>
-<?php endif ?>
-
-<!-- MAIN -->
-<div class="zone zone-main container-wrapper">
-  <div class="container">
-    <div class="zone-inner id-pin-to">
-      <div class="row-fluid">
-        <?php if ($has_sidebar_first): ?>
-        <!-- SIDEBAR FIRST -->
-        <aside class="span3">
-          <div class="sidebar sidebar-first">
-            <?php print render($page['sidebar_first']) ?>
-            <?php print render($page['sidebar_first_affix']) ?>
-          </div>
-        </aside>
-        <?php endif ?>
-        <!-- CONTENT -->
-        <section class="span<?php print 12 - 3 * $has_sidebar_first - 3 * $has_sidebar_second ?>">
-          <?php print render($page['content']) ?>
-        </section>
-        <?php if ($has_sidebar_second): ?>
-        <!-- SIDEBAR SECOND -->
-        <aside class="span3">
-          <div class="sidebar sidebar-second">
-            <?php print render($page['sidebar_second']) ?>
-            <?php print render($page['sidebar_second_affix']) ?>
-          </div>
-        </aside>
-        <?php endif ?>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
 
 <?php if ($page['bottom']): ?>
-<!-- BOTTOM -->
-<header class="zone zone-bottom zone-annex container-wrapper">
-  <div class="container">
-    <div class="zone-inner">
+<header class="bottom zone">
+  <div class="zone-inner">
+    <div class="container">
       <?php print render($page['bottom']) ?>
     </div>
   </div>
 </header>
 <?php endif ?>
 
-<!-- FOOTER -->
-<footer class="zone zone-footer container-wrapper">
-  <div class="container">
-    <div class="zone-inner size-s align-center">
-      <?php print $page['footer'] ? render($page['footer']) : $copyright ?>
-      <?php if ($secondary_menu): ?>
-      <div class="footer-links">
-        <?php foreach ($secondary_menu as $item): ?>
-        <?php print l($item['title'], $item['href']) ?>
-        <?php endforeach ?>
-      </div>
-      <?php endif ?>
-      <?php if ($feed_icons): ?>
-      <div class="footer-icons"><?php print $feed_icons ?></div>
-      <?php endif ?>
+<footer class="footer zone">
+  <div class="zone-inner">
+    <div class="container">
+      <?php print $page['footer'] ? render($page['footer']) : '©' . date('Y') . ' ' . $site_name ?>
     </div>
   </div>
 </footer>
