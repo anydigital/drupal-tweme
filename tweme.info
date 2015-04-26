@@ -3,6 +3,8 @@ description = Ultra lightweight Bootstrap theme for Drupal.
 core = 7.x
 base theme = bootstrap
 
+settings[bootstrap_navbar_position] = 'fixed-top'
+
 stylesheets[all][] = common.less
 stylesheets[all][] = style.less
 

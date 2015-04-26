@@ -5,6 +5,24 @@
 @gray-light: lighten(@gray-base, 46.7%); // #777
 @footer-sitemap-hover-bg: rgba(255, 255, 255, 0.05);
 
+body.navbar-is-fixed-top {
+  &, &.admin-menu {
+    padding-top: 0 !important;
+  }
+}
+
+.navbar-nav {
+  float: none;
+  > li {
+    display: table-cell;
+    float: none;
+    width: 1%;
+    > a {
+      text-align: center;
+    }
+  }
+}
+
 .footer {
   background: #222;
   color: lighten(@gray-light);
