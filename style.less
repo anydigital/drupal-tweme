@@ -3,12 +3,17 @@
 
 @gray-base: #000;
 @gray-light: lighten(@gray-base, 46.7%); // #777
+@gray-lighter: lighten(@gray-base, 93.5%); // #eee
 @footer-sitemap-hover-bg: rgba(255, 255, 255, 0.05);
 
 body.navbar-is-fixed-top {
   &, &.admin-menu {
     padding-top: 0 !important;
   }
+}
+
+h1, h2, h3 {
+  font-weight: normal;
 }
 
 .navbar-nav {
@@ -20,6 +25,26 @@ body.navbar-is-fixed-top {
     > a {
       text-align: center;
     }
+  }
+}
+
+.header {
+  background: @gray-lighter;
+}
+
+.header-top {
+  margin-top: @block;
+  h1 {
+    font-size: 6*@cell;
+    font-weight: 300;
+    padding: @cell 0;
+  }
+}
+
+.header-bottom {
+  margin-top: @block/4;
+  .nav-tabs {
+    margin-bottom: 0;
   }
 }
 

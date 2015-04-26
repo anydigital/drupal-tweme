@@ -36,7 +36,7 @@
       <?php print $breadcrumb ?>
       <?php print render($title_prefix) ?>
       <?php if (!empty($title)): ?>
-      <h1 class="page-header"><?php print $title ?></h1>
+      <h1><?php print $title ?></h1>
       <?php endif ?>
       <?php print render($title_suffix) ?>
       <?php print render($page['header']) ?>
