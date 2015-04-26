@@ -73,7 +73,7 @@
 </header>
 <?php endif ?>
 
-<footer class="footer zone">
+<footer class="footer zone has-sitemap">
   <div class="zone-inner">
     <div class="container">
       <?php print $page['footer'] ? render($page['footer']) : '©' . date('Y') . ' ' . $site_name ?>

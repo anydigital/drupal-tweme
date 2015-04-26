@@ -15,15 +15,17 @@
   text-decoration: none;
 }
 
-.footer .sitemap {
+.footer-sitemap {
   margin-bottom: @block/2;
-  a {
-    margin: 0 -2*@cell;
-    padding-top: @cell/2;
-    padding-bottom: @cell/2;
-    &:hover {
-      background: @footer-sitemap-hover-bg;
-      color: white;
+  li {
+    > a {
+      margin: 0 -2*@cell;
+      padding-top: @cell/2;
+      padding-bottom: @cell/2;
+      &:hover {
+        background: @footer-sitemap-hover-bg;
+        color: white;
+      }
     }
   }
   > li {
