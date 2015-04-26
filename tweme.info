@@ -6,6 +6,8 @@ base theme = bootstrap
 stylesheets[all][] = common.less
 stylesheets[all][] = style.less
 
+scripts[] = tweme.js
+
 regions[body_top] = Body top
 regions[page_top] = Page top
 regions[header] = Header

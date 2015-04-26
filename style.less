@@ -1,0 +1,42 @@
+@block: 8rem;
+@cell: @block/10;
+
+@gray-base: #000;
+@gray-light: lighten(@gray-base, 46.7%); // #777
+@footer-sitemap-hover-bg: rgba(255, 255, 255, 0.05);
+
+.footer {
+  background: #222;
+  color: lighten(@gray-light);
+}
+
+.footer a {
+  color: lighten(@gray-light, 15%);
+  text-decoration: none;
+}
+
+.footer .sitemap {
+  margin-bottom: @block/2;
+  a {
+    margin: 0 -2*@cell;
+    padding-top: @cell/2;
+    padding-bottom: @cell/2;
+    &:hover {
+      background: @footer-sitemap-hover-bg;
+      color: white;
+    }
+  }
+  > li {
+    > a {
+      color: white;
+      display: block;
+      margin-bottom: @cell;
+      padding: @cell 2*@cell;
+      text-transform: uppercase;
+      .caret {
+        display: none;
+      }
+    }
+  }
+}
+
