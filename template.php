@@ -13,7 +13,7 @@ function tweme_css_alter(&$css) {
 function tweme_preprocess_block(&$vars) {
   $block = $vars['block'];
 
-  if ($block->region == 'featured') {
+  if ($block->region == 'header') {
     if ($block->module == 'imageblock' && module_exists('imageblock')) {
       if ($img = imageblock_get_file($block->delta)) {
         $src = file_create_url($img->uri);

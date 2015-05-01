@@ -31,7 +31,6 @@
 
 <header class="header zone">
   <div class="zone-inner">
-    <?php if (empty($page['featured'])): ?><div class="container"><?php endif ?>
     <div class="header-top">
       <?php print $breadcrumb ?>
       <?php print render($title_prefix) ?>
@@ -41,14 +40,12 @@
       <?php print render($title_suffix) ?>
       <?php print render($page['header']) ?>
     </div>
-    <?php print render($page['featured']) ?>
     <div class="header-bottom">
       <?php print render($tabs) ?>
       <?php if (!empty($action_links)): ?>
       <ul class="action-links"><?php print render($action_links) ?></ul>
       <?php endif ?>
     </div>
-    <?php if (empty($page['featured'])): ?></div><?php endif ?>
   </div>
 </header>
 
