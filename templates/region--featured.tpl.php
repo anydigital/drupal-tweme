@@ -1,5 +1,5 @@
 <?php if ($content): ?>
-<div class="<?php print $classes ?> carousel slide">
+<div class="<?php print $classes ?> carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <?php print $content ?>
   </div>
