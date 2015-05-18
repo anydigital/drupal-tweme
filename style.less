@@ -20,23 +20,6 @@ h1, h2, h3 {
   margin-right: @block/2;
 }
 
-.navbar-nav {
-  float: none;
-  > li {
-    display: table-cell;
-    float: none;
-    width: 1%;
-    > a {
-      text-align: center;
-    }
-    &:hover {
-      > ul {
-        display: block;
-      }
-    }
-  }
-}
-
 .header {
   background: @gray-lighter;
 }
@@ -68,7 +51,7 @@ h1, h2, h3 {
 
 .footer {
   background: #222;
-  color: lighten(@gray-light);
+  color: @gray-light;
   margin-top: 0;
 }
 
