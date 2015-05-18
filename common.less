@@ -1,3 +1,24 @@
 img {
   max-width: 100%;
 }
+
+.stack {
+  position: relative;
+}
+
+.stack > *:not(:last-child) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.stack > .stack-top {
+  top: 0;
+  height: auto;
+}
+
+.stack > .stack-bottom {
+  bottom: 0;
+  height: auto;
+  z-index: 1;
+}

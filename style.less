@@ -6,6 +6,15 @@
 @gray-lighter: lighten(@gray-base, 93.5%); // #eee
 @footer-sitemap-hover-bg: rgba(255, 255, 255, 0.05);
 
+html {
+  background: #222;
+}
+
+body {
+  font-size: 2*@cell;
+  font-weight: 300;
+}
+
 body.navbar-is-fixed-top {
   &, &.admin-menu {
     padding-top: 0 !important;
@@ -16,32 +25,47 @@ h1, h2, h3 {
   font-weight: normal;
 }
 
+.carousel-control {
+  font-size: 4*@cell;
+}
+
 .navbar-brand {
   margin-right: @block/2;
 }
 
 .header {
   background: @gray-lighter;
+  text-align: center;
+  font-size: 2.5*@cell;
 }
 
-.header-top {
-  margin-top: @block;
-  h1 {
-    font-size: 6*@cell;
-    font-weight: 300;
-    padding: @cell 0;
-  }
+.header h1 {
+  font-size: 6*@cell;
+  font-weight: 300;
+  padding: @cell 0;
 }
 
-.header-bottom {
-  margin-top: @block/4;
-  .nav-tabs {
-    margin-bottom: 0;
+.header p {
+  margin-bottom: 3*@cell;
+}
+
+.header .nav-tabs {
+  margin-bottom: 0;
+}
+
+.header .block {
+  padding-top: 2*@block;
+  padding-bottom: 1.5*@block;
+  &.header-top {
+    padding-top: @block;
+    padding-bottom: 0.75*@block;
+    text-align: left;
   }
 }
 
 .main {
-  padding: @block/4 0;
+  padding-top: @block/4;
+  padding-bottom: @block/2;
 }
 
 .bottom {
@@ -86,4 +110,3 @@ h1, h2, h3 {
     }
   }
 }
-

@@ -1,3 +1,5 @@
+<?php print render($page['body_top']) ?>
+
 <header class="<?php print $navbar_classes ?>">
   <div class="container">
     <div class="navbar-header">
@@ -26,20 +28,29 @@
 
 <header class="header zone">
   <div class="zone-inner">
-    <div class="header-top">
-      <?php print $breadcrumb ?>
-      <?php print render($title_prefix) ?>
-      <?php if (!empty($title)): ?>
-      <h1><?php print $title ?></h1>
-      <?php endif ?>
-      <?php print render($title_suffix) ?>
+    <div class="stack">
+      <div class="stack-bottom">
+        <div class="container">
+          <?php if (!empty($action_links)): ?>
+          <ul class="action-links pull-right">
+            <?php print render($action_links) ?>
+          </ul>
+          <?php endif ?>
+          <?php print render($tabs) ?>
+        </div>
+      </div>
+      <div class="header-top block">
+        <div class="container">
+          <?php print $breadcrumb ?>
+          <?php print render($title_prefix) ?>
+          <?php if (!$page['header'] && !empty($title)): ?>
+          <h1><?php print $title ?></h1>
+          <?php endif ?>
+          <?php print render($title_suffix) ?>
+        </div>
+      </div>
       <?php print render($page['header']) ?>
-    </div>
-    <div class="header-bottom">
-      <?php print render($tabs) ?>
-      <?php if (!empty($action_links)): ?>
-      <ul class="action-links"><?php print render($action_links) ?></ul>
-      <?php endif ?>
+      <?php print render($page['featured']) ?>
     </div>
   </div>
 </header>
@@ -72,3 +83,5 @@
     </div>
   </div>
 </footer>
+
+<?php print render($page['body_bottom']) ?>
