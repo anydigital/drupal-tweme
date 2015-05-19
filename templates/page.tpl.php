@@ -39,7 +39,7 @@
           <?php print render($tabs) ?>
         </div>
       </div>
-      <div class="header-top block">
+      <div class="block">
         <div class="container">
           <?php print $breadcrumb ?>
           <?php print render($title_prefix) ?>
