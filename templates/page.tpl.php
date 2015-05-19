@@ -1,6 +1,6 @@
 <?php print render($page['body_top']) ?>
 
-<header class="<?php print $navbar_classes ?>">
+<div class="<?php print $navbar_classes ?>">
   <div class="container">
     <div class="navbar-header">
       <?php if (!empty($site_name)): ?>
@@ -24,63 +24,55 @@
       </div>
     <?php endif ?>
   </div>
-</header>
+</div>
 
 <header class="header zone">
-  <div class="zone-inner">
-    <div class="stack">
-      <div class="stack-bottom">
-        <div class="container">
-          <?php if (!empty($action_links)): ?>
-          <ul class="action-links pull-right">
-            <?php print render($action_links) ?>
-          </ul>
-          <?php endif ?>
-          <?php print render($tabs) ?>
-        </div>
+  <div class="stack">
+    <div class="stack-bottom">
+      <div class="container">
+        <?php if (!empty($action_links)): ?>
+        <ul class="action-links pull-right">
+          <?php print render($action_links) ?>
+        </ul>
+        <?php endif ?>
+        <?php print render($tabs) ?>
       </div>
-      <div class="block">
-        <div class="container">
-          <?php print $breadcrumb ?>
-          <?php print render($title_prefix) ?>
-          <?php if (!$page['header'] && !empty($title)): ?>
-          <h1><?php print $title ?></h1>
-          <?php endif ?>
-          <?php print render($title_suffix) ?>
-        </div>
-      </div>
-      <?php print render($page['header']) ?>
-      <?php print render($page['featured']) ?>
     </div>
+    <div class="block">
+      <div class="container">
+        <?php print $breadcrumb ?>
+        <?php print render($title_prefix) ?>
+        <?php if (!$page['header'] && !empty($title)): ?>
+        <h1><?php print $title ?></h1>
+        <?php endif ?>
+        <?php print render($title_suffix) ?>
+      </div>
+    </div>
+    <?php print render($page['header']) ?>
+    <?php print render($page['featured']) ?>
   </div>
 </header>
 
 <section class="main zone">
-  <div class="zone-inner">
-    <div class="container">
-      <?php print $messages ?>
-      <?php print render($page['help']) ?>
-      <?php print render($page['highlighted']) ?>
-      <?php print render($page['content']) ?>
-    </div>
+  <div class="container">
+    <?php print $messages ?>
+    <?php print render($page['help']) ?>
+    <?php print render($page['highlighted']) ?>
+    <?php print render($page['content']) ?>
   </div>
 </section>
 
 <?php if ($page['bottom']): ?>
-<header class="bottom zone">
-  <div class="zone-inner">
-    <div class="container">
-      <?php print render($page['bottom']) ?>
-    </div>
+<section class="bottom zone">
+  <div class="container">
+    <?php print render($page['bottom']) ?>
   </div>
-</header>
+</section>
 <?php endif ?>
 
 <footer class="footer zone has-sitemap">
-  <div class="zone-inner">
-    <div class="container">
-      <?php print $page['footer'] ? render($page['footer']) : '©' . date('Y') . ' ' . $site_name ?>
-    </div>
+  <div class="container">
+    <?php print $page['footer'] ? render($page['footer']) : '©' . date('Y') . ' ' . $site_name ?>
   </div>
 </footer>
 
