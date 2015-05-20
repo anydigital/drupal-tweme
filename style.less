@@ -71,10 +71,28 @@ h1, h2, h3 {
   padding: @block/2 0;
 }
 
+.region-share {
+  .at-share-btn {
+    float: left;
+    width: 20%;
+    max-width: none !important;
+    max-height: 6*@cell !important;
+    margin: 0 !important;
+    padding: @cell;
+    text-align: center;
+    cursor: pointer;
+  }
+  .at_flat_counter {
+    float: left;
+    margin: @cell 0 @cell -0.75*@block !important;
+  }
+}
+
 .footer {
   background: #222;
   color: @gray-light;
   margin-top: 0;
+  border: none;
 }
 
 .footer a {

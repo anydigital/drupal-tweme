@@ -62,6 +62,8 @@
   </div>
 </section>
 
+<?php print render($page['share']) ?>
+
 <?php if ($page['bottom']): ?>
 <section class="bottom zone">
   <div class="container">

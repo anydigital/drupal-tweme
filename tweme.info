@@ -17,6 +17,7 @@ regions[featured] = Featured
 regions[help] = Help
 regions[highlighted] = Highlighted
 regions[content] = Content
+regions[share] = Share
 regions[bottom] = Bottom
 regions[footer] = Footer
 regions[page_bottom] = Page bottom
