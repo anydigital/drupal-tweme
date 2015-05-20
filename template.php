@@ -1,6 +1,19 @@
 <?php
 
 /**
+ * Implements hook_html_head_alter().
+ */
+function tweme_html_head_alter(&$head_elements) {
+  foreach ($head_elements as &$element) {
+    if (isset($element['#attributes']['rel'])
+        && in_array($element['#attributes']['rel'], array('canonical', 'shortlink'))
+        && drupal_is_front_page()) {
+      $element['#attributes']['href'] = '/';
+    }
+  }
+}
+
+/**
  * Implements hook_css_alter().
  */
 function tweme_css_alter(&$css) {
