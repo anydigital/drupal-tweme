@@ -27,29 +27,26 @@
 </div>
 
 <header class="header zone">
-  <div class="stack">
-    <div class="stack-bottom">
-      <div class="container">
-        <?php if (!empty($action_links)): ?>
-        <ul class="action-links pull-right">
-          <?php print render($action_links) ?>
-        </ul>
-        <?php endif ?>
-        <?php print render($tabs) ?>
-      </div>
+  <div class="block<?php print $page['header'] ? ' header-top' : '' ?>">
+    <div class="container">
+      <?php print $breadcrumb ?>
+      <?php print render($title_prefix) ?>
+      <?php if (!$page['header'] && !empty($title)): ?>
+      <h1><?php print $title ?></h1>
+      <?php endif ?>
+      <?php print render($title_suffix) ?>
     </div>
-    <div class="block">
-      <div class="container">
-        <?php print $breadcrumb ?>
-        <?php print render($title_prefix) ?>
-        <?php if (!$page['header'] && !empty($title)): ?>
-        <h1><?php print $title ?></h1>
-        <?php endif ?>
-        <?php print render($title_suffix) ?>
-      </div>
+  </div>
+  <?php print render($page['header']) ?>
+  <div class="header-bottom">
+    <div class="container">
+      <?php if (!empty($action_links)): ?>
+      <ul class="action-links pull-right">
+        <?php print render($action_links) ?>
+      </ul>
+      <?php endif ?>
+      <?php print render($tabs) ?>
     </div>
-    <?php print render($page['header']) ?>
-    <?php print render($page['featured']) ?>
   </div>
 </header>
 

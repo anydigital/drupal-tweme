@@ -15,14 +15,14 @@ body {
   font-weight: 300;
 }
 
-body.navbar-is-fixed-top {
-  &, &.admin-menu {
-    padding-top: 0 !important;
-  }
-}
-
 h1, h2, h3 {
   font-weight: normal;
+}
+
+p {
+  &, &:last-child {
+    margin-bottom: 2*@cell;
+  }
 }
 
 .carousel-control {
@@ -34,30 +34,34 @@ h1, h2, h3 {
 }
 
 .header {
+  position: relative;
   background: @gray-lighter;
   text-align: center;
   font-size: 2.5*@cell;
+  h1, h2 {
+    font-size: 6*@cell;
+    font-weight: 300;
+  }
+  .block {
+    padding: 1.5*@block 0;
+    body.not-front & {
+      padding: @block 0;
+    }
+  }
 }
 
-.header h1 {
-  font-size: 6*@cell;
-  font-weight: 300;
+.header-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
-.header p {
-  margin-bottom: 3*@cell;
-}
-
-.header .nav-tabs {
-  margin-bottom: 0;
-}
-
-.header .block {
-  padding-top: 2*@block;
-  padding-bottom: 1.5*@block;
-  body.not-front & {
-    padding-top: @block;
-    padding-bottom: 0.5*@block;
+.header-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;  
+  .nav-tabs {
+    margin-bottom: 0;
   }
 }
 
@@ -98,31 +102,4 @@ h1, h2, h3 {
 .footer a {
   color: lighten(@gray-light, 15%);
   text-decoration: none;
-}
-
-.footer-sitemap {
-  margin-bottom: @block/2;
-  li {
-    > a {
-      margin: 0 -2*@cell;
-      padding-top: @cell/2;
-      padding-bottom: @cell/2;
-      &:hover {
-        background: @footer-sitemap-hover-bg;
-        color: white;
-      }
-    }
-  }
-  > li {
-    > a {
-      color: white;
-      display: block;
-      margin-bottom: @cell;
-      padding: @cell 2*@cell;
-      text-transform: uppercase;
-      .caret {
-        display: none;
-      }
-    }
-  }
 }
