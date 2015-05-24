@@ -1,11 +1,11 @@
 <?php print $prefix ?>
 <?php print $view_mode == 'teaser' ? '&lt;Row&gt;' : '' ?>
-<?php if ($bricks): ?>
-<?php $_class = 'col-md-' . 12 / count($bricks) ?>
+<?php if ($atoms): ?>
+<?php $_class = 'col-md-' . 12 / count($atoms) ?>
 <div class="row">
-  <?php foreach ($bricks as $brick): ?>
+  <?php foreach ($atoms as $atom): ?>
   <div class="col <?php print $_class ?>">
-    <?php print render($brick) ?>
+    <?php print render($atom) ?>
   </div>
   <?php endforeach ?>
 </div>
