@@ -33,3 +33,16 @@ function tweme_preprocess_block(&$vars) {
     }
   }
 }
+
+/**
+ * Preprocesses variables for entity.tpl.php.
+ */
+function tweme_preprocess_entity(&$vars) {
+  $element = $vars['elements'];
+
+  if ($element['#entity_type'] == 'atom') {
+    if (!empty($element['#host_field']) && $element['#host_field'] == 'field_featured' && $element['#bundle'] == 'container') {
+      $vars['classes_array'][] = 'header-body';
+    }
+  }
+}
