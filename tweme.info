@@ -13,6 +13,7 @@ scripts[] = tweme.js
 regions[body_top] = Body top
 regions[page_top] = Page top
 regions[header] = Header
+regions[featured] = Featured
 regions[help] = Help
 regions[highlighted] = Highlighted
 regions[content] = Content

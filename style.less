@@ -42,22 +42,21 @@ p {
     font-size: 6*@cell;
     font-weight: 300;
   }
-  .block {
-    padding: 1.5*@block 0;
-    body.not-front & {
-      padding: @block 0;
-    }
-  }
-  .block-imageblock {
-    background: no-repeat center center;
-    background-size: cover;
-  }
 }
 
 .header-top {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.header-body {
+  padding: 1.5*@block 0;
+  background: no-repeat center center;
+  background-size: cover;
+  body.not-front & {
+    padding: @block 0;
+  }  
 }
 
 .header-bottom {

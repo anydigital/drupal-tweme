@@ -27,17 +27,18 @@
 </div>
 
 <header class="header zone">
-  <div class="block<?php print $page['header'] ? ' header-top' : '' ?>">
+  <div class="header-body<?php print $page['header'] || $page['featured'] ? ' header-top' : '' ?>">
     <div class="container">
       <?php print $breadcrumb ?>
       <?php print render($title_prefix) ?>
-      <?php if (!$page['header'] && !empty($title)): ?>
+      <?php if (!(empty($title) || $page['header'] || $page['featured'])): ?>
       <h1><?php print $title ?></h1>
       <?php endif ?>
       <?php print render($title_suffix) ?>
     </div>
   </div>
   <?php print render($page['header']) ?>
+  <?php print render($page['featured']) ?>
   <div class="header-bottom">
     <div class="container">
       <?php if (!empty($action_links)): ?>
