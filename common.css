@@ -1,0 +1,26 @@
+body.navbar-is-fixed-top,
+body.navbar-is-fixed-top.admin-menu {
+  padding-top: 0 !important;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.stack {
+  position: relative;
+}
+.stack > *:not(:last-child) {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.stack > .stack-bottom {
+  top: auto;
+  bottom: 0;
+  height: auto;
+  z-index: 1;
+}
+.hljs {
+  background: transparent !important;
+}
