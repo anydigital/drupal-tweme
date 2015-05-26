@@ -18,6 +18,15 @@ function tweme_html_head_alter(&$head_elements) {
  */
 function tweme_css_alter(&$css) {
   unset($css['modules/poll/poll.css']);
+
+  // Less fallback:
+  if (!module_exists('less')) {
+    foreach ($css as &$file) {
+      if ($file['type'] == 'file' && substr($file['data'], -5) == '.less') {
+        $file['data'] = substr($file['data'], 0, -5) . '.css';
+      }
+    }
+  }
 }
 
 /**
