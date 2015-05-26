@@ -32,6 +32,9 @@ function tweme_preprocess_block(&$vars) {
       $vars['attributes_array']['style'] = sprintf('background-image: url(%s)', $src);
     }
   }
+  elseif ($block->region == 'footer' && $block->module == 'menu' && $block->delta == 'menu-footer-sitemap') {
+    $vars['classes_array'][] = 'row';
+  }
 }
 
 /**
@@ -45,4 +48,26 @@ function tweme_preprocess_entity(&$vars) {
       $vars['classes_array'][] = 'header-body';
     }
   }
+}
+
+/**
+ * Overrides theme_menu_tree() for menu_footer_sitemap.
+ */
+function tweme_menu_tree__menu_footer_sitemap($vars) {
+  return '<ul class="list-unstyled">' . $vars['tree'] . '</ul>';
+}
+
+/**
+ * Overrides theme_menu_link() for menu_footer_sitemap.
+ */
+function tweme_menu_link__menu_footer_sitemap($vars) {
+  $element = $vars['element'];
+
+  $sub_menu = $element['#below'] ? drupal_render($element['#below']) : '';
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+  if ($element['#original_link']['depth'] == 1) {
+    $element['#attributes']['class'][] = 'root col-xs-6 col-sm-4 col-md-2';
+  }
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }

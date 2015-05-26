@@ -2,6 +2,7 @@
 @cell: @block/10;
 
 @gray-base: #000;
+@gray-dark: lighten(@gray-base, 20%); // #333
 @gray-light: lighten(@gray-base, 46.7%); // #777
 @gray-lighter: lighten(@gray-base, 93.5%); // #eee
 @footer-sitemap-hover-bg: rgba(255, 255, 255, 0.05);
@@ -105,4 +106,30 @@ p {
 .footer a {
   color: lighten(@gray-light, 15%);
   text-decoration: none;
+  &:hover {
+    color: white;
+  }
+}
+
+.footer {
+  hr {
+    border-color: @gray-dark;
+  }
+}
+
+#block-menu-menu-footer-sitemap {
+  li {
+    margin-top: @cell/2;
+  }
+  li.root {
+    margin-bottom: 2*@cell;
+    > a {
+      text-transform: uppercase;
+      font-size: 1.25*@cell;
+      letter-spacing: 2px;      
+    }
+    > ul {
+      margin-top: 2*@cell;
+    }
+  }
 }
