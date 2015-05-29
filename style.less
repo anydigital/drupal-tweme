@@ -133,3 +133,37 @@ p {
     }
   }
 }
+#block-book-navigation {
+  ul {
+    margin-right: -30px;
+    margin-left: -1px;
+    padding: 2*@cell 0;
+    border: 1px solid gray;
+    border-width: 0 1px;
+  }
+  a {
+    display: block;
+    padding: 0 30px;
+  }
+  a.active-trail {
+    position: relative;
+    font-weight: bold;
+    &:before,
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 0;
+      height: 2*@cell;
+      margin-top: -@cell;
+      border: @cell solid transparent;
+      border-right-color: gray;
+    }
+    &:after {
+      right: -2px;
+      border-right-color: white;
+      z-index: 1;
+    }
+  }
+}
