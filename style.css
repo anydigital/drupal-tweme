@@ -97,8 +97,20 @@ body.not-front .header-body {
 .footer a:hover {
   color: white;
 }
+.footer {
+  padding: 2rem 0;
+}
 .footer hr {
   border-color: #333333;
+}
+.footer .block {
+  padding: 2rem 0;
+}
+.footer .block + .block {
+  border-top: 1px solid #333333;
+}
+#block-menu-menu-footer-sitemap {
+  text-align: left;
 }
 #block-menu-menu-footer-sitemap li {
   margin-top: 0.4rem;
