@@ -123,12 +123,20 @@ p {
 }
 
 .footer {
+  padding: @block/4 0;
   hr {
     border-color: @gray-dark;
+  }
+  .block {
+    padding: @block/4 0;
+    + .block {
+      border-top: 1px solid @gray-dark;
+    }
   }
 }
 
 #block-menu-menu-footer-sitemap {
+  text-align: left;
   li {
     margin-top: @cell/2;
   }

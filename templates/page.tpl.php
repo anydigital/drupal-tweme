@@ -90,9 +90,9 @@
 </section>
 <?php endif ?>
 
-<footer class="footer zone has-sitemap">
+<footer class="footer zone">
   <div class="container">
-    <?php print $page['footer'] ? render($page['footer']) : '©' . date('Y') . ' ' . $site_name ?>
+    <?php print render($page['footer']) ?>
   </div>
 </footer>
 
