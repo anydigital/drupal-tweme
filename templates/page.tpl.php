@@ -59,14 +59,15 @@
 <section class="main zone">
   <div class="container">
     <div class="row">
-      <section class="main-col col-md-6 col-md-push-3">
+      <?php $_content_cols = 12 - 3 * !empty($page['sidebar_first']) - 3 * !empty($page['sidebar_second']) ?>
+      <section class="main-col col-md-<?php print $_content_cols  ?><?php print !empty($page['sidebar_first']) ? ' col-md-push-3' : '' ?>">
         <?php print $messages ?>
         <?php print render($page['help']) ?>
         <?php print render($page['highlighted']) ?>
         <?php print render($page['content']) ?>
       </section>
       <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="main-col col-md-3 col-md-pull-6">
+      <aside class="main-col col-md-3 col-md-pull-<?php print $_content_cols  ?>">
         <?php print render($page['sidebar_first']) ?>
       </aside>
       <?php endif ?>
