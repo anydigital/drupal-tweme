@@ -58,10 +58,24 @@
 
 <section class="main zone">
   <div class="container">
-    <?php print $messages ?>
-    <?php print render($page['help']) ?>
-    <?php print render($page['highlighted']) ?>
-    <?php print render($page['content']) ?>
+    <div class="row">
+      <section class="main-col col-md-6 col-md-push-3">
+        <?php print $messages ?>
+        <?php print render($page['help']) ?>
+        <?php print render($page['highlighted']) ?>
+        <?php print render($page['content']) ?>
+      </section>
+      <?php if (!empty($page['sidebar_first'])): ?>
+      <aside class="main-col col-md-3 col-md-pull-6">
+        <?php print render($page['sidebar_first']) ?>
+      </aside>
+      <?php endif ?>
+      <?php if (!empty($page['sidebar_second'])): ?>
+      <aside class="main-col col-md-3">
+        <?php print render($page['sidebar_second']) ?>
+      </aside>
+      <?php endif ?>
+    </div>
   </div>
 </section>
 
