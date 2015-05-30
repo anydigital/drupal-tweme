@@ -18,7 +18,8 @@ p:last-child {
   font-size: 3.2rem;
 }
 .navbar-brand {
-  margin-right: 4rem;
+  font-weight: normal;
+  color: #333333 !important;
 }
 .header {
   position: relative;
@@ -30,6 +31,12 @@ p:last-child {
 .header h2 {
   font-size: 4.800000000000001rem;
   font-weight: 300;
+}
+.header .breadcrumb {
+  background: transparent;
+  font-size: smaller;
+  margin: 0;
+  padding: 0;
 }
 .header-top {
   position: absolute;
@@ -53,8 +60,10 @@ body.not-front .header-body {
   margin-bottom: 0;
 }
 .main {
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding: 4rem 0 2rem 0;
+}
+.main-col {
+  margin-bottom: 2rem;
 }
 .bottom {
   background: #eeeeee;
@@ -79,6 +88,7 @@ body.not-front .header-body {
   color: #777777;
   margin-top: 0;
   border: none;
+  text-align: center;
 }
 .footer a {
   color: #9d9d9d;

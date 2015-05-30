@@ -2,6 +2,9 @@ body.navbar-is-fixed-top,
 body.navbar-is-fixed-top.admin-menu {
   padding-top: 0 !important;
 }
+body.navbar-is-fixed-top.toolbar-drawer {
+  padding-top: 6.4rem !important;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -20,6 +23,11 @@ img {
   bottom: 0;
   height: auto;
   z-index: 1;
+}
+.navbar-brand img {
+  height: 3.2rem;
+  width: auto;
+  margin: -0.8rem 0;
 }
 .hljs {
   background: transparent !important;
