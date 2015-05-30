@@ -3,9 +3,14 @@
 <div class="<?php print $navbar_classes ?>">
   <div class="container">
     <div class="navbar-header">
-      <?php if (!empty($site_name)): ?>
-      <a class="name navbar-brand" href="<?php print $front_page ?>" title="<?php print t('Home') ?>">
-        <?php print $site_name ?>
+      <?php if (!empty($logo) || !empty($site_name)): ?>
+      <a class="navbar-brand" href="<?php print $front_page ?>" title="<?php print t('Home') ?>">
+        <?php if (!empty($logo)): ?>
+        <img src="<?php print $logo ?>" alt="<?php print t('Home') ?>" />
+        <?php endif ?>
+        <?php if (!empty($site_name)): ?>
+        <span><?php print $site_name ?></span>
+        <?php endif ?>
       </a>
       <?php endif ?>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
