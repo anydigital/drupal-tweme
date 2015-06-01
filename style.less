@@ -46,9 +46,11 @@ p {
   }
   .breadcrumb {
     background: transparent;
-    font-size: smaller;
-    margin: 0;
+    font-size: small;
+    margin: -2.5*@cell 0 0 0;
     padding: 0;
+    height: 2.5*@cell;
+    opacity: 0.5;
   }
 }
 
@@ -56,6 +58,7 @@ p {
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header-body {
