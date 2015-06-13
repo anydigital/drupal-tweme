@@ -6,6 +6,7 @@ base theme = bootstrap
 simplytest_dependencies[] = jquery_update
 
 settings[bootstrap_navbar_position] = 'fixed-top'
+settings[bootstrap_cdn] = 3.3.4
 
 stylesheets[all][] = common.less
 stylesheets[all][] = style.less
