@@ -34,14 +34,17 @@ p:last-child {
 }
 .header .breadcrumb {
   background: transparent;
-  font-size: smaller;
-  margin: 0;
+  font-size: small;
+  margin: -2rem 0 0 0;
   padding: 0;
+  height: 2rem;
+  opacity: 0.5;
 }
 .header-top {
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 .header-body {
   padding: 12rem 0;
