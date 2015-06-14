@@ -21,10 +21,6 @@ p {
   }
 }
 
-.links.list-inline {
-  margin-left: 0;
-}
-
 .carousel-control {
   font-size: 3rem;
 }
@@ -50,6 +46,15 @@ p {
     height: 2rem;
     opacity: 0.5;
   }
+  .jumbotron {
+    margin: 0;
+    padding: 8rem 0;
+    background: no-repeat center center;
+    background-size: cover;
+    body.front & {
+      padding: 12rem 0;
+    }  
+  }
 }
 
 .header-top {
@@ -57,19 +62,10 @@ p {
   top: 0;
   width: 100%;
   z-index: 1;
-}
-
-.header .jumbotron {
-  margin: 0;
-  padding: 12rem 0;
-  background: no-repeat center center;
-  background-size: cover;
-  &.header-top {
+  .header &.jumbotron {
     background: transparent;
+    padding-bottom: 0;
   }
-  body.not-front & {
-    padding: 8rem 0;
-  }  
 }
 
 .header-bottom {
@@ -121,20 +117,16 @@ p {
   background: #222;
   color: @gray-light;
   margin-top: 0;
+  padding: 2rem 0;
   border: none;
   text-align: center;
-}
-
-.footer a {
-  color: lighten(@gray-light, 15%);
-  text-decoration: none;
-  &:hover {
-    color: white;
+  a {
+    color: lighten(@gray-light, 15%);
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
   }
-}
-
-.footer {
-  padding: 2rem 0;
   hr {
     border-color: @gray-dark;
   }
