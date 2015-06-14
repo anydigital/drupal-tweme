@@ -1,4 +1,4 @@
-<div id="<?php print $block_html_id ?>" class="header-body <?php print $classes ?>"<?php print $attributes ?>>
+<div id="<?php print $block_html_id ?>" class="jumbotron <?php print $classes ?>"<?php print $attributes ?>>
   <div class="container">
     <?php print render($title_prefix) ?>
     <?php if ($block->subject): ?>

@@ -32,7 +32,7 @@
 </div>
 
 <header class="header zone">
-  <div class="header-body<?php print $page['header'] || $page['featured'] ? ' header-top' : '' ?>">
+  <div class="jumbotron<?php print $page['header'] || $page['featured'] ? ' header-top' : '' ?>">
     <div class="container">
       <?php print $breadcrumb ?>
       <?php print render($title_prefix) ?>

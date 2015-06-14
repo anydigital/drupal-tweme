@@ -42,9 +42,7 @@ p {
 
 .header {
   position: relative;
-  background: @gray-lighter;
   text-align: center;
-  font-size: 2.5*@cell;
   h1, h2 {
     font-size: 6*@cell;
     font-weight: 300;
@@ -66,10 +64,14 @@ p {
   z-index: 1;
 }
 
-.header-body {
+.header .jumbotron {
+  margin: 0;
   padding: 1.5*@block 0;
   background: no-repeat center center;
   background-size: cover;
+  &.header-top {
+    background: transparent;
+  }
   body.not-front & {
     padding: @block 0;
   }  
