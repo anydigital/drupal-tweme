@@ -4,18 +4,20 @@ html {
 body {
   font-size: 1.6rem;
   font-weight: 300;
+  z-index: -2;
 }
 h1,
 h2,
 h3 {
   font-weight: normal;
+  margin-bottom: 2rem;
 }
 p,
 p:last-child {
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
 }
 .carousel-control {
-  font-size: 3.2rem;
+  font-size: 3rem;
 }
 .navbar-brand {
   font-weight: normal;
@@ -23,14 +25,13 @@ p:last-child {
 }
 .header {
   position: relative;
-  background: #eeeeee;
   text-align: center;
-  font-size: 2rem;
 }
 .header h1,
 .header h2 {
-  font-size: 4.800000000000001rem;
+  font-size: 5rem;
   font-weight: 300;
+  margin-bottom: 1rem;
 }
 .header .breadcrumb {
   background: transparent;
@@ -40,19 +41,24 @@ p:last-child {
   height: 2rem;
   opacity: 0.5;
 }
+.header .jumbotron {
+  margin: 0;
+  padding: 8rem 0;
+  background: no-repeat center center;
+  background-size: cover;
+}
+body.front .header .jumbotron {
+  padding: 12rem 0;
+}
 .header-top {
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 1;
 }
-.header-body {
-  padding: 12rem 0;
-  background: no-repeat center center;
-  background-size: cover;
-}
-body.not-front .header-body {
-  padding: 8rem 0;
+.header .header-top.jumbotron {
+  background: transparent;
+  padding-bottom: 0;
 }
 .header-bottom {
   position: absolute;
@@ -65,6 +71,14 @@ body.not-front .header-body {
 .main {
   padding: 4rem 0 2rem 0;
 }
+.main h1,
+.main h2,
+.main h3 {
+  margin-top: -7rem;
+  padding-top: 8rem;
+  position: relative;
+  z-index: -1;
+}
 .main-col {
   margin-bottom: 2rem;
 }
@@ -76,20 +90,21 @@ body.not-front .header-body {
   float: left;
   width: 20%;
   max-width: none !important;
-  max-height: 4.800000000000001rem !important;
+  max-height: 5rem !important;
   margin: 0 !important;
-  padding: 0.8rem;
+  padding: 0.9rem;
   text-align: center;
   cursor: pointer;
 }
 .region-share .at_flat_counter {
   float: left;
-  margin: 0.8rem 0 0.8rem -6rem !important;
+  margin: 0.9rem 0 0.9rem -6rem !important;
 }
 .footer {
   background: #222;
   color: #777777;
   margin-top: 0;
+  padding: 2rem 0;
   border: none;
   text-align: center;
 }
@@ -99,9 +114,6 @@ body.not-front .header-body {
 }
 .footer a:hover {
   color: white;
-}
-.footer {
-  padding: 2rem 0;
 }
 .footer hr {
   border-color: #333333;
@@ -116,10 +128,10 @@ body.not-front .header-body {
   text-align: left;
 }
 #block-menu-menu-footer-sitemap li {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
 }
 #block-menu-menu-footer-sitemap li.root {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.5rem;
 }
 #block-menu-menu-footer-sitemap li.root > a {
   text-transform: uppercase;
@@ -127,5 +139,5 @@ body.not-front .header-body {
   letter-spacing: 2px;
 }
 #block-menu-menu-footer-sitemap li.root > ul {
-  margin-top: 1.6rem;
+  margin-top: 1.5rem;
 }
