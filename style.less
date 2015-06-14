@@ -1,29 +1,23 @@
-@block: 8rem;
-@cell: @block/10;
-
-@gray-base: #000;
-@gray-dark: lighten(@gray-base, 20%); // #333
-@gray-light: lighten(@gray-base, 46.7%); // #777
-@gray-lighter: lighten(@gray-base, 93.5%); // #eee
-@footer-sitemap-hover-bg: rgba(255, 255, 255, 0.05);
+@import '../../libraries/bootstrap/less/variables.less';
 
 html {
   background: #222;
 }
 
 body {
-  font-size: 2*@cell;
+  font-size: 1.6rem;
   font-weight: 300;
   z-index: -2;
 }
 
 h1, h2, h3 {
   font-weight: normal;
+  margin-bottom: 2rem;
 }
 
 p {
   &, &:last-child {
-    margin-bottom: 2*@cell;
+    margin-bottom: 2rem;
   }
 }
 
@@ -32,7 +26,7 @@ p {
 }
 
 .carousel-control {
-  font-size: 4*@cell;
+  font-size: 3rem;
 }
 
 .navbar-brand {
@@ -44,15 +38,16 @@ p {
   position: relative;
   text-align: center;
   h1, h2 {
-    font-size: 6*@cell;
+    font-size: 5rem;
     font-weight: 300;
+    margin-bottom: 1rem;
   }
   .breadcrumb {
     background: transparent;
     font-size: small;
-    margin: -2.5*@cell 0 0 0;
+    margin: -2rem 0 0 0;
     padding: 0;
-    height: 2.5*@cell;
+    height: 2rem;
     opacity: 0.5;
   }
 }
@@ -66,14 +61,14 @@ p {
 
 .header .jumbotron {
   margin: 0;
-  padding: 1.5*@block 0;
+  padding: 12rem 0;
   background: no-repeat center center;
   background-size: cover;
   &.header-top {
     background: transparent;
   }
   body.not-front & {
-    padding: @block 0;
+    padding: 8rem 0;
   }  
 }
 
@@ -87,22 +82,22 @@ p {
 }
 
 .main {
-  padding: @block/2 0 @block/4 0;
+  padding: 4rem 0 2rem 0;
   h1, h2, h3 {
-    margin-top: -70px;
-    padding-top: 80px;
+    margin-top: -7rem;
+    padding-top: 8rem;
     position: relative;
     z-index: -1;
   }
 }
 
 .main-col {
-  margin-bottom: @block/4;
+  margin-bottom: 2rem;
 }
 
 .bottom {
   background: @gray-lighter;
-  padding: @block/2 0;
+  padding: 4rem 0;
 }
 
 .region-share {
@@ -110,15 +105,15 @@ p {
     float: left;
     width: 20%;
     max-width: none !important;
-    max-height: 6*@cell !important;
+    max-height: 5rem !important;
     margin: 0 !important;
-    padding: @cell;
+    padding: 0.9rem;
     text-align: center;
     cursor: pointer;
   }
   .at_flat_counter {
     float: left;
-    margin: @cell 0 @cell -0.75*@block !important;
+    margin: 0.9rem 0 0.9rem -6rem !important;
   }
 }
 
@@ -139,12 +134,12 @@ p {
 }
 
 .footer {
-  padding: @block/4 0;
+  padding: 2rem 0;
   hr {
     border-color: @gray-dark;
   }
   .block {
-    padding: @block/4 0;
+    padding: 2rem 0;
     + .block {
       border-top: 1px solid @gray-dark;
     }
@@ -154,17 +149,17 @@ p {
 #block-menu-menu-footer-sitemap {
   text-align: left;
   li {
-    margin-top: @cell/2;
+    margin-top: 0.5rem;
   }
   li.root {
-    margin-bottom: 2*@cell;
+    margin-bottom: 1.5rem;
     > a {
       text-transform: uppercase;
-      font-size: 1.25*@cell;
+      font-size: 1rem;
       letter-spacing: 2px;      
     }
     > ul {
-      margin-top: 2*@cell;
+      margin-top: 1.5rem;
     }
   }
 }
