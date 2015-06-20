@@ -71,3 +71,24 @@ function tweme_system_powered_by() {
     (module_exists('atoms') ? ', <a href="http://drupal.tonystar.me/atoms">Atoms</a>' : '') .
     ' ' . t('and') . ' <a href="http://drupal.tonystar.me/tweme">Tweme</a>.';
 }
+
+/**
+ * Preprocesses variables for poll-bar.tpl.php.
+ */
+function tweme_preprocess_poll_bar(&$vars) {
+  $vars['theme_hook_suggestions'] = array('poll_bar');
+}
+
+/**
+ * Preprocesses variables for theme_item_list().
+ */
+function tweme_preprocess_item_list(&$vars) {
+  $vars['attributes']['class'][] = 'list-unstyled';
+}
+
+/**
+ * Preprocesses variables for theme_links().
+ */
+function tweme_preprocess_links(&$vars) {
+  $vars['attributes']['class'][] = 'list-unstyled';
+}

@@ -33,6 +33,8 @@ p {
 .header {
   position: relative;
   text-align: center;
+  border-bottom: 1px solid @panel-default-border;
+  background: @gray-lighter;
   h1, h2 {
     font-size: 5rem;
     font-weight: 300;
@@ -74,21 +76,36 @@ p {
   width: 100%;  
   .nav-tabs {
     margin-bottom: 0;
+    border-bottom: none;
   }
 }
 
 .main {
   padding: 4rem 0 2rem 0;
+}
+
+.main-col {
+  margin-bottom: 2rem;
+}
+
+.region-content {
   h1, h2, h3 {
     margin-top: -7rem;
     padding-top: 8rem;
     position: relative;
     z-index: -1;
-  }
+  }  
 }
 
-.main-col {
-  margin-bottom: 2rem;
+.region-sidebar-first {
+  .nav {
+    margin: 0 -1.9rem;
+    > li {
+      > a {
+        padding: 1rem 1.9rem;
+      }
+    }
+  }
 }
 
 .bottom {

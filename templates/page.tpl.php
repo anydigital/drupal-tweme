@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<header class="header zone">
+<header class="header">
   <div class="jumbotron">
     <div class="container">
       <?php print $breadcrumb ?>
@@ -55,7 +55,7 @@
   </div>
 </header>
 
-<section class="main zone">
+<section class="main">
   <div class="container">
     <div class="row">
       <?php $_content_cols = 12 - 3 * !empty($page['sidebar_first']) - 3 * !empty($page['sidebar_second']) ?>
@@ -82,14 +82,14 @@
 <?php print render($page['share']) ?>
 
 <?php if ($page['bottom']): ?>
-<section class="bottom zone">
+<section class="bottom">
   <div class="container">
     <?php print render($page['bottom']) ?>
   </div>
 </section>
 <?php endif ?>
 
-<footer class="footer zone">
+<footer class="footer">
   <div class="container">
     <?php print render($page['footer']) ?>
   </div>
