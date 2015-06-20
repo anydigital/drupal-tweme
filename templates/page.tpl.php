@@ -32,18 +32,17 @@
 </div>
 
 <header class="header zone">
-  <div class="jumbotron<?php print $page['header'] || $page['featured'] ? ' header-top' : '' ?>">
+  <div class="jumbotron">
     <div class="container">
       <?php print $breadcrumb ?>
       <?php print render($title_prefix) ?>
-      <?php if (!(empty($title) || $page['header'] || $page['featured'])): ?>
+      <?php if (!empty($title) && !$page['header']): ?>
       <h1><?php print $title ?></h1>
       <?php endif ?>
       <?php print render($title_suffix) ?>
+      <?php print render($page['header']) ?>
     </div>
   </div>
-  <?php print render($page['header']) ?>
-  <?php print render($page['featured']) ?>
   <div class="header-bottom">
     <div class="container">
       <?php if (!empty($action_links)): ?>

@@ -35,13 +35,7 @@ function tweme_css_alter(&$css) {
 function tweme_preprocess_block(&$vars) {
   $block = $vars['block'];
 
-  if ($block->region == 'header' && $block->module == 'imageblock' && module_exists('imageblock')) {
-    if ($img = imageblock_get_file($block->delta)) {
-      $src = file_create_url($img->uri);
-      $vars['attributes_array']['style'] = sprintf('background-image: url(%s)', $src);
-    }
-  }
-  elseif ($block->region == 'footer' && $block->module == 'menu' && $block->delta == 'menu-footer-sitemap') {
+  if ($block->region == 'footer' && $block->module == 'menu' && $block->delta == 'menu-footer-sitemap') {
     $vars['classes_array'][] = 'row';
   }
 }
