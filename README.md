@@ -4,7 +4,7 @@ Drupal Tweme
 Ultra lightweight Bootstrap theme for Drupal.
 
 
-## [Demo ↗](http://drupal.tonystar.me/tweme)
+## [Demo →](https://drupal.tonystar.me/tweme)
 
 
 Installation
@@ -22,3 +22,5 @@ Requirements
 
 * [jQuery Update](https://www.drupal.org/project/jquery_update)
 * [Bootstrap](https://www.drupal.org/project/bootstrap) (base theme)
+
+## [Read more](https://drupal.tonystar.me/tweme#main)
