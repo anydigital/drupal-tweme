@@ -32,7 +32,7 @@
 </div>
 
 <header class="header">
-  <div class="jumbotron">
+  <div class="jumbotron" style="<?php print isset($header_bg) ? 'background-image: url(' . $header_bg . ')' : '' ?>">
     <div class="container">
       <?php print $breadcrumb ?>
       <?php print render($title_prefix) ?>

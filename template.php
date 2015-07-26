@@ -30,10 +30,28 @@ function tweme_css_alter(&$css) {
 }
 
 /**
+ * Preprocesses variables for page.tpl.php.
+ */
+function tweme_preprocess_page(&$vars) {
+  $page = &$vars['page'];
+
+  if ($page['header_bg']) {
+    $children = element_children($page['header_bg']);
+    $delta = reset($children);
+    $block = $page['header_bg'][$delta]['#block'];
+    if ($block->region == 'header_bg' && $block->module == 'imageblock' && module_exists('imageblock')) {
+      if ($img = imageblock_get_file($block->delta)) {
+        $vars['header_bg'] = file_create_url($img->uri);
+      }
+    }
+  }
+}
+
+/**
  * Preprocesses variables for block.tpl.php.
  */
 function tweme_preprocess_block(&$vars) {
-  $block = $vars['block'];
+  $block = &$vars['block'];
 
   if ($block->region == 'footer' && $block->module == 'menu' && $block->delta == 'menu-footer-sitemap') {
     $vars['classes_array'][] = 'row';
