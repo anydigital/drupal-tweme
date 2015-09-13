@@ -21,6 +21,10 @@ div.links {
   width: auto;
   margin: -0.6rem 1rem 0 0;
 }
+.jumbotron {
+  background: #eeeeee no-repeat center center;
+  background-size: cover;
+}
 .hljs {
   background: transparent !important;
 }

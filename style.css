@@ -26,40 +26,30 @@ p:last-child {
   position: relative;
   text-align: center;
   border-bottom: 1px solid #dddddd;
-  background: #eeeeee;
-}
-.header h1,
-.header h2 {
-  font-size: 5rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
+  background: #eeeeee no-repeat center center;
+  background-size: cover;
 }
 .header .breadcrumb {
   background: transparent;
-  font-size: small;
-  margin: -2rem 0 0 0;
-  padding: 0;
-  height: 2rem;
+  font-size: 12px;
   opacity: 0.5;
 }
 .header .jumbotron {
   margin: 0;
-  padding: 8rem 0;
-  background: no-repeat center center;
-  background-size: cover;
+  padding: 12rem 0 6rem 0;
+  background-color: transparent;
 }
-body.front .header .jumbotron {
-  padding: 12rem 0;
+.header .jumbotron h1,
+.header .jumbotron h2 {
+  font-size: 63px;
+  font-weight: 300;
+  margin: 0 0 1rem 0;
 }
 .header-top {
   position: absolute;
-  top: 0;
+  top: 5rem;
   width: 100%;
   z-index: 1;
-}
-.header .header-top.jumbotron {
-  background: transparent;
-  padding-bottom: 0;
 }
 .header-bottom {
   position: absolute;
