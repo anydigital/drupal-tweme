@@ -33,6 +33,7 @@ function tweme_css_alter(&$css) {
  * Preprocesses variables for page.tpl.php.
  */
 function tweme_preprocess_page(&$vars) {
+  $vars['header_attributes'] = '';
   $page = &$vars['page'];
 
   if ($page['header_bg']) {
@@ -41,10 +42,29 @@ function tweme_preprocess_page(&$vars) {
     $block = $page['header_bg'][$delta]['#block'];
     if ($block->region == 'header_bg' && $block->module == 'imageblock' && module_exists('imageblock')) {
       if ($img = imageblock_get_file($block->delta)) {
-        $vars['header_bg'] = file_create_url($img->uri);
+        $src = file_create_url($img->uri);
+        $vars['header_attributes'] = sprintf(' style="background-image: url(%s)"', $src);
       }
     }
   }
+}
+
+/**
+ * Processes variables for page.tpl.php.
+ */
+function tweme_process_page(&$vars) {
+  $page = &$vars['page'];
+
+  if ($vars['is_front'] && !$vars['title']) {
+    $vars['title'] = $vars['site_name'];
+  }
+}
+
+/**
+ * Preprocesses variables for region.tpl.php.
+ */
+function tweme_preprocess_region(&$vars) {
+  $vars['block_count'] = count(element_children($vars['elements']));
 }
 
 /**
@@ -53,6 +73,12 @@ function tweme_preprocess_page(&$vars) {
 function tweme_preprocess_block(&$vars) {
   $block = &$vars['block'];
 
+  if ($block->region == 'header' && $block->module == 'imageblock' && module_exists('imageblock')) {
+    if ($img = imageblock_get_file($block->delta)) {
+      $src = file_create_url($img->uri);
+      $vars['attributes_array']['style'] = sprintf('background-image: url(%s)', $src);
+    }
+  }
   if ($block->region == 'footer' && $block->module == 'menu' && $block->delta == 'menu-footer-sitemap') {
     $vars['classes_array'][] = 'row';
   }

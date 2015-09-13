@@ -33,46 +33,36 @@ p {
   position: relative;
   text-align: center;
   border-bottom: 1px solid @panel-default-border;
-  background: @gray-lighter;
-  h1, h2 {
-    font-size: 5rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
-  }
+  background: @jumbotron-bg no-repeat center center;
+  background-size: cover;
   .breadcrumb {
     background: transparent;
-    font-size: small;
-    margin: -2rem 0 0 0;
-    padding: 0;
-    height: 2rem;
+    font-size: @font-size-small;
     opacity: 0.5;
   }
   .jumbotron {
     margin: 0;
-    padding: 8rem 0;
-    background: no-repeat center center;
-    background-size: cover;
-    body.front & {
-      padding: 12rem 0;
-    }  
+    padding: 12rem 0 6rem 0;
+    background-color: transparent;
+    h1, h2 {
+      font-size: @jumbotron-heading-font-size;
+      font-weight: 300;
+      margin: 0 0 1rem 0;
+    }
   }
 }
 
 .header-top {
   position: absolute;
-  top: 0;
+  top: 5rem;
   width: 100%;
   z-index: 1;
-  .header &.jumbotron {
-    background: transparent;
-    padding-bottom: 0;
-  }
 }
 
 .header-bottom {
   position: absolute;
   bottom: 0;
-  width: 100%;  
+  width: 100%;
   .nav-tabs {
     margin-bottom: 0;
     border-bottom: none;
@@ -155,7 +145,7 @@ p {
     > a {
       text-transform: uppercase;
       font-size: 1rem;
-      letter-spacing: 2px;      
+      letter-spacing: 2px;
     }
     > ul {
       margin-top: 1.5rem;

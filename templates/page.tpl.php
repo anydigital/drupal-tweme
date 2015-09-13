@@ -31,21 +31,26 @@
   </div>
 </div>
 
-<header class="header">
-  <div class="jumbotron" style="<?php print isset($header_bg) ? 'background-image: url(' . $header_bg . ')' : '' ?>">
+<header class="header" <?php print $header_attributes ?>>
+  <div class="header-top">
     <div class="container">
       <?php print $breadcrumb ?>
       <?php print render($title_prefix) ?>
-      <?php if (!empty($title) && !$page['header']): ?>
-      <h1><?php print $title ?></h1>
-      <?php endif ?>
       <?php print render($title_suffix) ?>
-      <?php print render($page['header']) ?>
     </div>
   </div>
+  <?php if ($page['header']): ?>
+  <?php print render($page['header']) ?>
+  <?php else: ?>
+  <div class="jumbotron">
+    <div class="container">
+      <h1><?php print $title ?></h1>
+    </div>
+  </div>
+  <?php endif ?>
   <div class="header-bottom">
     <div class="container">
-      <?php if (!empty($action_links)): ?>
+      <?php if ($action_links): ?>
       <ul class="action-links pull-right">
         <?php print render($action_links) ?>
       </ul>
