@@ -127,6 +127,9 @@ function tweme_preprocess_poll_bar(&$vars) {
  * Preprocesses variables for theme_item_list().
  */
 function tweme_preprocess_item_list(&$vars) {
+  if (!is_array($vars['attributes']['class'])) {
+    $vars['attributes']['class'] = array($vars['attributes']['class']);
+  }
   $vars['attributes']['class'][] = 'list-unstyled';
 }
 
