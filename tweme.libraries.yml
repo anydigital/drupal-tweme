@@ -1,0 +1,13 @@
+tether:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js: { type: external, minified: true }
+
+bootstrap:
+  css:
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css: { type: external, minified: true }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - tweme/tether
