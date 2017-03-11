@@ -1,3 +1,10 @@
+global-styling:
+  css:
+    theme:
+      css/theme.css: {}
+  dependencies:
+    - tweme/bootstrap
+
 tether:
   js:
     https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js: { type: external, minified: true }

@@ -1,0 +1,10 @@
+{% extends "block.html.twig" %}
+
+{% block content %}
+  <a class="navbar-brand" href="{{ path('<front>') }}" title="{{ site_slogan }}" rel="home">
+    {% if site_logo %}
+      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}"/>
+    {% endif %}
+    {{ site_name }}
+  </a>
+{% endblock %}

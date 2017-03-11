@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * Prepares variables for `html.html.twig`.
+ */
+function tweme_preprocess_html(&$variables) {
+  $variables['attributes']['class'][] = 'container';
+}
+
+/**
+ * Prepares variables for `region.html.twig`.
+ */
+function tweme_preprocess_region(&$variables) {
+  $variables['attributes']['class'][] = 'mb-5';
+}
+function tweme_preprocess_region__primary_menu(&$variables) {
+  $variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-light bg-faded';
+}
+function tweme_preprocess_region__sidebar_first(&$variables) {
+  $variables['attributes']['class'][] = 'card-group';
+}
+
+/**
+ * Prepares variables for `block.html.twig`.
+ */
+function tweme_preprocess_block(&$variables) {
+  $block = \Drupal\block\Entity\Block::load($variables['elements']['#id']);
+
+  if ($block->getRegion() == 'sidebar_first') {
+    $variables['attributes']['class'][] = 'card card-footer';
+  }
+}
+
+/**
+ * Prepares variables for `menu.html.twig`.
+ */
+function tweme_preprocess_menu(&$variables) {
+  $menu_name = isset($variables['menu_name']) ? $variables['menu_name'] : '';
+
+  switch ($menu_name) {
+    case 'main':
+    case 'account':
+      $variables['attributes']['class'][] = 'navbar-nav nav';
+      foreach ($variables['items'] as &$item) {
+        $item['attributes']->addClass('nav-item');
+        $attrs = $item['url']->getOption('attributes');
+        $attrs['class'][] = 'nav-link';
+        $item['url']->setOption('attributes', $attrs);
+      }
+      break;
+    default:
+      $variables['attributes']['class'][] = 'list-unstyled mb-0';
+      break;
+  }
+}
+
+/**
+ * Prepares variables for `menu-local-task.html.twig`.
+ */
+function tweme_preprocess_menu_local_task(&$variables) {
+  $variables['attributes']['class'][] = 'nav-item';
+  $variables['link']['#options']['attributes']['class'][] = 'nav-link' . (!empty($variables['is_active']) ? ' active' : '');
+}
+
+/**
+ * Prepares variables for `form.html.twig`.
+ */
+function tweme_preprocess_form(&$variables) {
+  if ($variables['element']['#form_id'] == 'search_block_form') {
+    $variables['attributes']['class'][] = 'container-inline';
+  }
+}
+
+/**
+ * Prepares variables for `status-messages.html.twig`.
+ */
+function tweme_preprocess_status_messages(&$variables) {
+  $variables['attributes']['class'][] = 'alert alert-info';
+}

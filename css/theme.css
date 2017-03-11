@@ -1,0 +1,26 @@
+.layout-container {
+  padding: 2rem 0;
+}
+
+.navbar-brand img {
+  height: 2rem;
+  margin-top: -.5rem;
+}
+
+.layout-sidebar-first h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+#block-tweme-breadcrumbs {
+  display: none;
+}
+
+#block-tweme-local-tasks {
+  margin-bottom: 1rem;
+}
+
+#block-tweme-content img {
+  max-width: 100%;
+  height: auto;
+}
