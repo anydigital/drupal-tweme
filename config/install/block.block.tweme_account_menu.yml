@@ -10,7 +10,7 @@ dependencies:
 id: tweme_account_menu
 theme: tweme
 region: primary_menu
-weight: -4
+weight: 2
 provider: null
 plugin: 'system_menu_block:account'
 settings:

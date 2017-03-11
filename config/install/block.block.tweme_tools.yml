@@ -10,7 +10,7 @@ dependencies:
 id: tweme_tools
 theme: tweme
 region: footer
-weight: -5
+weight: 1
 provider: null
 plugin: 'system_menu_block:tools'
 settings:

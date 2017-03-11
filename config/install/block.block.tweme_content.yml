@@ -5,15 +5,15 @@ dependencies:
     - system
   theme:
     - tweme
-id: tweme_powered
+id: tweme_content
 theme: tweme
-region: footer
+region: content
 weight: 3
 provider: null
-plugin: system_powered_by_block
+plugin: system_main_block
 settings:
-  id: system_powered_by_block
-  label: 'Powered by Drupal'
+  id: system_main_block
+  label: 'Main page content'
   provider: system
   label_display: '0'
 visibility: {  }

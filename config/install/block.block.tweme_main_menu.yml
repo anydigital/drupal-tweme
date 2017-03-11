@@ -1,22 +1,23 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - system.menu.main
   module:
     - system
   theme:
     - tweme
-id: tweme_branding
+id: tweme_main_menu
 theme: tweme
 region: primary_menu
-weight: 0
+weight: 1
 provider: null
-plugin: system_branding_block
+plugin: 'system_menu_block:main'
 settings:
-  id: system_branding_block
-  label: 'Site branding'
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
   provider: system
   label_display: '0'
-  use_site_logo: true
-  use_site_name: true
-  use_site_slogan: true
+  level: 1
+  depth: 1
 visibility: {  }

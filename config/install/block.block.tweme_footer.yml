@@ -10,7 +10,7 @@ dependencies:
 id: tweme_footer
 theme: tweme
 region: footer
-weight: -6
+weight: 0
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

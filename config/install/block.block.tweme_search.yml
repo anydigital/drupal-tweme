@@ -8,7 +8,7 @@ dependencies:
 id: tweme_search
 theme: tweme
 region: footer
-weight: -4
+weight: 2
 provider: null
 plugin: search_form_block
 settings:
