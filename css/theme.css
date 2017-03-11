@@ -7,7 +7,11 @@
   margin-top: -.5rem;
 }
 
-.layout-sidebar-first h2 {
+.layout-content {
+  margin-bottom: 3rem;
+}
+
+footer h2 {
   font-size: 1rem;
   text-transform: uppercase;
 }

@@ -11,12 +11,12 @@ function tweme_preprocess_html(&$variables) {
  * Prepares variables for `region.html.twig`.
  */
 function tweme_preprocess_region(&$variables) {
-  $variables['attributes']['class'][] = 'mb-5';
+  $variables['attributes']['class'][] = 'mb-3';
 }
 function tweme_preprocess_region__primary_menu(&$variables) {
-  $variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-light bg-faded';
+  $variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-light bg-faded mb-5';
 }
-function tweme_preprocess_region__sidebar_first(&$variables) {
+function tweme_preprocess_region__footer(&$variables) {
   $variables['attributes']['class'][] = 'card-group';
 }
 
@@ -26,7 +26,7 @@ function tweme_preprocess_region__sidebar_first(&$variables) {
 function tweme_preprocess_block(&$variables) {
   $block = \Drupal\block\Entity\Block::load($variables['elements']['#id']);
 
-  if ($block->getRegion() == 'sidebar_first') {
+  if ($block->getRegion() == 'footer') {
     $variables['attributes']['class'][] = 'card card-footer';
   }
 }
