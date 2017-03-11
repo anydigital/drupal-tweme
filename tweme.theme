@@ -14,7 +14,7 @@ function tweme_preprocess_region(&$variables) {
   $variables['attributes']['class'][] = 'mb-3';
 }
 function tweme_preprocess_region__primary_menu(&$variables) {
-  $variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-light bg-faded mb-5';
+  $variables['attributes']['class'][] = 'navbar navbar-toggleable-md navbar-light bg-faded';
 }
 function tweme_preprocess_region__footer(&$variables) {
   $variables['attributes']['class'][] = 'card-group';
@@ -28,6 +28,12 @@ function tweme_preprocess_block(&$variables) {
 
   if ($block->getRegion() == 'footer') {
     $variables['attributes']['class'][] = 'card card-footer';
+  }
+
+  switch ($variables['elements']['#plugin_id']) {
+    case 'system_menu_block:main':
+      $variables['attributes']['class'][] = 'mr-auto';
+      break;
   }
 }
 
