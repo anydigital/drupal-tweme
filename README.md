@@ -2,6 +2,8 @@
 
 Ultra lightweight Bootstrap 4 theme for Drupal 8.
 
+![](https://cdn.rawgit.com/tonystar/drupal-tweme/media/drupal-tweme-8.x-4.0.png)
+
 
 ## Live demo
 
