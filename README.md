@@ -7,7 +7,7 @@ Ultra lightweight Bootstrap 4 theme for Drupal 8.
 
 ## Live demo
 
-1. Open [pre-configured sandbox](https://simplytest.me/project/tweme/8.x-4.0).
+1. Open [pre-configured sandbox](https://simplytest.me/project/tweme).
 2. Click **Launch sandbox** and wait.
 3. Follow the installation (all settings should be pre-filled, don't change them).
 4. Go to **Appearance**, install **Tweme** and set as default theme.
